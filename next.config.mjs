@@ -6,6 +6,13 @@ const nextConfig = {
   },
   typescript: {
     ignoreBuildErrors: true
+  },
+  webpack: (config, { isServer }) => {
+    // Fix Leaflet image assets in CSS - webpack can fail on node_modules/leaflet PNGs
+    if (isServer) {
+      config.externals = [...(config.externals || []), "leaflet", "react-leaflet"];
+    }
+    return config;
   }
 };
 
