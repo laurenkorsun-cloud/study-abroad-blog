@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Header } from "./components/Header";
+import { siteMeta } from "../data/siteContent";
 
 export const metadata: Metadata = {
-  title: "Semester Abroad | Travel Journal",
-  description: "Personal travel blog documenting a semester studying abroad."
+  title: siteMeta.title,
+  description: siteMeta.description
 };
 
 export default function RootLayout({
@@ -14,9 +15,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="flex min-h-screen flex-col">
+      <body className="flex min-h-screen flex-col bg-white text-slate-900">
         <Header />
-        <main className="mx-auto flex w-full max-w-5xl flex-1 px-4 py-8 md:py-10">
+        <main className="flex w-full flex-1 flex-col px-0 py-0">
           {children}
         </main>
       </body>

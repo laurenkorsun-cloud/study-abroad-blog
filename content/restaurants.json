@@ -1,0 +1,83 @@
+[
+  {
+    "id": "rome-cacio-spot",
+    "name": "Trattoria Cacio e Pepe",
+    "city": "Rome",
+    "country": "Italy",
+    "neighborhood": "Trastevere",
+    "lat": 41.889,
+    "lng": 12.4705,
+    "rating": 4.8,
+    "notes": "We ended up here after getting lost on the way to a different restaurant. The waiter insisted we try the house cacio e pepe, and it set the bar for the rest of the semester.",
+    "highlight": "Cacio e pepe and tiramisu that tasted like staying longer.",
+    "imageUrls": [
+      "https://images.pexels.com/photos/1437267/pexels-photo-1437267.jpeg?auto=compress&cs=tinysrgb&w=1600",
+      "https://images.pexels.com/photos/1279330/pexels-photo-1279330.jpeg?auto=compress&cs=tinysrgb&w=1600"
+    ],
+    "relatedTripSlugs": []
+  },
+  {
+    "id": "rome-morning-cafe",
+    "name": "Bar al Ponte",
+    "city": "Rome",
+    "country": "Italy",
+    "neighborhood": "Near the Tiber",
+    "lat": 41.8932,
+    "lng": 12.4663,
+    "rating": 4.6,
+    "notes": "My default stop for a quick cappuccino and cornetto before class. By October, they started my order as soon as I walked in.",
+    "highlight": "Standing at the bar with locals, watching the morning unfold.",
+    "imageUrls": [
+      "https://images.pexels.com/photos/434213/pexels-photo-434213.jpeg?auto=compress&cs=tinysrgb&w=1600"
+    ],
+    "relatedTripSlugs": []
+  },
+  {
+    "id": "florence-gelato",
+    "name": "Gelateria sul Fiume",
+    "city": "Florence",
+    "country": "Italy",
+    "neighborhood": "Along the Arno",
+    "lat": 43.7696,
+    "lng": 11.2558,
+    "rating": 4.9,
+    "notes": "We went back twice in one day and they remembered our favorite flavors.",
+    "highlight": "Pistachio and stracciatella with the river at sunset.",
+    "imageUrls": [
+      "https://images.pexels.com/photos/461430/pexels-photo-461430.jpeg?auto=compress&cs=tinysrgb&w=1600"
+    ],
+    "relatedTripSlugs": ["florence-first-weekend"]
+  },
+  {
+    "id": "amalfi-lemon",
+    "name": "Pasticceria Limone",
+    "city": "Amalfi",
+    "country": "Italy",
+    "neighborhood": "Old town lanes",
+    "lat": 40.634,
+    "lng": 14.602,
+    "rating": 4.7,
+    "notes": "Everything tasted faintly of lemon and sea salt in the best possible way.",
+    "highlight": "Sfogliatella and lemon granita after a hot cliffside walk.",
+    "imageUrls": [
+      "https://images.pexels.com/photos/3026800/pexels-photo-3026800.jpeg?auto=compress&cs=tinysrgb&w=1600"
+    ],
+    "relatedTripSlugs": ["amalfi-coast-escape"]
+  },
+  {
+    "id": "paris-bakery",
+    "name": "Boulangerie du Coin",
+    "city": "Paris",
+    "country": "France",
+    "neighborhood": "Side street off the main boulevard",
+    "lat": 48.8566,
+    "lng": 2.3522,
+    "rating": 4.8,
+    "notes": "The kind of bakery where everything looks perfect and you have to commit to just choosing something.",
+    "highlight": "Pane au chocolat eaten on the sidewalk outside, still warm.",
+    "imageUrls": [
+      "https://images.pexels.com/photos/7362872/pexels-photo-7362872.jpeg?auto=compress&cs=tinysrgb&w=1600"
+    ],
+    "relatedTripSlugs": ["paris-fall-break"]
+  }
+]

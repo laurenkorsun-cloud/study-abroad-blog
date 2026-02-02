@@ -1,0 +1,48 @@
+{
+  "roma": [
+    {
+      "id": "evening-river",
+      "title": "Golden hour along the Tiber",
+      "location": "Lungotevere",
+      "imageUrl": "https://images.pexels.com/photos/4606725/pexels-photo-4606725.jpeg?auto=compress&cs=tinysrgb&w=1600",
+      "aspect": "landscape"
+    },
+    {
+      "id": "street-cafe",
+      "title": "Tiny street-side café",
+      "location": "Trastevere",
+      "imageUrl": "https://images.pexels.com/photos/4606723/pexels-photo-4606723.jpeg?auto=compress&cs=tinysrgb&w=1600",
+      "aspect": "portrait"
+    },
+    {
+      "id": "piazza-night",
+      "title": "Piazza lights after dinner",
+      "location": "Campo de' Fiori",
+      "imageUrl": "https://images.pexels.com/photos/1797124/pexels-photo-1797124.jpeg?auto=compress&cs=tinysrgb&w=1600",
+      "aspect": "landscape"
+    }
+  ],
+  "apartment": [
+    {
+      "id": "kitchen-window",
+      "title": "Kitchen window view",
+      "location": "Apartment",
+      "imageUrl": "https://images.pexels.com/photos/3952039/pexels-photo-3952039.jpeg?auto=compress&cs=tinysrgb&w=1600",
+      "aspect": "landscape"
+    },
+    {
+      "id": "desk-corner",
+      "title": "Study desk and postcards",
+      "location": "Bedroom",
+      "imageUrl": "https://images.pexels.com/photos/3752981/pexels-photo-3752981.jpeg?auto=compress&cs=tinysrgb&w=1600",
+      "aspect": "portrait"
+    },
+    {
+      "id": "living-room",
+      "title": "Late-night catch-ups in the living room",
+      "location": "Living room",
+      "imageUrl": "https://images.pexels.com/photos/3958961/pexels-photo-3958961.jpeg?auto=compress&cs=tinysrgb&w=1600",
+      "aspect": "landscape"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+[
+  {
+    "id": "first-morning",
+    "title": "First Morning: Market Coffee and Cobblestones",
+    "date": "Sept 2, 2026",
+    "label": "Daily Life · Trastevere",
+    "description": "I woke up to the sound of the street below coming to life — carts, voices, and the soft clink of espresso cups. I walked to the corner bar where no one spoke English, ordered my first cappuccino entirely in broken Italian, and watched the city stretch awake."
+  },
+  {
+    "id": "getting-lost",
+    "title": "Getting Lost on Purpose After Class",
+    "date": "Sept 12, 2026",
+    "label": "Daily Life · Centro Storico",
+    "description": "Instead of taking the tram home, I decided to walk with no map — just following whatever alley looked most interesting. I kept stumbling onto tiny churches, laundry hanging overhead, and little pockets of quiet that made the city feel strangely intimate."
+  },
+  {
+    "id": "routine-forms",
+    "title": "When a Routine Finally Started to Form",
+    "date": "Oct 1, 2026",
+    "label": "Daily Life · Testaccio",
+    "description": "Somewhere between the morning walk across the Tiber, afternoon classes, and evening grocery runs, life here stopped feeling like a trip and more like a life I belonged to, even if only temporarily."
+  }
+]

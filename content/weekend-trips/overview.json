@@ -1,0 +1,20 @@
+{
+  "label": "Weekend Escapes",
+  "title": "The cities that stretched this semester beyond Rome.",
+  "description": "A quick overview of every place I slipped away to between classes — mornings on trains, nights in new streets, and all the tiny details I want to remember from each weekend.",
+  "cardLabel": "Weekend Trip",
+  "yearSuffix": "2026",
+  "defaultCoverImage": "https://images.pexels.com/photos/1796727/pexels-photo-1796727.jpeg?auto=compress&cs=tinysrgb&w=1600",
+  "detail": {
+    "pageLabel": "Weekend Trip",
+    "entriesTitle": "Entries",
+    "sidebarSummaryTitle": "This weekend",
+    "sidebarSummaryTemplate": "Moments from {location}: {count} entries captured during this trip.",
+    "mapTitle": "Map of this weekend",
+    "mapDescription": "Click any marker to see details, photos, and notes about that spot. The map will shrink and a detail panel will slide in.",
+    "notFoundLabel": "Weekend Trip",
+    "notFoundTitle": "Trip not found",
+    "notFoundDescription": "This trip doesn't exist yet. Check the weekend trips overview.",
+    "notFoundButton": "Back to weekend trips"
+  }
+}

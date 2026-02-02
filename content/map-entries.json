@@ -1,0 +1,78 @@
+[
+  {
+    "id": "rome-cacio-spot",
+    "title": "Trattoria Cacio e Pepe",
+    "type": "restaurant",
+    "latitude": 41.889,
+    "longitude": 12.4705,
+    "city": "Rome",
+    "country": "Italy",
+    "pageSlug": "/food",
+    "images": [
+      "https://images.pexels.com/photos/1437267/pexels-photo-1437267.jpeg?auto=compress&cs=tinysrgb&w=1600"
+    ],
+    "notes": "Set the standard for every pasta after. The waiter insisted we try the house cacio e pepe.",
+    "date": "2026-09-10",
+    "rating": 4.8,
+    "tags": ["cacio-e-pepe", "pasta", "rome"]
+  },
+  {
+    "id": "florence-duomo-view",
+    "title": "View from the Duomo",
+    "type": "landmark",
+    "latitude": 43.773,
+    "longitude": 11.255,
+    "city": "Florence",
+    "country": "Italy",
+    "pageSlug": "/weekend-trips/florence-first-weekend",
+    "images": [],
+    "notes": "Climbed up just before golden hour. The whole city opened up below.",
+    "date": "2026-09-06",
+    "tags": ["view", "sunset", "duomo"]
+  },
+  {
+    "id": "florence-gelato-riverside",
+    "title": "Gelateria sul Fiume",
+    "type": "restaurant",
+    "latitude": 43.7696,
+    "longitude": 11.2558,
+    "city": "Florence",
+    "country": "Italy",
+    "pageSlug": "/weekend-trips/florence-first-weekend",
+    "images": [
+      "https://images.pexels.com/photos/461430/pexels-photo-461430.jpeg?auto=compress&cs=tinysrgb&w=1600"
+    ],
+    "notes": "We went back twice in one day and they remembered our favorite flavors.",
+    "rating": 4.9,
+    "tags": ["gelato", "dessert", "riverside"]
+  },
+  {
+    "id": "amalfi-beach-spot",
+    "title": "Favorite Beach Cove",
+    "type": "experience",
+    "latitude": 40.634,
+    "longitude": 14.602,
+    "city": "Amalfi",
+    "country": "Italy",
+    "pageSlug": "/weekend-trips/amalfi-coast-escape",
+    "notes": "Where we stayed until the sun disappeared completely behind the cliffs.",
+    "date": "2026-09-20",
+    "tags": ["beach", "swimming", "sunset"]
+  },
+  {
+    "id": "amalfi-lemon-shop",
+    "title": "Pasticceria Limone",
+    "type": "restaurant",
+    "latitude": 40.633,
+    "longitude": 14.605,
+    "city": "Amalfi",
+    "country": "Italy",
+    "pageSlug": "/weekend-trips/amalfi-coast-escape",
+    "images": [
+      "https://images.pexels.com/photos/3026800/pexels-photo-3026800.jpeg?auto=compress&cs=tinysrgb&w=1600"
+    ],
+    "notes": "Everything tasted faintly of lemon and sea salt in the best possible way.",
+    "rating": 4.7,
+    "tags": ["bakery", "lemon", "sfogliatella"]
+  }
+]

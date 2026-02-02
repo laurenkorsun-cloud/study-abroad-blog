@@ -1,0 +1,35 @@
+{
+  "header": {
+    "label": "Rome · Daily Life",
+    "title": "The in-between moments that made Rome feel like home.",
+    "description": "This page gathers the slow mornings, small routines, and late-night walks that defined my months in Rome — not just the monuments, but the ordinary days that quietly rewired what \"home\" means."
+  },
+  "entriesSection": {
+    "title": "Recent entries",
+    "subtitle": "Long-form posts coming soon"
+  },
+  "sidebar": {
+    "heroLabel": "Daily rhythms",
+    "heroDescription": "A semester of tram tickets, grocery lists in Italian, new friends, and streets that slowly became familiar.",
+    "heroImage": "https://images.pexels.com/photos/4606721/pexels-photo-4606721.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    "videoTitle": "Rome video moments",
+    "videoPlaceholderTitle": "Evening walk from class to the apartment",
+    "videoPlaceholderDescription": "Placeholder for video embeds."
+  },
+  "galleries": {
+    "roma": {
+      "title": "Roma in still frames",
+      "subtitle": "Scenes from the walk to class, weekend afternoons, and evenings wandering back home."
+    },
+    "apartment": {
+      "title": "Apartment snapshots",
+      "subtitle": "The tiny details of the space I called home: light on the walls, cluttered desks, and all."
+    }
+  },
+  "mapSection": {
+    "title": "My Rome, zoomed in",
+    "description": "A focused view on the part of the city that became my everyday orbit: home, campus, favorite cafés, and where I went to watch the sun set over terracotta rooftops.",
+    "ctaButton": "See all food spots",
+    "ctaHref": "/food"
+  }
+}

@@ -2,16 +2,114 @@
 @tailwind components;
 @tailwind utilities;
 
-html,
-body {
-  min-height: 100%;
+/* ═══════════════════════════════════════════════════════════════════════════
+   GLOBAL BASE STYLES
+   These apply to all pages automatically
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+@layer base {
+  html,
+  body {
+    @apply min-h-full bg-white text-text-primary;
+  }
+
+  body {
+    @apply font-sans antialiased;
+  }
+
+  /* Headings use elegant serif font */
+  h1, h2, h3, h4 {
+    @apply font-serif tracking-normal text-text-primary;
+  }
+
+  /* Navigation and buttons use clean sans-serif */
+  nav, button {
+    @apply font-sans;
+  }
+
+  a {
+    @apply text-inherit no-underline;
+  }
+
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
 }
 
-body {
-  @apply bg-slate-950 text-slate-50 antialiased;
-}
+/* ═══════════════════════════════════════════════════════════════════════════
+   REUSABLE COMPONENT CLASSES
+   Use these classes throughout the site for consistency
+   ═══════════════════════════════════════════════════════════════════════════ */
 
-a {
-  @apply text-inherit no-underline;
+@layer components {
+  /* Content box - soft background, no dark borders */
+  .content-box {
+    @apply bg-box-bg rounded-box p-box-padding;
+  }
+
+  .content-box-lg {
+    @apply bg-box-bg rounded-box-lg p-box-padding-lg;
+  }
+
+  /* Section container with consistent spacing */
+  .section-container {
+    @apply px-6 py-section md:px-10 md:py-section-lg;
+  }
+
+  /* Page header styling */
+  .page-header {
+    @apply space-y-3;
+  }
+
+  .page-label {
+    @apply text-xs font-semibold uppercase tracking-[0.3em] text-text-muted;
+  }
+
+  .page-title {
+    @apply text-3xl font-semibold tracking-tight md:text-4xl;
+  }
+
+  .page-description {
+    @apply max-w-2xl text-sm text-text-secondary md:text-base;
+  }
+
+  /* Card/box title styling */
+  .box-title {
+    @apply text-lg font-semibold tracking-tight md:text-xl;
+  }
+
+  .box-subtitle {
+    @apply text-xs text-text-muted md:text-sm;
+  }
+
+  /* Primary button */
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-full bg-accent-primary px-5 py-2 text-sm font-medium text-white transition hover:bg-accent-hover;
+  }
+
+  /* Secondary button */
+  .btn-secondary {
+    @apply inline-flex items-center justify-center rounded-full border border-slate-200 bg-white px-5 py-2 text-sm font-medium text-text-primary transition hover:bg-slate-50;
+  }
+
+  /* Tag/badge styling */
+  .tag {
+    @apply rounded-full border border-slate-200 px-3 py-1 text-xs text-text-secondary;
+  }
+
+  /* Map container styling */
+  .map-container {
+    @apply h-[60vh] min-h-[400px] overflow-hidden rounded-box-lg border border-slate-200 bg-slate-50;
+  }
+
+  /* Image with caption */
+  .image-card {
+    @apply overflow-hidden rounded-box bg-box-bg;
+  }
+
+  .image-card-caption {
+    @apply px-4 py-3 text-sm;
+  }
 }
 

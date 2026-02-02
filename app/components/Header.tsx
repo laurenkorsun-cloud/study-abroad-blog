@@ -1,18 +1,9 @@
+"use client";
+
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import type { ReactNode } from "react";
-
-type NavItem = {
-  href: string;
-  label: string;
-};
-
-const navItems: NavItem[] = [
-  { href: "/", label: "Home" },
-  { href: "/rome", label: "Rome" },
-  { href: "/weekend-trips", label: "Weekend Trips" },
-  { href: "/food", label: "Food" }
-];
+import { siteMeta, navItems } from "../../data/siteContent";
 
 function NavLink({ href, children }: { href: string; children: ReactNode }) {
   const pathname = usePathname();
@@ -24,10 +15,8 @@ function NavLink({ href, children }: { href: string; children: ReactNode }) {
   return (
     <Link
       href={href}
-      className={`rounded-full px-4 py-1 text-sm font-medium transition-colors ${
-        isActive
-          ? "bg-slate-100 text-slate-900"
-          : "text-slate-200 hover:bg-slate-800/80"
+      className={`text-xs uppercase tracking-[0.2em] ${
+        isActive ? "font-semibold" : "text-slate-500 hover:text-slate-900"
       }`}
     >
       {children}
@@ -37,15 +26,12 @@ function NavLink({ href, children }: { href: string; children: ReactNode }) {
 
 export function Header() {
   return (
-    <header className="sticky top-0 z-40 border-b border-slate-800 bg-slate-950/80 backdrop-blur">
-      <div className="mx-auto flex max-w-5xl items-center justify-between px-4 py-3 md:py-4">
-        <Link href="/" className="flex items-baseline gap-1">
-          <span className="text-sm font-semibold uppercase tracking-[0.2em] text-slate-300">
-            Semester Abroad
-          </span>
+    <header className="border-b border-slate-200 bg-white">
+      <div className="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
+        <Link href="/" className="font-serif text-lg">
+          {siteMeta.siteName}
         </Link>
-
-        <nav className="flex gap-2 rounded-full bg-slate-900/80 px-2 py-1 ring-1 ring-slate-800">
+        <nav className="flex gap-6">
           {navItems.map((item) => (
             <NavLink key={item.href} href={item.href}>
               {item.label}

@@ -1,0 +1,14 @@
+{
+  "header": {
+    "label": "Food & Coffee",
+    "title": "A map of everything I tasted along the way.",
+    "description": "From tiny Roman trattorias to seaside lemon pastries and Paris bakeries, this map collects the restaurants and cafés that quietly defined the semester abroad."
+  },
+  "sections": {
+    "placesLabel": "places",
+    "citiesLabel": "cities",
+    "countriesLabel": "countries",
+    "allPlacesTitle": "All places",
+    "moreOnMapSuffix": "more places on the map above"
+  }
+}

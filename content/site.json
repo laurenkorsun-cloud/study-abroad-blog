@@ -1,0 +1,28 @@
+{
+  "meta": {
+    "title": "Semester Abroad | Travel Journal",
+    "description": "Personal travel blog documenting a semester studying abroad.",
+    "siteName": "Lauren's Semester Abroad"
+  },
+  "nav": [
+    { "href": "/", "label": "Home" },
+    { "href": "/food", "label": "Food" },
+    { "href": "/rome", "label": "Rome" },
+    { "href": "/weekend-trips", "label": "Weekend Trips" }
+  ],
+  "ui": {
+    "loadingMap": "Loading map…",
+    "explorePrefix": "Explore",
+    "viewDetails": "View details",
+    "close": "Close",
+    "comingSoon": "Coming soon",
+    "moreOnMap": "more places on the map above"
+  },
+  "mapLegend": {
+    "food": "Food",
+    "experience": "Experience",
+    "landmark": "Landmark",
+    "previewDescription": "Preview of all places from the semester",
+    "instructions": "Click markers to explore • Drag to pan • Scroll to zoom"
+  }
+}
