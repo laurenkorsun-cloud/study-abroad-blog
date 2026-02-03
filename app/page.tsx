@@ -1,11 +1,12 @@
 import Link from "next/link";
-import { HomeMapPreview } from "./components/MapWrapper";
+import { InteractiveMap } from "./components/MapWrapper";
 import {
   homeHero,
   homeSections,
   homeMapPreview
 } from "../data/homeContent";
 import { uiStrings } from "../data/siteContent";
+import { getAllEntries } from "../data/mapEntries";
 
 // ═══════════════════════════════════════════════════════════════════════════
 // HOME PAGE - All content from data/homeContent.ts
@@ -60,6 +61,8 @@ function SectionCard({
 }
 
 export default function HomePage() {
+  const entries = getAllEntries();
+
   return (
     <div className="flex flex-col">
       {/* Hero section */}
@@ -131,7 +134,13 @@ export default function HomePage() {
             </Link>
           </div>
 
-          <HomeMapPreview />
+          <InteractiveMap
+            entries={entries}
+            center={[45, 10]}
+            zoom={4}
+            height="60vh"
+            showDetailPanel={true}
+          />
         </div>
       </section>
     </div>
