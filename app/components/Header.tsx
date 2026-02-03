@@ -27,8 +27,11 @@ function NavLink({ href, children }: { href: string; children: ReactNode }) {
 export function Header() {
   return (
     <header className="border-b border-slate-200 bg-white">
-      <div className="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
-        <Link href="/" className="font-serif text-lg">
+      <div className="flex w-full items-center justify-between px-4 py-4 md:px-6">
+        <Link
+          href="/"
+          className="text-xs font-semibold uppercase tracking-[0.25em]"
+        >
           {siteMeta.siteName}
         </Link>
         <nav className="flex gap-6">
