@@ -135,8 +135,8 @@ export default function WeekendTripDetailPage() {
       <Slideshow slides={trip.slideshow} />
 
       {/* Chronological timeline of moments */}
-      <section className="section-container bg-box-bg">
-        <div className="space-y-4">
+      <section className="section-container bg-white">
+        <div className="mx-auto max-w-3xl space-y-4">
           <h2 className="box-title">{weekendTripDetail.entriesTitle}</h2>
 
           <div className="relative mt-6 space-y-6 border-l border-slate-200 pl-6">
