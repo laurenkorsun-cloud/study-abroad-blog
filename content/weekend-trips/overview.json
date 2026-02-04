@@ -8,6 +8,8 @@
   "detail": {
     "pageLabel": "Weekend Trip",
     "entriesTitle": "Entries",
+    "weatherTitle": "Weather for this weekend",
+    "weatherSubtitleTemplate": "Forecast for {location} · {dateRange}",
     "sidebarSummaryTitle": "This weekend",
     "sidebarSummaryTemplate": "Moments from {location}: {count} entries captured during this trip.",
     "mapTitle": "Map of this weekend",

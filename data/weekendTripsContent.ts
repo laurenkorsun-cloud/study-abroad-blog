@@ -17,6 +17,8 @@ export const weekendTripsOverview = {
 export const weekendTripDetail = overviewData.detail as {
   pageLabel: string;
   entriesTitle: string;
+  weatherTitle: string;
+  weatherSubtitleTemplate: string;
   sidebarSummaryTitle: string;
   sidebarSummaryTemplate: string;
   mapTitle: string;

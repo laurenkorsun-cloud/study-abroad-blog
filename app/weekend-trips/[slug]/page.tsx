@@ -8,6 +8,7 @@ import { getTripPageBySlug } from "../../../data/tripPages";
 import { getEntriesByIds } from "../../../data/mapEntries";
 import { ContentBox } from "../../components/shared";
 import { weekendTripDetail } from "../../../data/weekendTripsContent";
+import { getWeatherForTrip } from "../../../data/tripWeather";
 
 const TripMap = dynamic(
   () => import("../../components/TripMap").then((mod) => ({ default: mod.TripMap })),
@@ -85,6 +86,8 @@ export default function WeekendTripDetailPage() {
   const trip = slug ? getTripPageBySlug(slug) : null;
   const [activeMarkerId, setActiveMarkerId] = useState<string | null>(null);
 
+  const weather = slug ? getWeatherForTrip(slug) : null;
+
   if (!trip) {
     return (
       <section className="space-y-4 px-6 py-10">
@@ -130,6 +133,42 @@ export default function WeekendTripDetailPage() {
           </div>
         </div>
       </section>
+
+      {/* Weather forecast for this weekend */}
+      {weather && (
+        <section className="section-container bg-white pt-0">
+          <div className="mx-auto max-w-3xl">
+            <div className="content-box flex flex-col gap-4 md:flex-row md:items-center">
+              <div className="flex-1 space-y-1">
+                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-text-muted">
+                  {weekendTripDetail.weatherTitle}
+                </p>
+                <p className="text-sm text-text-secondary">
+                  {weekendTripDetail.weatherSubtitleTemplate
+                    .replace("{location}", weather.location)
+                    .replace("{dateRange}", weather.dateRange)}
+                </p>
+              </div>
+
+              <div className="flex gap-4">
+                {weather.days.map((day) => (
+                  <div key={day.label} className="min-w-[70px] text-center">
+                    <p className="text-xs font-semibold text-text-muted">
+                      {day.label}
+                    </p>
+                    <p className="text-sm font-semibold text-text-primary">
+                      {day.high}° / {day.low}°
+                    </p>
+                    <p className="mt-1 text-xs text-text-secondary">
+                      {day.summary}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Slideshow */}
       <Slideshow slides={trip.slideshow} />
