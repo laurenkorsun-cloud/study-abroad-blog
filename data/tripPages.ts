@@ -68,7 +68,7 @@ export const TRIP_PAGES: TripPage[] = [
         caption: "Lucerne, evening walks along Chapel Bridge."
       }
     ],
-    mapEntryIds: ["switzerland-airbnb-zurich", "tres-amigos-winterthur"],
+        mapEntryIds: ["switzerland-airbnb-zurich", "tres-amigos-winterthur", "Le-Dezaley"],
     activities: [
       {
         id: "switzerland-airbnb",
@@ -136,10 +136,8 @@ export const TRIP_PAGES: TripPage[] = [
             imageUrl: "/IMG_3440.heic"
           }
         ]
-      }
-    ]
-  },
-   {
+      },
+      {
         id: "Dinner at Le Dezaley",
         title: "Dinner at Le Dezaley",
         date: "January 23, 2026",
@@ -149,16 +147,13 @@ export const TRIP_PAGES: TripPage[] = [
         mapEntryId: "Le-Dezaley",
         images: [
           {
-            imageUrl:
-              "/IMG_3474.heic",
+            imageUrl: "/IMG_3474.heic"
           },
           {
-            imageUrl:
-              "/IMG_3480.heic",
+            imageUrl: "/IMG_3480.heic"
           },
           {
-            imageUrl:
-              "/IMG_3495.heic",
+            imageUrl: "/IMG_3495.heic"
           }
         ]
       }
