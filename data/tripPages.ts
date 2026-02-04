@@ -28,6 +28,8 @@ export interface TripActivity {
   link?: string;
   /** Optional: custom label for the link, e.g. "View on Airbnb". Default comes from content. */
   linkLabel?: string;
+  /** Optional: rating out of 5 (e.g. for accommodation). Displayed as star graphics when set. */
+  rating?: number;
 }
 
 export interface TripPage {
@@ -78,6 +80,7 @@ export const TRIP_PAGES: TripPage[] = [
         link: "https://www.airbnb.com/rooms/YOUR_LISTING_ID",
         linkLabel: "View on Airbnb",
         mapEntryId: "switzerland-airbnb-zurich",
+        rating: 5,
         images: []
       },
       {
@@ -124,16 +127,13 @@ export const TRIP_PAGES: TripPage[] = [
         mapEntryId: "tres-amigos-winterthur",
         images: [
           {
-            imageUrl:
-              "/IMG_3436.heic",
+            imageUrl: "/IMG_3436.heic"
           },
           {
-            imageUrl:
-              "/IMG_3439.heic",
+            imageUrl: "/IMG_3439.heic"
           },
           {
-            imageUrl:
-              "/IMG_3440.heic",
+            imageUrl: "/IMG_3440.heic"
           }
         ]
       }
