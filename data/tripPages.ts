@@ -48,12 +48,12 @@ export const TRIP_PAGES: TripPage[] = [
       {
         imageUrl:
           "/IMG_3411.heic",
-        caption: "Finding the Duomo around every corner, no matter which street we chose."
+        caption: "View from the train, humafrost on trees."
       },
       {
         imageUrl:
           "/IMG_3593.heic",
-        caption: "Evening walks along Ponte Vecchio when the city finally cooled down."
+        caption: "Lucerne, evening walks along Chapel Bridge."
       }
     ],
     activities: [
