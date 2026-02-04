@@ -13,8 +13,8 @@ export interface TripActivity {
   id: string;
   title: string;
   description: string; // Main text content
-  date?: string; // Optional: e.g. "Sept 5, 2026" for vlog-style chronological entries
-  label?: string; // Optional: e.g. "Florence · Duomo" or neighborhood/area
+  date?: string; // Optional: e.g. "Jan 23, 2026" for vlog-style chronological entries
+  label?: string; // Optional: e.g. "Switzerland · Zurich" or neighborhood/area
   images?: MomentImage[]; // Optional array of images for slideshow
   width?: string; // Optional: "full", "1/2", "1/3", "2/3", etc. (Tailwind grid classes)
   height?: string; // Optional: "auto", "tall", "short" for future customization
@@ -33,11 +33,11 @@ export interface TripPage {
 
 export const TRIP_PAGES: TripPage[] = [
   {
-    slug: "florence-first-weekend",
-    title: "Florence – First Weekend Away",
-    location: "Florence",
-    country: "Italy",
-    dateRange: "Sept 5 – 7, 2026",
+    slug: "Switzerland-first-weekend",
+    title: "Switzerland – First Weekend Away",
+    location: "Zurich",
+    country: "Switzerland",
+    dateRange: "Jan 23 – 25, 2026",
     slideshow: [
       {
         imageUrl:
