@@ -60,7 +60,7 @@ export const TRIP_PAGES: TripPage[] = [
     ],
     activities: [
       {
-        id: "art-slow-down",
+        id: "Rhine-Falls",
         title: "Rhine Falls in Schloss Laufen",
         date: "January 23, 2026",
         label: "Switzerland · Rhine Falls",
@@ -69,18 +69,23 @@ export const TRIP_PAGES: TripPage[] = [
         images: [
           {
             imageUrl:
-              "/IMG_3381.heic",
-            caption: "Sketching in a quiet corner of the Uffizi"
+              "/IMG_3381.heic"
           },
           {
             imageUrl:
-              "/IMG_3432.JPG",
-            caption: "Sketching in a quiet corner of the Uffizi"
+              "/IMG_0056.heic"
           },
           {
             imageUrl:
-              "/IMG_3658.JPG",
-            caption: "Afternoon light on terracotta rooftops"
+              "/IMG_0057.heic"
+          },
+          {
+            imageUrl:
+              "/IMG_3432.JPG"
+          },
+          {
+            imageUrl:
+              "/IMG_3658.JPG"
           },
           {
             imageUrl:
@@ -89,27 +94,24 @@ export const TRIP_PAGES: TripPage[] = [
         ]
       },
       {
-        id: "getting-lost",
-        title: "Getting intentionally lost between museums",
-        date: "Sept 6, 2026",
-        label: "Florence · Centro Storico",
+        id: "Winterthur",
+        title: "Quick Stop: Winterthur",
+        date: "January 23, 2026",
+        label: "Switzerland · Winterthur",
         description:
-          "We walked without a map for hours, turning down whatever side street looked most interesting. We kept stumbling onto tiny churches, laundry hanging overhead, and pockets of quiet that made the city feel strangely intimate.",
+          "Pit Stop in Winterthur! We stopped in a small town to explore, and potentially eat. We found a restuarant called 'Tres Amigos' (of course mexican food in Switzerland). QWe sat down and quickly discovered that a quesadilla was 40 American Dollars and quickly left the fine establishment. We ran across the street to Coop, the most amazing grocery store ever where we got amazing salad bowls for 7 CHFs or 10 dollars. Then we ran back to the train and went home to Zurich.",
         images: [
           {
             imageUrl:
-              "https://images.pexels.com/photos/210488/pexels-photo-210488.jpeg?auto=compress&cs=tinysrgb&w=1600",
-            caption: "Quiet side streets between museums"
+              "/IMG_3436.heic",
           },
           {
             imageUrl:
-              "https://images.pexels.com/photos/1796727/pexels-photo-1796727.jpeg?auto=compress&cs=tinysrgb&w=1600",
-            caption: "Laundry hanging overhead in narrow alleys"
+              "/IMG_3439.heic",
           },
           {
             imageUrl:
-              "https://images.pexels.com/photos/460672/pexels-photo-460672.jpeg?auto=compress&cs=tinysrgb&w=1600",
-            caption: "Finding tiny churches around every corner"
+              "/IMG_3440.heic",
           }
         ]
       },
