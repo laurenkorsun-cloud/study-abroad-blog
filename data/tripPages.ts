@@ -43,7 +43,7 @@ export const TRIP_PAGES: TripPage[] = [
         imageUrl:
           "/DSC00333.JPG",
         caption:
-          "Rhine Falls, View from the Castle."
+          "Rhine Falls, view from the Schloss Laufen."
       },
       {
         imageUrl:
