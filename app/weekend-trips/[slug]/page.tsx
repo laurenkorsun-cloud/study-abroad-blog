@@ -121,7 +121,7 @@ export default function WeekendTripDetailPage() {
   return (
     <div className="flex flex-col">
       {/* Title box - matches Rome page header structure */}
-      <section className="section-container border-b border-slate-100">
+      <section className="section-container">
         <div className="page-header">
           <p className="page-label">{weekendTripDetail.pageLabel}</p>
           <h1 className="page-title">{trip.title}</h1>
@@ -153,11 +153,16 @@ export default function WeekendTripDetailPage() {
               <div className="flex gap-4">
                 {weather.days.map((day) => (
                   <div key={day.label} className="min-w-[70px] text-center">
+                    {day.icon && (
+                      <div className="mb-1 text-xl" aria-hidden="true">
+                        {day.icon}
+                      </div>
+                    )}
                     <p className="text-xs font-semibold text-text-muted">
                       {day.label}
                     </p>
                     <p className="text-sm font-semibold text-text-primary">
-                      {day.high}° / {day.low}°
+                      {day.high}°F / {day.low}°F
                     </p>
                     <p className="mt-1 text-xs text-text-secondary">
                       {day.summary}

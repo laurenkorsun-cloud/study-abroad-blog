@@ -7,21 +7,24 @@
       "days": [
         {
           "label": "Fri",
-          "high": 4,
-          "low": -1,
-          "summary": "Cold and clear, perfect for waterfalls and long walks."
+          "high": 39,
+          "low": 30,
+          "summary": "Cold and clear, perfect for waterfalls and long walks.",
+          "icon": "❄️"
         },
         {
           "label": "Sat",
-          "high": 3,
-          "low": -2,
-          "summary": "Cloudy with soft light over the city and lake."
+          "high": 37,
+          "low": 28,
+          "summary": "Cloudy with soft light over the city and lake.",
+          "icon": "☁️"
         },
         {
           "label": "Sun",
-          "high": 5,
-          "low": -1,
-          "summary": "Bright winter sun on the train ride back to Rome."
+          "high": 41,
+          "low": 30,
+          "summary": "Bright winter sun on the train ride back to Rome.",
+          "icon": "☀️"
         }
       ]
     }

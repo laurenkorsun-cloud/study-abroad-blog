@@ -2,9 +2,10 @@ import weatherData from "../content/weekend-trips/weather.json";
 
 export interface TripWeatherDay {
   label: string; // e.g. "Fri", "Sat", "Sun"
-  high: number; // high temperature (°C or °F - your choice)
-  low: number; // low temperature
+  high: number; // high temperature in °F
+  low: number; // low temperature in °F
   summary: string; // short description like "Sunny and warm"
+  icon?: string; // optional emoji like ☀️, ☁️, ❄️
 }
 
 export interface TripWeather {
