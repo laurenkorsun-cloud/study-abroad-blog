@@ -48,7 +48,7 @@ export const TRIP_PAGES: TripPage[] = [
       {
         imageUrl:
           "/IMG_3411.heic",
-        caption: "View from the train, humafrost on trees."
+        caption: "View from the train, powdery mildew on trees."
       },
       {
         imageUrl:
