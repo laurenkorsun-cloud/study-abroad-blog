@@ -61,25 +61,30 @@ export const TRIP_PAGES: TripPage[] = [
     activities: [
       {
         id: "art-slow-down",
-        title: "Letting the art slow us down",
-        date: "Sept 5, 2026",
-        label: "Florence · Uffizi",
+        title: "Rhine Falls in Schloss Laufen",
+        date: "January 23, 2026",
+        label: "Switzerland · Rhine Falls",
         description:
-          "Instead of racing through museums, we decided on one gallery a day. The rest of the time we let ourselves move slowly—sitting on church steps, sketching in tiny notebooks, and choosing cafés based only on how sunlit their outdoor tables looked. Florence made it feel okay to take up space in the middle of the afternoon just to notice things.",
+          "After landing, we took the train straight to Rhine falls, the most beautiful waterfall ever. Pro-tip: Purchase train tickets day of. OMIO is slightly cheapr if you book in advance, but you have no options of when you come and go. If you decide you want to leave early you have to buy a whole new train ticket. The train ride to Rhine Falls was gorgeous. The white trees and swiss countryside were amazing to see. On the train, we got ready, did our makeup, and finally arrived after an hour. With our travel backpacks we walked through the castle and Rhine falls and stopped for some pictures. The tickets to actually walk through the waterfall were 5 euro. We made our way down the steep steps, getting super close to the waterfall, where the water was able to splash us. The town across the river was small and industrial, and we didnt go but we ventured to find lunch in another small city.",
         images: [
           {
             imageUrl:
-              "https://images.pexels.com/photos/1797161/pexels-photo-1797161.jpeg?auto=compress&cs=tinysrgb&w=1600",
+              "/IMG_3381.heic",
             caption: "Sketching in a quiet corner of the Uffizi"
           },
           {
             imageUrl:
-              "https://images.pexels.com/photos/1796727/pexels-photo-1796727.jpeg?auto=compress&cs=tinysrgb&w=1600",
+              "/IMG_3432.JPG",
+            caption: "Sketching in a quiet corner of the Uffizi"
+          },
+          {
+            imageUrl:
+              "/IMG_3658.JPG",
             caption: "Afternoon light on terracotta rooftops"
           },
           {
             imageUrl:
-              "https://images.pexels.com/photos/460672/pexels-photo-460672.jpeg?auto=compress&cs=tinysrgb&w=1600"
+              "/IMG_3411.heic"
           }
         ]
       },
