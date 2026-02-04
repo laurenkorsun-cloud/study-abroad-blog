@@ -41,7 +41,7 @@ export const TRIP_PAGES: TripPage[] = [
     slideshow: [
       {
         imageUrl:
-          "https://images.pexels.com/photos/1796727/pexels-photo-1796727.jpeg?auto=compress&cs=tinysrgb&w=1600",
+          "/public/DSC00333.JPG",
         caption:
           "Sunset over the Arno, with the Duomo rising above terracotta rooftops."
       },
