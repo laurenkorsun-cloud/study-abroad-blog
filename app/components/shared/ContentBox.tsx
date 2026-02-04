@@ -21,6 +21,10 @@ export interface ContentBoxProps {
   date?: string;
   images?: ContentBoxImage[];
   className?: string;
+  /** Optional click handler for making the whole card clickable (used in timelines) */
+  onClick?: () => void;
+  /** When true, visually highlight the card as the active timeline entry */
+  isActive?: boolean;
 }
 
 function MiniSlideshow({ images }: { images: ContentBoxImage[] }) {
@@ -92,10 +96,18 @@ export function ContentBox({
   label,
   date,
   images,
-  className = ""
+  className = "",
+  onClick,
+  isActive
 }: ContentBoxProps) {
+  const activeStyles = isActive ? "ring-2 ring-accent-primary bg-white" : "";
+  const clickableStyles = onClick ? "cursor-pointer hover:shadow-md transition-shadow" : "";
+
   return (
-    <article className={`content-box ${className}`}>
+    <article
+      className={`content-box ${activeStyles} ${clickableStyles} ${className}`}
+      onClick={onClick}
+    >
       {images && images.length > 0 && (
         <div className="-mx-box-padding -mt-box-padding mb-4 overflow-hidden rounded-t-box">
           <MiniSlideshow images={images} />

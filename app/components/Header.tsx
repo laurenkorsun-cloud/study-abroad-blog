@@ -27,10 +27,10 @@ function NavLink({ href, children }: { href: string; children: ReactNode }) {
 export function Header() {
   return (
     <header className="border-b border-slate-200 bg-white">
-      <div className="flex w-full items-center justify-between px-4 py-4 md:px-6">
+      <div className="flex w-full items-center justify-between px-4 py-5 md:px-8 md:py-6">
         <Link
           href="/"
-          className="text-xs font-semibold uppercase tracking-[0.25em]"
+          className="text-sm font-semibold uppercase tracking-[0.25em] md:text-base lg:text-lg"
         >
           {siteMeta.siteName}
         </Link>

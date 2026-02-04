@@ -83,6 +83,7 @@ export default function WeekendTripDetailPage() {
   const params = useParams<{ slug: string }>();
   const slug = params?.slug as string | undefined;
   const trip = slug ? getTripPageBySlug(slug) : null;
+  const [activeMarkerId, setActiveMarkerId] = useState<string | null>(null);
 
   if (!trip) {
     return (
@@ -133,66 +134,42 @@ export default function WeekendTripDetailPage() {
       {/* Slideshow */}
       <Slideshow slides={trip.slideshow} />
 
-      {/* Entries section - same vlog-style layout as Rome Recent Entries */}
+      {/* Chronological timeline of moments */}
       <section className="section-container bg-box-bg">
-        <div className="grid gap-6 lg:grid-cols-[minmax(0,1.5fr)_minmax(0,1fr)]">
-          {/* Main: chronological content blocks */}
-          <div className="space-y-4">
-            <div className="flex items-center justify-between gap-2">
-              <h2 className="box-title">{weekendTripDetail.entriesTitle}</h2>
-            </div>
-            <div className="space-y-4">
-              {trip.activities.map((activity) => (
+        <div className="space-y-4">
+          <h2 className="box-title">{weekendTripDetail.entriesTitle}</h2>
+
+          <div className="relative mt-6 space-y-6 border-l border-slate-200 pl-6">
+            {trip.activities.map((activity) => (
+              <div key={activity.id} className="relative">
+                {/* Timeline dot */}
+                <span className="absolute -left-[7px] top-4 h-3 w-3 rounded-full border-2 border-white bg-accent-primary shadow" />
+
                 <ContentBox
-                  key={activity.id}
                   title={activity.title}
                   label={activity.label}
                   date={activity.date}
                   description={activity.description}
                   images={activity.images}
+                  isActive={Boolean(
+                    activity.mapEntryId &&
+                      activeMarkerId &&
+                      activity.mapEntryId === activeMarkerId
+                  )}
+                  onClick={() =>
+                    activity.mapEntryId
+                      ? setActiveMarkerId(activity.mapEntryId)
+                      : undefined
+                  }
+                  className="ml-4"
                 />
-              ))}
-            </div>
-          </div>
-
-          {/* Sidebar - matches Rome layout */}
-          <div className="space-y-4">
-            {/* Hero image from slideshow */}
-            <div className="image-card">
-              <div
-                className="h-44 bg-cover bg-center"
-                style={
-                  trip.slideshow[0]
-                    ? {
-                        backgroundImage: `linear-gradient(to bottom, rgba(15,23,42,0.1), rgba(15,23,42,0.6)), url(${trip.slideshow[0].imageUrl})`
-                      }
-                    : undefined
-                }
-              />
-              <div className="image-card-caption space-y-2">
-                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-text-muted">
-                  {trip.location}
-                </p>
-                <p className="text-sm text-text-secondary">
-                  {trip.dateRange} · {trip.country}
-                </p>
               </div>
-            </div>
-
-            {/* Trip summary card */}
-            <div className="content-box space-y-3">
-              <h2 className="text-sm font-semibold">{weekendTripDetail.sidebarSummaryTitle}</h2>
-              <p className="text-sm text-text-secondary">
-                {weekendTripDetail.sidebarSummaryTemplate
-                  .replace("{location}", trip.location)
-                  .replace("{count}", String(trip.activities.length))}
-              </p>
-            </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Interactive map */}
+      {/* Interactive map at the bottom, stays consistent with other pages */}
       <section className="section-container border-t border-slate-100 bg-white">
         <div className="space-y-2">
           <h2 className="box-title">{weekendTripDetail.mapTitle}</h2>
@@ -201,7 +178,12 @@ export default function WeekendTripDetailPage() {
           </p>
         </div>
         <div className="mt-4">
-          <TripMap entries={mapEntries} cityCenter={cityCenter} />
+          <TripMap
+            entries={mapEntries}
+            cityCenter={cityCenter}
+            activeMarkerId={activeMarkerId}
+            onMarkerSelect={(markerId) => setActiveMarkerId(markerId)}
+          />
         </div>
       </section>
     </div>

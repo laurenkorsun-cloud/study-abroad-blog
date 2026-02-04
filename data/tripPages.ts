@@ -18,6 +18,8 @@ export interface TripActivity {
   images?: MomentImage[]; // Optional array of images for slideshow
   width?: string; // Optional: "full", "1/2", "1/3", "2/3", etc. (Tailwind grid classes)
   height?: string; // Optional: "auto", "tall", "short" for future customization
+  /** Optional: id of a related MapEntry for this moment (used to highlight markers in the trip map) */
+  mapEntryId?: string;
 }
 
 export interface TripPage {
