@@ -9,6 +9,8 @@ export interface MomentImage {
   caption?: string;
 }
 
+export type TripEntryType = "activity" | "accommodation";
+
 export interface TripActivity {
   id: string;
   title: string;
@@ -20,6 +22,12 @@ export interface TripActivity {
   height?: string; // Optional: "auto", "tall", "short" for future customization
   /** Optional: id of a related MapEntry for this moment (used to highlight markers in the trip map) */
   mapEntryId?: string;
+  /** Optional: "activity" (default) or "accommodation" – accommodation entries show a link to the listing */
+  entryType?: TripEntryType;
+  /** Optional: URL to the accommodation listing (e.g. Airbnb). Shown as a clickable link when entryType is "accommodation" */
+  link?: string;
+  /** Optional: custom label for the link, e.g. "View on Airbnb". Default comes from content. */
+  linkLabel?: string;
 }
 
 export interface TripPage {
@@ -58,7 +66,29 @@ export const TRIP_PAGES: TripPage[] = [
         caption: "Lucerne, evening walks along Chapel Bridge."
       }
     ],
+    mapEntryIds: ["switzerland-airbnb-zurich", "tres-amigos-winterthur"],
     activities: [
+      {
+        id: "switzerland-airbnb",
+        title: "Our Airbnb in Zurich",
+        date: "Jan 23 – 25, 2026",
+        label: "Switzerland · Zurich",
+        description: "Cozy apartment right in the city center. Easy walk to the lake, trains, and cafes. Perfect base for weekend trips to Rhine Falls and Lucerne.",
+        entryType: "accommodation",
+        link: "https://www.airbnb.com/rooms/YOUR_LISTING_ID",
+        linkLabel: "View on Airbnb",
+        mapEntryId: "switzerland-airbnb-zurich",
+        images: []
+      },
+      {
+        id: "tres-amigos-winterthur",
+        title: "Tres Amigos",
+        date: "January 2026",
+        label: "Switzerland · Winterthur",
+        description: "Add your review and notes here.",
+        mapEntryId: "tres-amigos-winterthur",
+        images: []
+      },
       {
         id: "art-slow-down",
         title: "Rhine Falls in Schloss Laufen",

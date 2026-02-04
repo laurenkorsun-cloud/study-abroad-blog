@@ -65,6 +65,20 @@
     "relatedTripSlugs": ["amalfi-coast-escape"]
   },
   {
+    "id": "tres-amigos-winterthur",
+    "name": "Tres Amigos",
+    "city": "Winterthur",
+    "country": "Switzerland",
+    "neighborhood": "",
+    "lat": 47.5056,
+    "lng": 8.7241,
+    "rating": 0,
+    "notes": "Add your review and notes here.",
+    "highlight": "Add your highlight here.",
+    "imageUrls": [],
+    "relatedTripSlugs": ["Switzerland"]
+  },
+  {
     "id": "paris-bakery",
     "name": "Boulangerie du Coin",
     "city": "Paris",

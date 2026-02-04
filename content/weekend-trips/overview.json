@@ -12,6 +12,7 @@
     "weatherSubtitleTemplate": "Forecast for {location} · {dateRange}",
     "sidebarSummaryTitle": "This weekend",
     "sidebarSummaryTemplate": "Moments from {location}: {count} entries captured during this trip.",
+    "accommodationLinkLabel": "View on Airbnb",
     "mapTitle": "Map of this weekend",
     "mapDescription": "Click any marker to see details, photos, and notes about that spot. The map will shrink and a detail panel will slide in.",
     "notFoundLabel": "Weekend Trip",

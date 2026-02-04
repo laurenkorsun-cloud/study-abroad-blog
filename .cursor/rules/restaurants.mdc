@@ -1,0 +1,14 @@
+---
+description: Add restaurants the user mentions to the restaurant record and map
+alwaysApply: true
+---
+
+# Adding Restaurants
+
+When the user mentions a restaurant they want to add (by name, location, or as part of a trip), add it to the project in these places:
+
+1. **content/restaurants.json** – Add an entry with: id, name, city, country, neighborhood, lat, lng, rating (0 if unknown), notes, highlight, imageUrls, relatedTripSlugs
+2. **content/map-entries.json** – Add a marker with: id (match restaurant id), title, type: "restaurant", latitude, longitude, city, country, pageSlug (trip or /food), images, notes, tags
+3. **data/tripPages.ts** – If the restaurant is tied to a weekend trip, add its id to that trip's `mapEntryIds` and optionally add a timeline activity with `mapEntryId` pointing to it
+
+Use placeholder values (e.g., "Add your review here") for notes/highlight when the user doesn't provide them yet.

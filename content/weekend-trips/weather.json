@@ -9,21 +9,21 @@
           "label": "Fri",
           "high": 39,
           "low": 30,
-          "summary": "Cold and clear, perfect for waterfalls and long walks.",
+          "summary": "Cold and clear.",
           "icon": "❄️"
         },
         {
           "label": "Sat",
           "high": 37,
           "low": 28,
-          "summary": "Cloudy with soft light over the city and lake.",
+          "summary": "Cloudy, light overcast.",
           "icon": "☁️"
         },
         {
           "label": "Sun",
           "high": 41,
           "low": 30,
-          "summary": "Bright winter sun on the train ride back to Rome.",
+          "summary": "Sunny and cold.",
           "icon": "☀️"
         }
       ]

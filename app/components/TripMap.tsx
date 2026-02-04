@@ -45,7 +45,7 @@ const getMarkerColor = (type: string) => {
 const createMarkerIcon = (type: string, isActive: boolean) => {
   const baseColor = getMarkerColor(type);
   const color = isActive ? "#0f172a" : baseColor;
-  const size = isActive ? 18 : 12;
+  const size = isActive ? 28 : 22;
 
   return L.divIcon({
     html: `<span style="
@@ -54,8 +54,8 @@ const createMarkerIcon = (type: string, isActive: boolean) => {
       height:${size}px;
       border-radius:9999px;
       background-color:${color};
-      border:2px solid white;
-      box-shadow:0 0 0 2px rgba(15,23,42,0.25);
+      border:3px solid white;
+      box-shadow:0 2px 8px rgba(0,0,0,0.4);
     "></span>`,
     className: "",
     iconSize: [size, size],

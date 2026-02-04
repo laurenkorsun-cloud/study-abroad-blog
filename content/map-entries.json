@@ -60,6 +60,33 @@
     "tags": ["beach", "swimming", "sunset"]
   },
   {
+    "id": "switzerland-airbnb-zurich",
+    "title": "Our Airbnb in Zurich",
+    "type": "experience",
+    "latitude": 47.3769,
+    "longitude": 8.5417,
+    "city": "Zurich",
+    "country": "Switzerland",
+    "pageSlug": "/weekend-trips/Switzerland",
+    "images": [],
+    "notes": "Cozy apartment in the city center. Easy walk to the lake, trains, and cafes. Perfect base for weekend trips to Rhine Falls and Lucerne.",
+    "date": "2026-01-23",
+    "tags": ["accommodation", "airbnb", "zurich"]
+  },
+  {
+    "id": "tres-amigos-winterthur",
+    "title": "Tres Amigos",
+    "type": "restaurant",
+    "latitude": 47.5056,
+    "longitude": 8.7241,
+    "city": "Winterthur",
+    "country": "Switzerland",
+    "pageSlug": "/weekend-trips/Switzerland",
+    "images": [],
+    "notes": "Add your review and notes here.",
+    "tags": ["mexican", "winterthur"]
+  },
+  {
     "id": "amalfi-lemon-shop",
     "title": "Pasticceria Limone",
     "type": "restaurant",

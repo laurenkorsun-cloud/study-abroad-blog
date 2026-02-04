@@ -25,6 +25,10 @@ export interface ContentBoxProps {
   onClick?: () => void;
   /** When true, visually highlight the card as the active timeline entry */
   isActive?: boolean;
+  /** Optional: external link URL (e.g. Airbnb listing). Shown as a clickable link at the bottom. */
+  link?: string;
+  /** Optional: label for the link, e.g. "View on Airbnb" */
+  linkLabel?: string;
 }
 
 function MiniSlideshow({ images }: { images: ContentBoxImage[] }) {
@@ -98,7 +102,9 @@ export function ContentBox({
   images,
   className = "",
   onClick,
-  isActive
+  isActive,
+  link,
+  linkLabel
 }: ContentBoxProps) {
   const activeStyles = isActive ? "ring-2 ring-accent-primary bg-white" : "";
   const clickableStyles = onClick ? "cursor-pointer hover:shadow-md transition-shadow" : "";
@@ -132,6 +138,19 @@ export function ContentBox({
           <p className="text-sm leading-relaxed text-text-secondary md:text-base">
             {description}
           </p>
+        )}
+
+        {link && (
+          <a
+            href={link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-3 inline-flex items-center gap-1.5 text-sm font-medium text-accent-primary hover:text-accent-hover"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {linkLabel ?? "View listing"}
+            <span aria-hidden="true">→</span>
+          </a>
         )}
       </div>
     </article>

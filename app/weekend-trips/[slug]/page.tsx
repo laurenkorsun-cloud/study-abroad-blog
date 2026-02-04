@@ -116,7 +116,9 @@ export default function WeekendTripDetailPage() {
       ? [11.255, 43.77]
       : trip.location.includes("Amalfi")
         ? [14.602, 40.634]
-        : [12.496, 41.902];
+        : trip.location === "Zurich" || trip.country === "Switzerland"
+          ? [8.5417, 47.3769]
+          : [12.496, 41.902];
 
   return (
     <div className="flex flex-col">
@@ -195,6 +197,8 @@ export default function WeekendTripDetailPage() {
                   date={activity.date}
                   description={activity.description}
                   images={activity.images}
+                  link={activity.link}
+                  linkLabel={activity.linkLabel ?? (activity.entryType === "accommodation" ? weekendTripDetail.accommodationLinkLabel : undefined)}
                   isActive={Boolean(
                     activity.mapEntryId &&
                       activeMarkerId &&

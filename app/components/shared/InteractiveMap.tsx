@@ -135,15 +135,15 @@ function createCustomIcon(type: string) {
   return L.divIcon({
     html: `<div style="
       background-color: ${color};
-      width: 12px;
-      height: 12px;
+      width: 22px;
+      height: 22px;
       border-radius: 50%;
-      border: 2px solid white;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+      border: 3px solid white;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.4);
     "></div>`,
     className: "custom-marker",
-    iconSize: [12, 12],
-    iconAnchor: [6, 6]
+    iconSize: [22, 22],
+    iconAnchor: [11, 11]
   });
 }
 
