@@ -122,7 +122,7 @@ export const TRIP_PAGES: TripPage[] = [
         title: "Quick Stop: Winterthur",
         date: "January 23, 2026",
         label: "Switzerland · Winterthur",
-        description:
+        description: 
           "Pit Stop in Winterthur! We stopped in a small town to explore, and potentially eat. We found a restuarant called 'Tres Amigos' (of course mexican food in Switzerland). We sat down and quickly discovered that a quesadilla was 40 American Dollars and quickly left the fine establishment. We ran across the street to Coop, the most amazing grocery store ever where we got amazing salad bowls for 7 CHFs or 10 dollars. Then we ran back to the train and went home to Zurich.",
         mapEntryId: "tres-amigos-winterthur",
         images: [
@@ -134,6 +134,31 @@ export const TRIP_PAGES: TripPage[] = [
           },
           {
             imageUrl: "/IMG_3440.heic"
+          }
+        ]
+      }
+    ]
+  },
+   {
+        id: "Dinner at Le Dezaley",
+        title: "Dinner at Le Dezaley",
+        date: "January 23, 2026",
+        label: "Switzerland · Zurich",
+        description: 
+          "We went for a fondue dinner at Le Dezaley! Honestly, fondue is not my favorite food ever. It was just cheese and bread and they made us each get a main dish and it was very very expensive. Really not my favorite, I would've gone gotten chocolate fondue instead. But it was very pretty inside and we had some drinks before so it was a great time regardless. We tried to go out afterwards in Zurich old town, but the scene was not active.",
+        mapEntryId: "Le-Dezaley",
+        images: [
+          {
+            imageUrl:
+              "/IMG_3474.heic",
+          },
+          {
+            imageUrl:
+              "/IMG_3480.heic",
+          },
+          {
+            imageUrl:
+              "/IMG_3495.heic",
           }
         ]
       }
