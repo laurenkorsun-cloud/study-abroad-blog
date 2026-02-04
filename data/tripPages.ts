@@ -47,12 +47,12 @@ export const TRIP_PAGES: TripPage[] = [
       },
       {
         imageUrl:
-          "https://images.pexels.com/photos/460672/pexels-photo-460672.jpeg?auto=compress&cs=tinysrgb&w=1600",
+          "/IMG_3411.heic",
         caption: "Finding the Duomo around every corner, no matter which street we chose."
       },
       {
         imageUrl:
-          "https://images.pexels.com/photos/210617/pexels-photo-210617.jpeg?auto=compress&cs=tinysrgb&w=1600",
+          "/IMG_3593.heic",
         caption: "Evening walks along Ponte Vecchio when the city finally cooled down."
       }
     ],
