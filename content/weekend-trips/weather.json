@@ -9,21 +9,21 @@
           "label": "Fri",
           "high": 39,
           "low": 30,
-          "summary": "Cold and clear.",
+          "summary": "Cold and clear, perfect for waterfalls and that quick stop in Winterthur.",
           "icon": "❄️"
         },
         {
           "label": "Sat",
           "high": 37,
           "low": 28,
-          "summary": "Cloudy, light overcast.",
+          "summary": "Cloudy with soft light over Lucerne and the Chapel Bridge.",
           "icon": "☁️"
         },
         {
           "label": "Sun",
           "high": 41,
           "low": 30,
-          "summary": "Sunny and cold.",
+          "summary": "Bright winter sun on the train ride back to Rome.",
           "icon": "☀️"
         }
       ]

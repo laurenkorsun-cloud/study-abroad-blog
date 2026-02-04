@@ -199,6 +199,7 @@ export default function WeekendTripDetailPage() {
                   images={activity.images}
                   link={activity.link}
                   linkLabel={activity.linkLabel ?? (activity.entryType === "accommodation" ? weekendTripDetail.accommodationLinkLabel : undefined)}
+                  rating={activity.rating}
                   isActive={Boolean(
                     activity.mapEntryId &&
                       activeMarkerId &&

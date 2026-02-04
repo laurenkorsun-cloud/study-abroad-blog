@@ -29,6 +29,8 @@ export interface ContentBoxProps {
   link?: string;
   /** Optional: label for the link, e.g. "View on Airbnb" */
   linkLabel?: string;
+  /** Optional: rating out of 5, displayed as star graphics (e.g. for accommodation) */
+  rating?: number;
 }
 
 function MiniSlideshow({ images }: { images: ContentBoxImage[] }) {
@@ -104,7 +106,8 @@ export function ContentBox({
   onClick,
   isActive,
   link,
-  linkLabel
+  linkLabel,
+  rating
 }: ContentBoxProps) {
   const activeStyles = isActive ? "ring-2 ring-accent-primary bg-white" : "";
   const clickableStyles = onClick ? "cursor-pointer hover:shadow-md transition-shadow" : "";
@@ -133,6 +136,21 @@ export function ContentBox({
         <h3 className="text-base font-semibold text-text-primary md:text-lg">
           {title}
         </h3>
+
+        {typeof rating === "number" && rating >= 0 && rating <= 5 && (
+          <div className="flex items-center gap-0.5" aria-label={`Rating: ${rating} out of 5 stars`}>
+            {[1, 2, 3, 4, 5].map((star) => (
+              <span
+                key={star}
+                className={`text-lg ${star <= rating ? "text-amber-400" : "text-slate-300"}`}
+                aria-hidden="true"
+              >
+                {star <= rating ? "★" : "☆"}
+              </span>
+            ))}
+            <span className="ml-1.5 text-sm text-text-muted">{rating}/5</span>
+          </div>
+        )}
 
         {description && (
           <p className="text-sm leading-relaxed text-text-secondary md:text-base">
