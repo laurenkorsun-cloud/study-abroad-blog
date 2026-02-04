@@ -33,8 +33,8 @@ export interface TripPage {
 
 export const TRIP_PAGES: TripPage[] = [
   {
-    slug: "Switzerland-first-weekend",
-    title: "Switzerland – First Weekend Away",
+    slug: "Switzerland",
+    title: "Switzerland",
     location: "Zurich",
     country: "Switzerland",
     dateRange: "Jan 23 – 25, 2026",
@@ -43,7 +43,7 @@ export const TRIP_PAGES: TripPage[] = [
         imageUrl:
           "/DSC00333.JPG",
         caption:
-          "Sunset over the Arno, with the Duomo rising above terracotta rooftops."
+          "Rhine Falls, View from the Castle."
       },
       {
         imageUrl:
