@@ -125,7 +125,7 @@ export function TripMap({
                 <div className="space-y-1 text-xs text-slate-900">
                   <p className="font-semibold">{entry.title}</p>
                   <p className="text-[11px] text-slate-700">
-                    {entry.city}, {entry.country}
+                    {entry.address ?? `${entry.city}, ${entry.country}`}
                   </p>
                   {entry.rating && (
                     <p className="text-[11px] text-amber-600">
@@ -158,7 +158,7 @@ export function TripMap({
                 {activeEntry.title}
               </h3>
               <p className="text-xs text-slate-500">
-                {activeEntry.city}, {activeEntry.country}
+                {activeEntry.address ?? `${activeEntry.city}, ${activeEntry.country}`}
               </p>
               {activeEntry.rating && (
                 <p className="mt-2 text-sm font-semibold text-amber-600">

@@ -20,15 +20,18 @@ type SlideshowProps = {
 };
 
 function Slideshow({ slides }: SlideshowProps) {
+  const safeSlides = Array.isArray(slides) && slides.length > 0 ? slides : [];
   const [current, setCurrent] = useState(0);
 
-  const next = () => setCurrent((c) => (c + 1) % slides.length);
-  const prev = () => setCurrent((c) => (c - 1 + slides.length) % slides.length);
+  const next = () => setCurrent((c) => (c + 1) % safeSlides.length);
+  const prev = () => setCurrent((c) => (c - 1 + safeSlides.length) % safeSlides.length);
+
+  if (safeSlides.length === 0) return null;
 
   return (
     <section className="relative overflow-hidden border-t border-b border-slate-200 bg-slate-50">
       <div className="relative h-[60vh] w-full md:h-[70vh]">
-        {slides.map((slide, idx) => (
+        {safeSlides.map((slide, idx) => (
           <div
             key={idx}
             className={`absolute inset-0 transition-opacity duration-700 ${
@@ -66,7 +69,7 @@ function Slideshow({ slides }: SlideshowProps) {
 
       {/* Dots */}
       <div className="absolute inset-x-0 bottom-4 flex justify-center gap-2">
-        {slides.map((_, idx) => (
+        {safeSlides.map((_, idx) => (
           <button
             key={idx}
             onClick={() => setCurrent(idx)}
@@ -110,7 +113,7 @@ export default function WeekendTripDetailPage() {
     );
   }
 
-  const mapEntries = getEntriesByIds(trip.mapEntryIds);
+  const mapEntries = getEntriesByIds(trip.mapEntryIds ?? []);
   const cityCenter: [number, number] =
     trip.location === "Florence"
       ? [11.255, 43.77]
@@ -118,7 +121,25 @@ export default function WeekendTripDetailPage() {
         ? [14.602, 40.634]
         : trip.location === "Zurich" || trip.country === "Switzerland"
           ? [8.5417, 47.3769]
-          : [12.496, 41.902];
+          : trip.location === "Lisbon" || trip.country === "Portugal"
+            ? [-9.1393, 38.7223]
+            : trip.location === "Rome"
+              ? [12.4964, 41.9028]
+              : trip.location === "Prague" || trip.country === "Czech Republic"
+                ? [14.4378, 50.0755]
+                : trip.location === "Budapest" || trip.country === "Hungary"
+                  ? [19.0402, 47.4979]
+                  : trip.location === "Amsterdam" || trip.country === "Netherlands"
+                    ? [4.9041, 52.3676]
+                    : trip.location === "Dublin" || trip.country === "Ireland"
+                      ? [-6.2603, 53.3498]
+                      : trip.location === "Paris" || trip.country === "France"
+                        ? [2.3522, 48.8566]
+                        : trip.location === "Valletta" || trip.country === "Malta"
+                          ? [14.5189, 35.9042]
+                          : trip.location === "Milan" || (trip.country === "Italy" && trip.slug === "milan")
+                            ? [9.19, 45.4642]
+                            : [12.496, 41.902];
 
   return (
     <div className="flex flex-col">
@@ -129,9 +150,17 @@ export default function WeekendTripDetailPage() {
           <h1 className="page-title">{trip.title}</h1>
           <div className="flex flex-wrap items-center gap-3 pt-2">
             <span className="tag">{trip.dateRange}</span>
-            <span className="tag">
-              {trip.location}, {trip.country}
-            </span>
+            {trip.locationTags
+              ? trip.locationTags.map((loc) => (
+                  <span key={loc} className="tag">
+                    {loc}
+                  </span>
+                ))
+              : (
+                  <span className="tag">
+                    {trip.location}, {trip.country}
+                  </span>
+                )}
           </div>
         </div>
       </section>
@@ -140,18 +169,10 @@ export default function WeekendTripDetailPage() {
       {weather && (
         <section className="section-container bg-white pt-0">
           <div className="mx-auto max-w-3xl">
-            <div className="content-box flex flex-col gap-4 md:flex-row md:items-center">
-              <div className="flex-1 space-y-1">
-                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-text-muted">
-                  {weekendTripDetail.weatherTitle}
-                </p>
-                <p className="text-sm text-text-secondary">
-                  {weekendTripDetail.weatherSubtitleTemplate
-                    .replace("{location}", weather.location)
-                    .replace("{dateRange}", weather.dateRange)}
-                </p>
-              </div>
-
+            <div className="content-box flex flex-col items-center gap-4">
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-text-muted">
+                {weekendTripDetail.weatherTitle}
+              </p>
               <div className="flex gap-4">
                 {weather.days.map((day) => (
                   <div key={day.label} className="min-w-[70px] text-center">
@@ -178,7 +199,7 @@ export default function WeekendTripDetailPage() {
       )}
 
       {/* Slideshow */}
-      <Slideshow slides={trip.slideshow} />
+      {trip.slideshow?.length ? <Slideshow slides={trip.slideshow} /> : null}
 
       {/* Chronological timeline of moments */}
       <section className="section-container bg-white">
@@ -186,7 +207,7 @@ export default function WeekendTripDetailPage() {
           <h2 className="box-title">{weekendTripDetail.entriesTitle}</h2>
 
           <div className="relative mt-6 space-y-6 border-l border-slate-200 pl-6">
-            {trip.activities.map((activity) => (
+            {(trip.activities ?? []).map((activity) => (
               <div key={activity.id} className="relative">
                 {/* Timeline dot */}
                 <span className="absolute -left-[7px] top-4 h-3 w-3 rounded-full border-2 border-white bg-accent-primary shadow" />
@@ -200,17 +221,7 @@ export default function WeekendTripDetailPage() {
                   link={activity.link}
                   linkLabel={activity.linkLabel ?? (activity.entryType === "accommodation" ? weekendTripDetail.accommodationLinkLabel : undefined)}
                   rating={activity.rating}
-                  isActive={Boolean(
-                    activity.mapEntryId &&
-                      activeMarkerId &&
-                      activity.mapEntryId === activeMarkerId
-                  )}
-                  onClick={() =>
-                    activity.mapEntryId
-                      ? setActiveMarkerId(activity.mapEntryId)
-                      : undefined
-                  }
-                  className="ml-4"
+                  className="ml-4 hover:shadow-md transition-shadow"
                 />
               </div>
             ))}

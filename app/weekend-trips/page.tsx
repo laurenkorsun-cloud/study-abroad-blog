@@ -1,8 +1,6 @@
 import Link from "next/link";
 import { getAllTrips } from "../../data/tripPages";
-import {
-  weekendTripsOverview
-} from "../../data/weekendTripsContent";
+import { weekendTripsOverview } from "../../data/weekendTripsContent";
 
 // ═══════════════════════════════════════════════════════════════════════════
 // WEEKEND TRIPS OVERVIEW - Trip cards from data/tripPages.ts
@@ -11,45 +9,36 @@ import {
 
 function TripCard({
   trip,
-  cardLabel,
   yearSuffix,
   defaultCoverImage
 }: {
   trip: ReturnType<typeof getAllTrips>[0];
-  cardLabel: string;
   yearSuffix: string;
   defaultCoverImage: string;
 }) {
   const coverImage = trip.slideshow?.[0]?.imageUrl || defaultCoverImage;
-
-  const dateRange = trip.dateRange.replace(`, ${yearSuffix}`, "");
+  const rawDate = trip.dateRange ?? "";
+  const dateRange = rawDate ? rawDate.replace(`, ${yearSuffix}`, "").trim() || rawDate : rawDate;
 
   return (
     <Link
       href={`/weekend-trips/${trip.slug}`}
-      className="group flex flex-col overflow-hidden rounded-3xl border border-slate-800 bg-slate-900/70 shadow-sm shadow-slate-950/40 transition hover:-translate-y-1 hover:border-slate-400/70 hover:shadow-lg"
+      className="flex min-w-0 flex-col overflow-hidden rounded-[1rem] border border-slate-200 bg-[#f8fafc] no-underline text-inherit shadow-sm transition hover:shadow-md focus:outline-none focus:ring-2 focus:ring-slate-300 w-full"
     >
       <div
-        className="relative h-40 w-full bg-cover bg-center md:h-44"
+        className="relative h-36 w-full shrink-0 rounded-t-[1rem] bg-cover bg-center md:h-40"
         style={{ backgroundImage: `url(${coverImage})` }}
       >
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/0 to-slate-950/40" />
-        <p className="absolute bottom-3 left-3 rounded-full bg-slate-950/80 px-3 py-1 text-[11px] font-medium uppercase tracking-[0.18em] text-slate-100 ring-1 ring-slate-600/70">
-          {cardLabel}
-        </p>
+        <div className="absolute inset-0 rounded-t-[1rem] bg-gradient-to-t from-slate-900/60 via-transparent to-transparent" />
       </div>
-      <div className="flex flex-1 flex-col justify-between gap-2 px-4 py-3">
-        <div className="space-y-1">
-          <p className="text-xs font-medium text-slate-300">
-            {trip.location}
-          </p>
-          <p className="text-[11px] uppercase tracking-[0.2em] text-slate-500">
-            {trip.country}
+      <div className="flex flex-1 flex-col justify-between gap-1.5 px-4 py-3">
+        <div className="space-y-0.5">
+          <p className="text-sm font-medium text-slate-900">{trip.title}</p>
+          <p className="text-xs text-slate-400">
+            {trip.location}, {trip.country}
           </p>
         </div>
-        <p className="text-xs text-slate-400">
-          {dateRange}, {yearSuffix}
-        </p>
+        <p className="text-xs text-slate-600">{dateRange}</p>
       </div>
     </Link>
   );
@@ -59,30 +48,27 @@ export default function WeekendTripsPage() {
   const trips = getAllTrips();
 
   return (
-    <section className="space-y-6">
-      <div className="space-y-3">
-        <p className="text-xs font-semibold uppercase tracking-[0.3em] text-slate-400">
-          {weekendTripsOverview.label}
-        </p>
-        <h1 className="text-3xl font-semibold tracking-tight md:text-4xl">
-          {weekendTripsOverview.title}
-        </h1>
-        <p className="max-w-2xl text-sm text-slate-300 md:text-base">
-          {weekendTripsOverview.description}
-        </p>
-      </div>
+    <div className="flex flex-col">
+      <section className="section-container border-b border-slate-100">
+        <div className="page-header">
+          <p className="page-label">{weekendTripsOverview.label}</p>
+          <h1 className="page-title">{weekendTripsOverview.title}</h1>
+          <p className="page-description">{weekendTripsOverview.description}</p>
+        </div>
+      </section>
 
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        {trips.map((trip) => (
+      <section className="section-container bg-box-bg">
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {trips.map((trip) => (
           <TripCard
             key={trip.slug}
             trip={trip}
-            cardLabel={weekendTripsOverview.cardLabel}
             yearSuffix={weekendTripsOverview.yearSuffix}
             defaultCoverImage={weekendTripsOverview.defaultCoverImage}
           />
-        ))}
-      </div>
-    </section>
+          ))}
+        </div>
+      </section>
+    </div>
   );
 }

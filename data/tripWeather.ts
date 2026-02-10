@@ -15,9 +15,11 @@ export interface TripWeather {
   days: TripWeatherDay[];
 }
 
-const TRIP_WEATHER: TripWeather[] = weatherData.trips as TripWeather[];
+const TRIP_WEATHER: TripWeather[] = Array.isArray(weatherData?.trips) ? (weatherData.trips as TripWeather[]) : [];
 
 export function getWeatherForTrip(slug: string): TripWeather | null {
-  return TRIP_WEATHER.find((trip) => trip.slug === slug) ?? null;
+  if (!slug) return null;
+  const lower = slug.toLowerCase();
+  return TRIP_WEATHER.find((trip) => trip.slug.toLowerCase() === lower) ?? null;
 }
 

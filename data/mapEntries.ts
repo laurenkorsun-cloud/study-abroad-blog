@@ -16,6 +16,8 @@ export interface MapEntry {
   city: string;
   country: string;
   pageSlug: string;
+  /** Optional: street address for display (e.g. "Bahnhofstrasse 1, 8001 Zurich") */
+  address?: string;
   images?: string[];
   notes?: string;
   date?: string;
@@ -29,7 +31,8 @@ export function getAllEntries(): MapEntry[] {
   return MAP_ENTRIES;
 }
 
-export function getEntriesByIds(ids: string[]): MapEntry[] {
+export function getEntriesByIds(ids: string[] | undefined): MapEntry[] {
+  if (!ids || !Array.isArray(ids)) return [];
   return MAP_ENTRIES.filter((entry) => ids.includes(entry.id));
 }
 

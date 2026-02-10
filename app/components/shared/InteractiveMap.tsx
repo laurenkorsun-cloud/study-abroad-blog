@@ -17,16 +17,18 @@ import { mapLegend, uiStrings } from "../../../data/siteContent";
 // Example: const InteractiveMap = dynamic(() => import("./InteractiveMap"), { ssr: false })
 // ═══════════════════════════════════════════════════════════════════════════
 
-// Fix default Leaflet marker icons in Next.js
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-expect-error
-delete L.Icon.Default.prototype._getIconUrl;
-L.Icon.Default.mergeOptions({
-  iconRetinaUrl:
-    "https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon-2x.png",
-  iconUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png",
-  shadowUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png"
-});
+// Fix default Leaflet marker icons in Next.js (only in browser)
+if (typeof window !== "undefined") {
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-expect-error
+  delete L.Icon.Default.prototype._getIconUrl;
+  L.Icon.Default.mergeOptions({
+    iconRetinaUrl:
+      "https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon-2x.png",
+    iconUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png",
+    shadowUrl: "https://unpkg.com/leaflet@1.9.4/dist/images/marker-shadow.png"
+  });
+}
 
 interface InteractiveMapProps {
   entries: MapEntry[];

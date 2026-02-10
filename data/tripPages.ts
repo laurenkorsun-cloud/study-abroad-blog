@@ -38,6 +38,8 @@ export interface TripPage {
   location: string;
   country: string;
   dateRange: string;
+  /** Optional: extra location tags to show as circles (e.g. "Lucerne, Switzerland") */
+  locationTags?: string[];
   slideshow: TripSlide[];
   activities: TripActivity[];
   mapEntryIds: string[]; // IDs from the global MAP_ENTRIES dataset
@@ -50,21 +52,18 @@ export const TRIP_PAGES: TripPage[] = [
     location: "Zurich",
     country: "Switzerland",
     dateRange: "Jan 23 – 25, 2026",
+    locationTags: ["Zurich, Switzerland", "Lucerne, Switzerland"],
     slideshow: [
       {
-        imageUrl:
-          "/DSC00333.JPG",
-        caption:
-          "Rhine Falls, view from the Schloss Laufen."
+        imageUrl: "/DSC00333.JPG",
+        caption: "Rhine Falls, view from the Schloss Laufen."
       },
       {
-        imageUrl:
-          "/IMG_3411.heic",
+        imageUrl: "/lucerne-1.png",
         caption: "View from the train, powdery mildew on trees."
       },
       {
-        imageUrl:
-          "/IMG_3593.heic",
+        imageUrl: "/lucerne-3.png",
         caption: "Lucerne, evening walks along Chapel Bridge."
       }
     ],
@@ -77,8 +76,8 @@ export const TRIP_PAGES: TripPage[] = [
         label: "Switzerland · Zurich",
         description: "Cozy apartment right in the city center. Easy walk to the lake, trains, and cafes. Perfect base for weekend trips to Rhine Falls and Lucerne.",
         entryType: "accommodation",
-        link: "https://www.airbnb.com/rooms/YOUR_LISTING_ID",
-        linkLabel: "View on Airbnb",
+        link: "https://www.vrbo.com/2476934ha",
+        linkLabel: "View on VRBO",
         mapEntryId: "switzerland-airbnb-zurich",
         rating: 5,
         images: []
@@ -156,6 +155,102 @@ export const TRIP_PAGES: TripPage[] = [
             imageUrl: "/IMG_3495.heic"
           }
         ]
+      },
+      {
+        id: "12-hours-lucerne",
+        title: "12 hours in Lucerne",
+        date: "January 24, 2026",
+        label: "Switzerland · Lucerne",
+        description: "",
+        images: [
+          { imageUrl: "/lucerne-1.png", caption: "Twilight by the river." },
+          { imageUrl: "/lucerne-2.png", caption: "Chapel Bridge and Water Tower." },
+          { imageUrl: "/lucerne-3.png", caption: "Evening by the water." },
+          { imageUrl: "/lucerne-4.png", caption: "City lights on the Reuss." },
+          { imageUrl: "/lucerne-5.png", caption: "Night in the old town." },
+          { imageUrl: "/lucerne-6.png", caption: "By the water at night." }
+        ]
+      },
+      {
+        id: "zurich",
+        title: "Zurich",
+        date: "February 9, 2026",
+        label: "Switzerland · Zurich",
+        description: "",
+        images: [
+          { imageUrl: "/zurich-1.png", caption: "Swan on the Limmat." },
+          { imageUrl: "/zurich-2.png", caption: "Panoramic view along the river." }
+        ]
+      }
+    ]
+  },
+  {
+    slug: "Lisbon",
+    title: "Lisbon",
+    location: "Lisbon",
+    country: "Portugal",
+    dateRange: "Feb 6 – 8, 2026",
+    locationTags: ["Lisbon, Portugal"],
+    slideshow: [
+      {
+        imageUrl: "https://images.pexels.com/photos/356618/pexels-photo-356618.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        caption: "Lisbon skyline and the Tagus."
+      },
+      {
+        imageUrl: "https://images.pexels.com/photos/1118869/pexels-photo-1118869.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        caption: "Pastel de nata and coffee."
+      },
+      {
+        imageUrl: "https://images.pexels.com/photos/1118866/pexels-photo-1118866.jpeg?auto=compress&cs=tinysrgb&w=1600",
+        caption: "Tram 28 through Alfama."
+      }
+    ],
+    mapEntryIds: ["lisbon-airbnb"],
+    activities: [
+      {
+        id: "lisbon-airbnb",
+        title: "Our Airbnb in Lisbon",
+        date: "Feb 6 – 8, 2026",
+        label: "Portugal · Lisbon",
+        description: "Add your accommodation description here.",
+        entryType: "accommodation",
+        link: "https://www.airbnb.com/rooms/YOUR_LISTING_ID",
+        linkLabel: "View on Airbnb",
+        mapEntryId: "lisbon-airbnb",
+        rating: 5,
+        images: []
+      },
+      {
+        id: "lisbon-day-1",
+        title: "Arrival",
+        date: "February 6, 2026",
+        label: "Portugal · Lisbon",
+        description: "Add your notes for the first day.",
+        images: []
+      },
+      {
+        id: "lisbon-day-2",
+        title: "Exploring Lisbon",
+        date: "February 7, 2026",
+        label: "Portugal · Lisbon",
+        description: "Add your notes for the second day.",
+        images: []
+      },
+      {
+        id: "lisbon-day-3",
+        title: "Lisbon",
+        date: "February 8, 2026",
+        label: "Portugal · Lisbon",
+        description: "Add your notes for the third day.",
+        images: []
+      },
+      {
+        id: "lisbon-day-4",
+        title: "Departure",
+        date: "February 9, 2026",
+        label: "Portugal · Lisbon",
+        description: "Add your notes for the last day.",
+        images: []
       }
     ]
   },
@@ -164,447 +259,190 @@ export const TRIP_PAGES: TripPage[] = [
     title: "Florence – First Weekend Away",
     location: "Florence",
     country: "Italy",
-    dateRange: "Sept 5 – 7, 2026",
-    slideshow: [],
-    mapEntryIds: ["florence-duomo-view", "florence-gelato-riverside"],
+    dateRange: "Feb 13 – 16, 2026",
+    locationTags: ["Florence, Italy"],
+    slideshow: [
+      { imageUrl: "https://images.pexels.com/photos/3683056/pexels-photo-3683056.jpeg?auto=compress&cs=tinysrgb&w=1600", caption: "View of Florence and the Duomo." },
+      { imageUrl: "https://images.pexels.com/photos/461430/pexels-photo-461430.jpeg?auto=compress&cs=tinysrgb&w=1600", caption: "Gelato by the Arno at sunset." },
+      { imageUrl: "https://images.pexels.com/photos/210617/pexels-photo-210617.jpeg?auto=compress&cs=tinysrgb&w=1600", caption: "The Arno and Ponte Vecchio." }
+    ],
+    mapEntryIds: ["florence-airbnb", "florence-duomo-view", "florence-gelato-riverside"],
     activities: [
-      {
-        id: "getting-lost",
-        title: "Getting intentionally lost between museums",
-        date: "Sept 6, 2026",
-        label: "Florence · Centro Storico",
-        description:
-          "We walked without a map for hours, turning down whatever side street looked most interesting.",
-        images: []
-      },
-      {
-        id: "gelato-twice",
-        title: "Going back for gelato twice in one day",
-        date: "Sept 7, 2026",
-        label: "Florence · Lungarno",
-        description:
-          "There was a stand along the river that we passed in the afternoon. We went back after dinner, and the staff remembered our order. Pistachio and stracciatella, eaten while watching the sunset turn the Arno golden.",
-        images: [
-          {
-            imageUrl:
-              "https://images.pexels.com/photos/461430/pexels-photo-461430.jpeg?auto=compress&cs=tinysrgb&w=1600",
-            caption: "Gelato by the Arno at sunset"
-          },
-          {
-            imageUrl:
-              "https://images.pexels.com/photos/210617/pexels-photo-210617.jpeg?auto=compress&cs=tinysrgb&w=1600",
-            caption: "The same stand, second visit of the day"
-          },
-          {
-            imageUrl:
-              "https://images.pexels.com/photos/1796727/pexels-photo-1796727.jpeg?auto=compress&cs=tinysrgb&w=1600",
-            caption: "Pistachio and stracciatella as the sky turned golden"
-          }
-        ]
-      }
+      { id: "florence-airbnb", title: "Our Airbnb in Florence", date: "Feb 13 – 16, 2026", label: "Italy · Florence", description: "Add your accommodation description here.", entryType: "accommodation", link: "https://www.airbnb.com/rooms/YOUR_LISTING_ID", linkLabel: "View on Airbnb", mapEntryId: "florence-airbnb", rating: 5, images: [] },
+      { id: "getting-lost", title: "Getting intentionally lost between museums", date: "February 14, 2026", label: "Florence · Centro Storico", description: "We walked without a map for hours, turning down whatever side street looked most interesting.", mapEntryId: "florence-duomo-view", images: [] },
+      { id: "gelato-twice", title: "Going back for gelato twice in one day", date: "February 15, 2026", label: "Florence · Lungarno", description: "There was a stand along the river that we passed in the afternoon. We went back after dinner, and the staff remembered our order. Pistachio and stracciatella, eaten while watching the sunset turn the Arno golden.", mapEntryId: "florence-gelato-riverside", images: [{ imageUrl: "https://images.pexels.com/photos/461430/pexels-photo-461430.jpeg?auto=compress&cs=tinysrgb&w=1600", caption: "Gelato by the Arno at sunset" }, { imageUrl: "https://images.pexels.com/photos/210617/pexels-photo-210617.jpeg?auto=compress&cs=tinysrgb&w=1600", caption: "The same stand, second visit of the day" }, { imageUrl: "https://images.pexels.com/photos/1796727/pexels-photo-1796727.jpeg?auto=compress&cs=tinysrgb&w=1600", caption: "Pistachio and stracciatella as the sky turned golden" }] }
     ]
   },
   {
-    slug: "amalfi-coast-escape",
-    title: "Amalfi Coast Escape",
-    location: "Amalfi Coast",
-    country: "Italy",
-    dateRange: "Sept 19 – 21, 2026",
-    slideshow: [
-      {
-        imageUrl:
-          "https://images.pexels.com/photos/167404/pexels-photo-167404.jpeg?auto=compress&cs=tinysrgb&w=1600",
-        caption: "Houses stacked impossibly high above the blue."
-      },
-      {
-        imageUrl:
-          "https://images.pexels.com/photos/1796726/pexels-photo-1796726.jpeg?auto=compress&cs=tinysrgb&w=1600",
-        caption: "Every turn on the cliffside road felt a little bit like flying."
-      }
-    ],
-    activities: [
-      {
-        id: "beach-rest",
-        title: "Slowing down by the water",
-        date: "Sept 20, 2026",
-        label: "Amalfi Coast · Beach",
-        description:
-          "We gave ourselves permission not to see everything. Instead, we spent entire afternoons on the same patch of rocky beach, reading, swimming, and counting how many ferries came and went. It was the first weekend that felt like real rest, not an itinerary."
-      }
-    ],
-    mapEntryIds: ["amalfi-beach-spot", "amalfi-lemon-shop"]
-  },
-  {
-    slug: "naples-pizza-pilgrimage",
-    title: "Naples – Pizza Pilgrimage",
-    location: "Naples",
-    country: "Italy",
-    dateRange: "Sept 26 – 28, 2026",
-    slideshow: [
-      {
-        imageUrl: "https://images.pexels.com/photos/825661/pexels-photo-825661.jpeg?auto=compress&cs=tinysrgb&w=1600",
-        caption: "The birthplace of pizza—wood-fired and folded in half on the street."
-      },
-      {
-        imageUrl: "https://images.pexels.com/photos/1454953/pexels-photo-1454953.jpeg?auto=compress&cs=tinysrgb&w=1600",
-        caption: "Neapolitan streets loud with scooters and conversation."
-      }
-    ],
-    activities: [
-      {
-        id: "pizza-quest",
-        title: "Chasing the perfect margherita",
-        date: "Sept 26, 2026",
-        label: "Naples · Spaccanapoli",
-        description: "We tried three pizzerias in one day. The first was good. The second was better. The third—in a tiny alley with no sign—was the one we still talk about. Charred crust, San Marzano tomatoes, buffalo mozzarella that stretched for what felt like forever."
-      },
-      {
-        id: "street-life",
-        title: "Napoli at full volume",
-        date: "Sept 27, 2026",
-        label: "Naples · Centro",
-        description: "Everything in Naples feels louder and more alive than Rome. Scooters weaving between pedestrians, laundry hanging from every balcony, and the smell of espresso and frying dough on every corner. We walked for hours and never wanted to sit down."
-      }
-    ],
-    mapEntryIds: []
-  },
-  {
-    slug: "tuscany-autumn-hills",
-    title: "Tuscany – Autumn in the Hills",
-    location: "Tuscany",
-    country: "Italy",
-    dateRange: "Oct 3 – 5, 2026",
-    slideshow: [
-      {
-        imageUrl: "https://images.pexels.com/photos/1450383/pexels-photo-1450383.jpeg?auto=compress&cs=tinysrgb&w=1600",
-        caption: "Golden light on rolling hills and cypress trees."
-      },
-      {
-        imageUrl: "https://images.pexels.com/photos/1121274/pexels-photo-1121274.jpeg?auto=compress&cs=tinysrgb&w=1600",
-        caption: "Small towns perched on hilltops, one winding road up and down."
-      }
-    ],
-    activities: [
-      {
-        id: "wine-and-olives",
-        title: "A farm lunch that lasted four hours",
-        date: "Oct 4, 2026",
-        label: "Tuscany · Chianti",
-        description: "We drove up a gravel road to a family-run farm. Lunch was bread, olive oil, pecorino, salami, and wine—all made on the property. We sat under an olive tree until the sun dropped behind the hills. No rush, no menu, just whatever Nonna brought out next."
-      }
-    ],
-    mapEntryIds: []
-  },
-  {
-    slug: "cinque-terre-cliffside-trails",
-    title: "Cinque Terre – Cliffside Trails",
-    location: "Cinque Terre",
-    country: "Italy",
-    dateRange: "Oct 10 – 12, 2026",
-    slideshow: [
-      {
-        imageUrl: "https://images.pexels.com/photos/1796730/pexels-photo-1796730.jpeg?auto=compress&cs=tinysrgb&w=1600",
-        caption: "Colorful villages stacked above the Ligurian Sea."
-      },
-      {
-        imageUrl: "https://images.pexels.com/photos/1179229/pexels-photo-1179229.jpeg?auto=compress&cs=tinysrgb&w=1600",
-        caption: "Hiking between villages with the sea always in view."
-      }
-    ],
-    activities: [
-      {
-        id: "trail-walk",
-        title: "Walking from Monterosso to Vernazza",
-        date: "Oct 11, 2026",
-        label: "Cinque Terre · Coastal Trail",
-        description: "The trail was steeper than we expected. Two hours of stone steps and olive groves, with the sea opening up between the trees. When Vernazza appeared below—all pastel buildings and tiny harbor—we sat on a rock and didn't move for twenty minutes."
-      },
-      {
-        id: "focaccia-port",
-        title: "Focaccia by the harbor",
-        date: "Oct 12, 2026",
-        label: "Cinque Terre · Vernazza",
-        description: "We bought focaccia warm from a bakery and ate it on the rocks while the sun set. Salt and rosemary, the sound of waves, and a train full of day-trippers pulling away. The village felt quiet for the first time all weekend."
-      }
-    ],
-    mapEntryIds: []
-  },
-  {
-    slug: "paris-fall-break",
-    title: "Paris – Fall Break",
-    location: "Paris",
-    country: "France",
-    dateRange: "Oct 17 – 20, 2026",
-    slideshow: [
-      {
-        imageUrl: "https://images.pexels.com/photos/460740/pexels-photo-460740.jpeg?auto=compress&cs=tinysrgb&w=1600",
-        caption: "The Eiffel Tower through autumn leaves."
-      },
-      {
-        imageUrl: "https://images.pexels.com/photos/1113638/pexels-photo-1113638.jpeg?auto=compress&cs=tinysrgb&w=1600",
-        caption: "Late afternoon light on the Seine."
-      }
-    ],
-    activities: [
-      {
-        id: "louvre-morning",
-        title: "The Louvre before the crowds",
-        date: "Oct 18, 2026",
-        label: "Paris · 1st Arrondissement",
-        description: "We got there at opening and headed straight for the Denon wing. For forty minutes we had the Winged Victory mostly to ourselves. By the time we left, the hall was packed. Worth every minute of the early alarm."
-      },
-      {
-        id: "croissant-hunt",
-        title: "In search of the perfect croissant",
-        date: "Oct 19, 2026",
-        label: "Paris · Le Marais",
-        description: "We tried four bakeries in one morning. Flaky, buttery, each one different. The last stop—a tiny place with no seating—was the one. We ate them on a bench by the Canal Saint-Martin and watched the barges pass."
-      }
-    ],
-    mapEntryIds: []
-  },
-  {
-    slug: "barcelona-sea-and-streets",
-    title: "Barcelona – Sea and Streets",
-    location: "Barcelona",
-    country: "Spain",
-    dateRange: "Oct 24 – 26, 2026",
-    slideshow: [
-      {
-        imageUrl: "https://images.pexels.com/photos/666697/pexels-photo-666697.jpeg?auto=compress&cs=tinysrgb&w=1600",
-        caption: "Sagrada Familia rising above the city."
-      },
-      {
-        imageUrl: "https://images.pexels.com/photos/1388030/pexels-photo-1388030.jpeg?auto=compress&cs=tinysrgb&w=1600",
-        caption: "The Mediterranean from Barceloneta beach."
-      }
-    ],
-    activities: [
-      {
-        id: "gaudi-afternoon",
-        title: "Losing ourselves in Gaudí",
-        date: "Oct 25, 2026",
-        label: "Barcelona · Eixample",
-        description: "Park Güell in the morning, Casa Batlló in the afternoon. Every surface curved and colorful. We kept stopping to touch the mosaics. It felt like walking through someone's wildest dream."
-      },
-      {
-        id: "tapas-evening",
-        title: "Tapas until midnight",
-        date: "Oct 26, 2026",
-        label: "Barcelona · El Raval",
-        description: "We hopped from bar to bar—patatas bravas, jamón, grilled octopus, pan con tomate. Each place had one thing they did perfectly. By the end we'd lost count of how many stops we'd made."
-      }
-    ],
-    mapEntryIds: []
-  },
-  {
-    slug: "vienna-cozy-museums",
-    title: "Vienna – Cozy Museums",
-    location: "Vienna",
-    country: "Austria",
-    dateRange: "Nov 1 – 3, 2026",
-    slideshow: [
-      {
-        imageUrl: "https://images.pexels.com/photos/208702/pexels-photo-208702.jpeg?auto=compress&cs=tinysrgb&w=1600",
-        caption: "Hofburg Palace in November light."
-      },
-      {
-        imageUrl: "https://images.pexels.com/photos/2746823/pexels-photo-2746823.jpeg?auto=compress&cs=tinysrgb&w=1600",
-        caption: "Coffee and cake in a traditional Kaffeehaus."
-      }
-    ],
-    activities: [
-      {
-        id: "belvedere-morning",
-        title: "Klimt at the Belvedere",
-        date: "Nov 2, 2026",
-        label: "Vienna · Belvedere",
-        description: "We went for The Kiss and stayed for three hours. The gold leaf in person is nothing like in photos. We sat in front of it for a long time, then wandered through room after room of paintings we'd never seen before."
-      },
-      {
-        id: "sacher-torte",
-        title: "Sachertorte and hot chocolate",
-        date: "Nov 2, 2026",
-        label: "Vienna · Innere Stadt",
-        description: "We splurged on the famous hotel café. The cake was dense and barely sweet. The hot chocolate was practically pudding. Outside, the first snow of the season was starting to fall."
-      }
-    ],
-    mapEntryIds: []
-  },
-  {
-    slug: "prague-cobblestones-and-cafes",
-    title: "Prague – Cobblestones and Cafés",
+    slug: "prague",
+    title: "Prague",
     location: "Prague",
     country: "Czech Republic",
-    dateRange: "Nov 7 – 9, 2026",
+    dateRange: "Feb 20 – 23, 2026",
+    locationTags: ["Prague, Czech Republic"],
     slideshow: [
-      {
-        imageUrl: "https://images.pexels.com/photos/415980/pexels-photo-415980.jpeg?auto=compress&cs=tinysrgb&w=1600",
-        caption: "Charles Bridge at dawn."
-      },
-      {
-        imageUrl: "https://images.pexels.com/photos/545048/pexels-photo-545048.jpeg?auto=compress&cs=tinysrgb&w=1600",
-        caption: "Old Town Square and the astronomical clock."
-      }
+      { imageUrl: "https://images.pexels.com/photos/415980/pexels-photo-415980.jpeg?auto=compress&cs=tinysrgb&w=1600", caption: "Charles Bridge at dawn." },
+      { imageUrl: "https://images.pexels.com/photos/545048/pexels-photo-545048.jpeg?auto=compress&cs=tinysrgb&w=1600", caption: "Old Town Square." },
+      { imageUrl: "https://images.pexels.com/photos/1329711/pexels-photo-1329711.jpeg?auto=compress&cs=tinysrgb&w=1600", caption: "Prague Castle." }
     ],
+    mapEntryIds: ["prague-airbnb"],
     activities: [
-      {
-        id: "bridge-dawn",
-        title: "Charles Bridge before sunrise",
-        date: "Nov 8, 2026",
-        label: "Prague · Malá Strana",
-        description: "We woke up at 5am to beat the crowds. The bridge was almost empty. Fog hung over the Vltava. The statues seemed to watch us as we walked across. By 7am the first tour groups had arrived—we were already at a café with hot chocolate."
-      },
-      {
-        id: "trdelnik",
-        title: "Trdelník and the hunt for the best one",
-        date: "Nov 9, 2026",
-        label: "Prague · Old Town",
-        description: "We tried four stands. Cinnamon, sugar, filled with ice cream, plain and warm. The best was from a tiny stall in a side alley—no line, no Instagram setup, just a man with a rolling pin and a fire."
-      }
-    ],
-    mapEntryIds: []
+      { id: "prague-airbnb", title: "Our Airbnb in Prague", date: "Feb 20 – 23, 2026", label: "Czech Republic · Prague", description: "Add your accommodation description here.", entryType: "accommodation", link: "https://www.airbnb.com/rooms/YOUR_LISTING_ID", linkLabel: "View on Airbnb", mapEntryId: "prague-airbnb", rating: 5, images: [] },
+      { id: "prague-day-1", title: "Arrival", date: "February 20, 2026", label: "Czech Republic · Prague", description: "Add your notes.", images: [] },
+      { id: "prague-day-2", title: "Exploring Prague", date: "February 21, 2026", label: "Czech Republic · Prague", description: "Add your notes.", images: [] },
+      { id: "prague-day-3", title: "Prague", date: "February 22, 2026", label: "Czech Republic · Prague", description: "Add your notes.", images: [] },
+      { id: "prague-day-4", title: "Departure", date: "February 23, 2026", label: "Czech Republic · Prague", description: "Add your notes.", images: [] }
+    ]
   },
   {
-    slug: "budapest-thermal-evenings",
-    title: "Budapest – Thermal Evenings",
+    slug: "budapest-vienna",
+    title: "Budapest & Vienna",
     location: "Budapest",
     country: "Hungary",
-    dateRange: "Nov 14 – 16, 2026",
+    dateRange: "Feb 27 – Mar 2, 2026",
+    locationTags: ["Budapest, Hungary", "Vienna, Austria"],
     slideshow: [
-      {
-        imageUrl: "https://images.pexels.com/photos/1329711/pexels-photo-1329711.jpeg?auto=compress&cs=tinysrgb&w=1600",
-        caption: "Parliament reflected in the Danube at night."
-      },
-      {
-        imageUrl: "https://images.pexels.com/photos/326057/pexels-photo-326057.jpeg?auto=compress&cs=tinysrgb&w=1600",
-        caption: "Széchenyi thermal baths—steam rising into the cold air."
-      }
+      { imageUrl: "https://images.pexels.com/photos/1329711/pexels-photo-1329711.jpeg?auto=compress&cs=tinysrgb&w=1600", caption: "Parliament on the Danube." },
+      { imageUrl: "https://images.pexels.com/photos/326057/pexels-photo-326057.jpeg?auto=compress&cs=tinysrgb&w=1600", caption: "Széchenyi thermal baths." },
+      { imageUrl: "https://images.pexels.com/photos/208702/pexels-photo-208702.jpeg?auto=compress&cs=tinysrgb&w=1600", caption: "Vienna." }
     ],
+    mapEntryIds: ["budapest-vienna-airbnb"],
     activities: [
-      {
-        id: "thermal-baths",
-        title: "A night at the baths",
-        date: "Nov 15, 2026",
-        label: "Budapest · City Park",
-        description: "We went to Széchenyi after dark. The outdoor pools were steaming in the cold. We moved between hot and cold, sometimes just floating, watching the yellow building glow against the black sky. Three hours felt like twenty minutes."
-      },
-      {
-        id: "ruin-bars",
-        title: "Ruin bars and ruin bars",
-        date: "Nov 16, 2026",
-        label: "Budapest · Jewish Quarter",
-        description: "Every bar was weirder than the last. Vintage furniture, graffiti, plants everywhere, rooms that led to more rooms. We got lost in one and ended up in a courtyard with a fire pit. The whole city felt like a secret."
-      }
-    ],
-    mapEntryIds: []
+      { id: "budapest-vienna-airbnb", title: "Our Airbnb", date: "Feb 27 – Mar 2, 2026", label: "Hungary · Budapest", description: "Add your accommodation description here.", entryType: "accommodation", link: "https://www.airbnb.com/rooms/YOUR_LISTING_ID", linkLabel: "View on Airbnb", mapEntryId: "budapest-vienna-airbnb", rating: 5, images: [] },
+      { id: "budapest-vienna-day-1", title: "Arrival", date: "February 27, 2026", label: "Budapest", description: "Add your notes.", images: [] },
+      { id: "budapest-vienna-day-2", title: "Exploring", date: "February 28, 2026", label: "Budapest", description: "Add your notes.", images: [] },
+      { id: "budapest-vienna-day-3", title: "Budapest or Vienna", date: "March 1, 2026", label: "Budapest/Vienna", description: "Add your notes.", images: [] },
+      { id: "budapest-vienna-day-4", title: "Departure", date: "March 2, 2026", label: "Budapest/Vienna", description: "Add your notes.", images: [] }
+    ]
   },
   {
-    slug: "milan-fashion-and-trains",
-    title: "Milan – Fashion and Trains",
+    slug: "amsterdam",
+    title: "Amsterdam",
+    location: "Amsterdam",
+    country: "Netherlands",
+    dateRange: "Mar 6 – 9, 2026",
+    locationTags: ["Amsterdam, Netherlands"],
+    slideshow: [
+      { imageUrl: "https://images.pexels.com/photos/1179229/pexels-photo-1179229.jpeg?auto=compress&cs=tinysrgb&w=1600", caption: "Canals of Amsterdam." },
+      { imageUrl: "https://images.pexels.com/photos/358319/pexels-photo-358319.jpeg?auto=compress&cs=tinysrgb&w=1600", caption: "Museum district." },
+      { imageUrl: "https://images.pexels.com/photos/1796727/pexels-photo-1796727.jpeg?auto=compress&cs=tinysrgb&w=1600", caption: "Jordaan." }
+    ],
+    mapEntryIds: ["amsterdam-airbnb"],
+    activities: [
+      { id: "amsterdam-airbnb", title: "Our Airbnb in Amsterdam", date: "Mar 6 – 9, 2026", label: "Netherlands · Amsterdam", description: "Add your accommodation description here.", entryType: "accommodation", link: "https://www.airbnb.com/rooms/YOUR_LISTING_ID", linkLabel: "View on Airbnb", mapEntryId: "amsterdam-airbnb", rating: 5, images: [] },
+      { id: "amsterdam-day-1", title: "Arrival", date: "March 6, 2026", label: "Netherlands · Amsterdam", description: "Add your notes.", images: [] },
+      { id: "amsterdam-day-2", title: "Exploring Amsterdam", date: "March 7, 2026", label: "Netherlands · Amsterdam", description: "Add your notes.", images: [] },
+      { id: "amsterdam-day-3", title: "Amsterdam", date: "March 8, 2026", label: "Netherlands · Amsterdam", description: "Add your notes.", images: [] },
+      { id: "amsterdam-day-4", title: "Departure", date: "March 9, 2026", label: "Netherlands · Amsterdam", description: "Add your notes.", images: [] }
+    ]
+  },
+  {
+    slug: "dublin",
+    title: "Dublin",
+    location: "Dublin",
+    country: "Ireland",
+    dateRange: "Mar 13 – 16, 2026",
+    locationTags: ["Dublin, Ireland"],
+    slideshow: [
+      { imageUrl: "https://images.pexels.com/photos/1113638/pexels-photo-1113638.jpeg?auto=compress&cs=tinysrgb&w=1600", caption: "Trinity College." },
+      { imageUrl: "https://images.pexels.com/photos/460740/pexels-photo-460740.jpeg?auto=compress&cs=tinysrgb&w=1600", caption: "Temple Bar." },
+      { imageUrl: "https://images.pexels.com/photos/461430/pexels-photo-461430.jpeg?auto=compress&cs=tinysrgb&w=1600", caption: "Dublin streets." }
+    ],
+    mapEntryIds: ["dublin-airbnb"],
+    activities: [
+      { id: "dublin-airbnb", title: "Our Airbnb in Dublin", date: "Mar 13 – 16, 2026", label: "Ireland · Dublin", description: "Add your accommodation description here.", entryType: "accommodation", link: "https://www.airbnb.com/rooms/YOUR_LISTING_ID", linkLabel: "View on Airbnb", mapEntryId: "dublin-airbnb", rating: 5, images: [] },
+      { id: "dublin-day-1", title: "Arrival", date: "March 13, 2026", label: "Ireland · Dublin", description: "Add your notes.", images: [] },
+      { id: "dublin-day-2", title: "Exploring Dublin", date: "March 14, 2026", label: "Ireland · Dublin", description: "Add your notes.", images: [] },
+      { id: "dublin-day-3", title: "Dublin", date: "March 15, 2026", label: "Ireland · Dublin", description: "Add your notes.", images: [] },
+      { id: "dublin-day-4", title: "Departure", date: "March 16, 2026", label: "Ireland · Dublin", description: "Add your notes.", images: [] }
+    ]
+  },
+  {
+    slug: "elenas-birthday",
+    title: "Elena's Birthday",
+    location: "Rome",
+    country: "Italy",
+    dateRange: "Mar 20 – 23, 2026",
+    locationTags: ["Rome, Italy"],
+    slideshow: [
+      { imageUrl: "https://images.pexels.com/photos/358319/pexels-photo-358319.jpeg?auto=compress&cs=tinysrgb&w=1600", caption: "Celebrating in Rome." },
+      { imageUrl: "https://images.pexels.com/photos/461430/pexels-photo-461430.jpeg?auto=compress&cs=tinysrgb&w=1600", caption: "Add your caption." },
+      { imageUrl: "https://images.pexels.com/photos/460740/pexels-photo-460740.jpeg?auto=compress&cs=tinysrgb&w=1600", caption: "Add your caption." }
+    ],
+    mapEntryIds: [],
+    activities: [
+      { id: "elenas-bday", title: "Elena's Birthday Weekend", date: "March 20, 2026", label: "Italy · Rome", description: "Add your notes for Elena's birthday celebration.", images: [] }
+    ]
+  },
+  {
+    slug: "paris",
+    title: "Paris",
+    location: "Paris",
+    country: "France",
+    dateRange: "Mar 27 – 30, 2026",
+    locationTags: ["Paris, France"],
+    slideshow: [
+      { imageUrl: "https://images.pexels.com/photos/460740/pexels-photo-460740.jpeg?auto=compress&cs=tinysrgb&w=1600", caption: "The Eiffel Tower." },
+      { imageUrl: "https://images.pexels.com/photos/1113638/pexels-photo-1113638.jpeg?auto=compress&cs=tinysrgb&w=1600", caption: "The Seine." },
+      { imageUrl: "https://images.pexels.com/photos/461430/pexels-photo-461430.jpeg?auto=compress&cs=tinysrgb&w=1600", caption: "Parisian streets." }
+    ],
+    mapEntryIds: ["paris-airbnb"],
+    activities: [
+      { id: "paris-airbnb", title: "Our Airbnb in Paris", date: "Mar 27 – 30, 2026", label: "France · Paris", description: "Add your accommodation description here.", entryType: "accommodation", link: "https://www.airbnb.com/rooms/YOUR_LISTING_ID", linkLabel: "View on Airbnb", mapEntryId: "paris-airbnb", rating: 5, images: [] },
+      { id: "paris-day-1", title: "Arrival", date: "March 27, 2026", label: "France · Paris", description: "Add your notes.", images: [] },
+      { id: "paris-day-2", title: "Exploring Paris", date: "March 28, 2026", label: "France · Paris", description: "Add your notes.", images: [] },
+      { id: "paris-day-3", title: "Paris", date: "March 29, 2026", label: "France · Paris", description: "Add your notes.", images: [] },
+      { id: "paris-day-4", title: "Departure", date: "March 30, 2026", label: "France · Paris", description: "Add your notes.", images: [] }
+    ]
+  },
+  {
+    slug: "malta",
+    title: "Malta",
+    location: "Valletta",
+    country: "Malta",
+    dateRange: "Apr 17 – 20, 2026",
+    locationTags: ["Malta"],
+    slideshow: [
+      { imageUrl: "https://images.pexels.com/photos/1796727/pexels-photo-1796727.jpeg?auto=compress&cs=tinysrgb&w=1600", caption: "Valletta." },
+      { imageUrl: "https://images.pexels.com/photos/167404/pexels-photo-167404.jpeg?auto=compress&cs=tinysrgb&w=1600", caption: "Blue Grotto." },
+      { imageUrl: "https://images.pexels.com/photos/1796726/pexels-photo-1796726.jpeg?auto=compress&cs=tinysrgb&w=1600", caption: "Mdina." }
+    ],
+    mapEntryIds: ["malta-airbnb"],
+    activities: [
+      { id: "malta-airbnb", title: "Our Airbnb in Malta", date: "Apr 17 – 20, 2026", label: "Malta", description: "Add your accommodation description here.", entryType: "accommodation", link: "https://www.airbnb.com/rooms/YOUR_LISTING_ID", linkLabel: "View on Airbnb", mapEntryId: "malta-airbnb", rating: 5, images: [] },
+      { id: "malta-day-1", title: "Arrival", date: "April 17, 2026", label: "Malta", description: "Add your notes.", images: [] },
+      { id: "malta-day-2", title: "Exploring Malta", date: "April 18, 2026", label: "Malta", description: "Add your notes.", images: [] },
+      { id: "malta-day-3", title: "Malta", date: "April 19, 2026", label: "Malta", description: "Add your notes.", images: [] },
+      { id: "malta-day-4", title: "Departure", date: "April 20, 2026", label: "Malta", description: "Add your notes.", images: [] }
+    ]
+  },
+  {
+    slug: "milan",
+    title: "Milan",
     location: "Milan",
     country: "Italy",
-    dateRange: "Nov 21 – 23, 2026",
+    dateRange: "May 8 – 11, 2026",
+    locationTags: ["Milan, Italy"],
     slideshow: [
-      {
-        imageUrl: "https://images.pexels.com/photos/1008155/pexels-photo-1008155.jpeg?auto=compress&cs=tinysrgb&w=1600",
-        caption: "The Duomo and Galleria Vittorio Emanuele II."
-      },
-      {
-        imageUrl: "https://images.pexels.com/photos/2360673/pexels-photo-2360673.jpeg?auto=compress&cs=tinysrgb&w=1600",
-        caption: "Aperitivo hour in Navigli."
-      }
+      { imageUrl: "https://images.pexels.com/photos/1008155/pexels-photo-1008155.jpeg?auto=compress&cs=tinysrgb&w=1600", caption: "The Duomo." },
+      { imageUrl: "https://images.pexels.com/photos/2360673/pexels-photo-2360673.jpeg?auto=compress&cs=tinysrgb&w=1600", caption: "Navigli." },
+      { imageUrl: "https://images.pexels.com/photos/461430/pexels-photo-461430.jpeg?auto=compress&cs=tinysrgb&w=1600", caption: "Galleria Vittorio Emanuele." }
     ],
+    mapEntryIds: ["milan-airbnb"],
     activities: [
-      {
-        id: "duomo-rooftop",
-        title: "The Duomo from above",
-        date: "Nov 22, 2026",
-        label: "Milan · Centro",
-        description: "We climbed to the rooftop. Spires and statues everywhere, close enough to touch. The view of the city—flat and endless—made Rome feel like a village. We stayed until they kicked us out."
-      },
-      {
-        id: "aperitivo-navigli",
-        title: "Aperitivo along the canals",
-        date: "Nov 22, 2026",
-        label: "Milan · Navigli",
-        description: "Spritzes and little plates of olives, cheese, and bread. The canals were lit with string lights. We sat outside in November—everyone had a blanket—and pretended we weren't cold."
-      }
-    ],
-    mapEntryIds: []
-  },
-  {
-    slug: "lake-como-quiet-water",
-    title: "Lake Como – Quiet Water",
-    location: "Lake Como",
-    country: "Italy",
-    dateRange: "Nov 28 – 30, 2026",
-    slideshow: [
-      {
-        imageUrl: "https://images.pexels.com/photos/1674046/pexels-photo-1674046.jpeg?auto=compress&cs=tinysrgb&w=1600",
-        caption: "Varenna at golden hour."
-      },
-      {
-        imageUrl: "https://images.pexels.com/photos/409127/pexels-photo-409127.jpeg?auto=compress&cs=tinysrgb&w=1600",
-        caption: "Ferry crossing the lake, mountains on every side."
-      }
-    ],
-    activities: [
-      {
-        id: "ferry-hop",
-        title: "Ferry-hopping between villages",
-        date: "Nov 29, 2026",
-        label: "Lake Como",
-        description: "We took the ferry from Bellagio to Varenna to Menaggio. Each village was smaller and quieter than the last. We had lunch in a place with three tables. The lake was still, the mountains sharp against the sky. Everything felt slowed down."
-      },
-      {
-        id: "villa-gardens",
-        title: "Villa gardens in the off-season",
-        date: "Nov 30, 2026",
-        label: "Lake Como · Tremezzo",
-        description: "The tourist season was over. We had Villa Carlotta's gardens mostly to ourselves. Empty fountains, bare branches, a few camellias already blooming. It felt like we'd found a secret version of the lake."
-      }
-    ],
-    mapEntryIds: []
-  },
-  {
-    slug: "munich-christmas-markets",
-    title: "Munich – Christmas Markets",
-    location: "Munich",
-    country: "Germany",
-    dateRange: "Dec 5 – 7, 2026",
-    slideshow: [
-      {
-        imageUrl: "https://images.pexels.com/photos/236699/pexels-photo-236699.jpeg?auto=compress&cs=tinysrgb&w=1600",
-        caption: "Marienplatz Christmas market at dusk."
-      },
-      {
-        imageUrl: "https://images.pexels.com/photos/2916828/pexels-photo-2916828.jpeg?auto=compress&cs=tinysrgb&w=1600",
-        caption: "Glühwein and gingerbread in the cold."
-      }
-    ],
-    activities: [
-      {
-        id: "christmas-markets",
-        title: "Glühwein and lebkuchen",
-        date: "Dec 6, 2026",
-        label: "Munich · Marienplatz",
-        description: "We hit four markets in one day. Each had its own character—one was medieval, one was for crafts, one was tiny and hidden in a courtyard. We drank glühwein until our fingers thawed and bought more ornaments than we could carry."
-      },
-      {
-        id: "english-garden",
-        title: "The English Garden in winter",
-        date: "Dec 7, 2026",
-        label: "Munich · Englischer Garten",
-        description: "The park was frozen and quiet. We walked along the creek, past bare trees and empty beer gardens. A few surfers were still riding the Eisbach wave in wetsuits. We stood and watched them until our noses went numb."
-      }
-    ],
-    mapEntryIds: []
+      { id: "milan-airbnb", title: "Our Airbnb in Milan", date: "May 8 – 11, 2026", label: "Italy · Milan", description: "Add your accommodation description here.", entryType: "accommodation", link: "https://www.airbnb.com/rooms/YOUR_LISTING_ID", linkLabel: "View on Airbnb", mapEntryId: "milan-airbnb", rating: 5, images: [] },
+      { id: "milan-day-1", title: "Arrival", date: "May 8, 2026", label: "Italy · Milan", description: "Add your notes.", images: [] },
+      { id: "milan-day-2", title: "Exploring Milan", date: "May 9, 2026", label: "Italy · Milan", description: "Add your notes.", images: [] },
+      { id: "milan-day-3", title: "Milan", date: "May 10, 2026", label: "Italy · Milan", description: "Add your notes.", images: [] },
+      { id: "milan-day-4", title: "Departure", date: "May 11, 2026", label: "Italy · Milan", description: "Add your notes.", images: [] }
+    ]
   }
 ];
 
 export function getTripPageBySlug(slug: string): TripPage | undefined {
-  return TRIP_PAGES.find((trip) => trip.slug === slug);
+  if (!slug) return undefined;
+  const lower = slug.toLowerCase();
+  return TRIP_PAGES.find((trip) => trip.slug.toLowerCase() === lower);
 }
 
 /** All trips for overview page. Add/remove trips in TRIP_PAGES above. */

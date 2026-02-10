@@ -27,6 +27,157 @@
           "icon": "☀️"
         }
       ]
+    },
+    {
+      "slug": "Lisbon",
+      "location": "Lisbon, Portugal",
+      "dateRange": "Feb 6 – 8, 2026",
+      "days": [
+        {
+          "label": "Fri",
+          "high": 62,
+          "low": 50,
+          "summary": "Arrival day – mild and partly cloudy, perfect for a first wander.",
+          "icon": "⛅"
+        },
+        {
+          "label": "Sat",
+          "high": 64,
+          "low": 52,
+          "summary": "Sunny and pleasant for wandering the hills.",
+          "icon": "☀️"
+        },
+        {
+          "label": "Sun",
+          "high": 63,
+          "low": 51,
+          "summary": "Warm enough for the waterfront, miradouros, and pastéis de nata.",
+          "icon": "🌤️"
+        }
+      ]
+    },
+    {
+      "slug": "florence-first-weekend",
+      "location": "Florence, Italy",
+      "dateRange": "Feb 13 – 16, 2026",
+      "days": [
+        {
+          "label": "Thu",
+          "high": 58,
+          "low": 42,
+          "summary": "Cool and clear for the Duomo and first wander.",
+          "icon": "⛅"
+        },
+        {
+          "label": "Fri",
+          "high": 60,
+          "low": 44,
+          "summary": "Sunny enough for gelato by the Arno.",
+          "icon": "☀️"
+        },
+        {
+          "label": "Sat",
+          "high": 59,
+          "low": 43,
+          "summary": "Mild and bright for museums and side streets.",
+          "icon": "🌤️"
+        },
+        {
+          "label": "Sun",
+          "high": 57,
+          "low": 41,
+          "summary": "Golden light before the train back.",
+          "icon": "☀️"
+        }
+      ]
+    },
+    {
+      "slug": "prague",
+      "location": "Prague, Czech Republic",
+      "dateRange": "Feb 20 – 23, 2026",
+      "days": [
+        { "label": "Fri", "high": 42, "low": 32, "summary": "Cold and crisp for Charles Bridge.", "icon": "❄️" },
+        { "label": "Sat", "high": 44, "low": 33, "summary": "Clear winter light on the castle.", "icon": "⛅" },
+        { "label": "Sun", "high": 43, "low": 32, "summary": "Brisk for cobblestones and trdelník.", "icon": "☁️" },
+        { "label": "Mon", "high": 41, "low": 31, "summary": "Chilly before the train.", "icon": "❄️" }
+      ]
+    },
+    {
+      "slug": "budapest-vienna",
+      "location": "Budapest/Vienna",
+      "dateRange": "Feb 27 – Mar 2, 2026",
+      "days": [
+        { "label": "Fri", "high": 46, "low": 35, "summary": "Cool for thermal baths and ruin bars.", "icon": "⛅" },
+        { "label": "Sat", "high": 48, "low": 36, "summary": "Mild for Parliament and Danube views.", "icon": "☀️" },
+        { "label": "Sun", "high": 47, "low": 35, "summary": "Bright for Vienna or Budapest exploring.", "icon": "🌤️" },
+        { "label": "Mon", "high": 45, "low": 34, "summary": "Soft light before heading back.", "icon": "☁️" }
+      ]
+    },
+    {
+      "slug": "amsterdam",
+      "location": "Amsterdam, Netherlands",
+      "dateRange": "Mar 6 – 9, 2026",
+      "days": [
+        { "label": "Fri", "high": 52, "low": 40, "summary": "Cool for canals and first wander.", "icon": "⛅" },
+        { "label": "Sat", "high": 54, "low": 42, "summary": "Mild for bikes and museums.", "icon": "☀️" },
+        { "label": "Sun", "high": 53, "low": 41, "summary": "Bright for the Jordaan.", "icon": "🌤️" },
+        { "label": "Mon", "high": 51, "low": 39, "summary": "Soft morning light.", "icon": "☁️" }
+      ]
+    },
+    {
+      "slug": "elenas-birthday",
+      "location": "Rome, Italy",
+      "dateRange": "Mar 20 – 23, 2026",
+      "days": [
+        { "label": "Fri", "high": 60, "low": 46, "summary": "Spring weather for celebrating.", "icon": "🎂" },
+        { "label": "Sat", "high": 62, "low": 48, "summary": "Warm enough for outdoor plans.", "icon": "☀️" },
+        { "label": "Sun", "high": 61, "low": 47, "summary": "Mild and pleasant.", "icon": "🌤️" },
+        { "label": "Mon", "high": 59, "low": 45, "summary": "Soft light to end the weekend.", "icon": "⛅" }
+      ]
+    },
+    {
+      "slug": "dublin",
+      "location": "Dublin, Ireland",
+      "dateRange": "Mar 13 – 16, 2026",
+      "days": [
+        { "label": "Fri", "high": 52, "low": 41, "summary": "Cool and possibly damp—pack a raincoat.", "icon": "🌧️" },
+        { "label": "Sat", "high": 53, "low": 42, "summary": "Classic Dublin weather for pubs.", "icon": "⛅" },
+        { "label": "Sun", "high": 52, "low": 40, "summary": "Mild for Trinity and Grafton St.", "icon": "☁️" },
+        { "label": "Mon", "high": 50, "low": 39, "summary": "Brisk before the flight.", "icon": "🌧️" }
+      ]
+    },
+    {
+      "slug": "paris",
+      "location": "Paris, France",
+      "dateRange": "Mar 27 – 30, 2026",
+      "days": [
+        { "label": "Fri", "high": 58, "low": 44, "summary": "Spring light on the Louvre.", "icon": "☀️" },
+        { "label": "Sat", "high": 60, "low": 46, "summary": "Perfect for croissants and the Seine.", "icon": "🌤️" },
+        { "label": "Sun", "high": 59, "low": 45, "summary": "Warm enough for outdoor cafés.", "icon": "⛅" },
+        { "label": "Mon", "high": 57, "low": 43, "summary": "Golden hour before leaving.", "icon": "☀️" }
+      ]
+    },
+    {
+      "slug": "malta",
+      "location": "Malta",
+      "dateRange": "Apr 17 – 20, 2026",
+      "days": [
+        { "label": "Fri", "high": 68, "low": 56, "summary": "Warm and sunny for Valletta.", "icon": "☀️" },
+        { "label": "Sat", "high": 70, "low": 58, "summary": "Perfect for the Blue Grotto.", "icon": "🌤️" },
+        { "label": "Sun", "high": 69, "low": 57, "summary": "Bright for Mdina and beaches.", "icon": "☀️" },
+        { "label": "Mon", "high": 67, "low": 55, "summary": "Last rays before heading back.", "icon": "⛅" }
+      ]
+    },
+    {
+      "slug": "milan",
+      "location": "Milan, Italy",
+      "dateRange": "May 8 – 11, 2026",
+      "days": [
+        { "label": "Fri", "high": 72, "low": 56, "summary": "Warm for the Duomo rooftop.", "icon": "☀️" },
+        { "label": "Sat", "high": 74, "low": 58, "summary": "Sunny for Navigli and aperitivo.", "icon": "🌤️" },
+        { "label": "Sun", "high": 73, "low": 57, "summary": "Perfect spring weather.", "icon": "☀️" },
+        { "label": "Mon", "high": 71, "low": 55, "summary": "Warm light before the train.", "icon": "⛅" }
+      ]
     }
   ]
 }
