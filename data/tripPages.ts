@@ -163,12 +163,12 @@ export const TRIP_PAGES: TripPage[] = [
         label: "Switzerland · Lucerne",
         description: "",
         images: [
-          { imageUrl: "/lucerne-1.png", caption: "Twilight by the river." },
-          { imageUrl: "/lucerne-2.png", caption: "Chapel Bridge and Water Tower." },
-          { imageUrl: "/lucerne-3.png", caption: "Evening by the water." },
-          { imageUrl: "/lucerne-4.png", caption: "City lights on the Reuss." },
-          { imageUrl: "/lucerne-5.png", caption: "Night in the old town." },
-          { imageUrl: "/lucerne-6.png", caption: "By the water at night." }
+          { imageUrl: "/lucerne-1.png" },
+          { imageUrl: "/lucerne-2.png" },
+          { imageUrl: "/lucerne-3.png" },
+          { imageUrl: "/lucerne-4.png" },
+          { imageUrl: "/lucerne-5.png" },
+          { imageUrl: "/lucerne-6.png" }
         ]
       },
       {
@@ -178,8 +178,8 @@ export const TRIP_PAGES: TripPage[] = [
         label: "Switzerland · Zurich",
         description: "",
         images: [
-          { imageUrl: "/zurich-1.png", caption: "Swan on the Limmat." },
-          { imageUrl: "/zurich-2.png", caption: "Panoramic view along the river." }
+          { imageUrl: "/zurich-1.png" },
+          { imageUrl: "/zurich-2.png" }
         ]
       }
     ]
@@ -193,19 +193,26 @@ export const TRIP_PAGES: TripPage[] = [
     locationTags: ["Lisbon, Portugal"],
     slideshow: [
       {
-        imageUrl: "https://images.pexels.com/photos/356618/pexels-photo-356618.jpeg?auto=compress&cs=tinysrgb&w=1600",
-        caption: "Lisbon skyline and the Tagus."
+        imageUrl: "/lisbon-1.png",
+        caption: "Vintage cars crossing Praça do Comércio after the rain."
       },
       {
-        imageUrl: "https://images.pexels.com/photos/1118869/pexels-photo-1118869.jpeg?auto=compress&cs=tinysrgb&w=1600",
-        caption: "Pastel de nata and coffee."
+        imageUrl: "/lisbon-2.png",
+        caption: "Umbrellas over Pink Street on a crowded Saturday night."
       },
       {
-        imageUrl: "https://images.pexels.com/photos/1118866/pexels-photo-1118866.jpeg?auto=compress&cs=tinysrgb&w=1600",
-        caption: "Tram 28 through Alfama."
+        imageUrl: "/lisbon-3.png",
+        caption: "Morning light on the tram tracks and tiled sidewalks."
       }
     ],
-    mapEntryIds: ["lisbon-airbnb"],
+    mapEntryIds: [
+      "lisbon-airbnb",
+      "lisbon-honest-greens",
+      "lisbon-da-noi",
+      "lisbon-o-petit",
+      "lisbon-peixola",
+      "lisbon-manteigaria"
+    ],
     activities: [
       {
         id: "lisbon-airbnb",
@@ -221,8 +228,17 @@ export const TRIP_PAGES: TripPage[] = [
         images: []
       },
       {
+        id: "lisbon-honest-greens",
+        title: "Eating breakfast at Honest Greens",
+        date: "February 6, 2026",
+        label: "Portugal · Lisbon",
+        description: "Add your notes about breakfast at Honest Greens.",
+        images: [],
+        mapEntryId: "lisbon-honest-greens"
+      },
+      {
         id: "lisbon-day-1",
-        title: "Arrival",
+        title: "Sintra",
         date: "February 6, 2026",
         label: "Portugal · Lisbon",
         description: "Add your notes for the first day.",
@@ -230,27 +246,47 @@ export const TRIP_PAGES: TripPage[] = [
       },
       {
         id: "lisbon-day-2",
-        title: "Exploring Lisbon",
+        title: "Dinner at De Noi",
         date: "February 7, 2026",
         label: "Portugal · Lisbon",
         description: "Add your notes for the second day.",
-        images: []
+        images: [],
+        mapEntryId: "lisbon-da-noi"
       },
       {
         id: "lisbon-day-3",
-        title: "Lisbon",
+        title: "Walking tour around Lisbon",
         date: "February 8, 2026",
         label: "Portugal · Lisbon",
         description: "Add your notes for the third day.",
         images: []
       },
       {
+        id: "lisbon-pasteis-manteigaria",
+        title: "Pastéis de nata at Manteigaria",
+        date: "February 8, 2026",
+        label: "Portugal · Lisbon",
+        description: "Add your notes about stopping for pastéis de nata at Manteigaria.",
+        images: [],
+        mapEntryId: "lisbon-manteigaria"
+      },
+      {
         id: "lisbon-day-4",
-        title: "Departure",
+        title: "Lunch at O Petit",
         date: "February 9, 2026",
         label: "Portugal · Lisbon",
         description: "Add your notes for the last day.",
-        images: []
+        images: [],
+        mapEntryId: "lisbon-o-petit"
+      },
+      {
+        id: "lisbon-dinner-paixolo",
+        title: "Dinner at Paixolo",
+        date: "February 9, 2026",
+        label: "Portugal · Lisbon",
+        description: "Add your notes about dinner at Paixolo.",
+        images: [],
+        mapEntryId: "lisbon-peixola"
       }
     ]
   },

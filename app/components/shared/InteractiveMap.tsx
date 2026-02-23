@@ -1,7 +1,7 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import { useEffect, useMemo, useState } from "react";
+import { GeoJSON, MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
 import type { Map as LeafletMap } from "leaflet";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
@@ -37,6 +37,41 @@ interface InteractiveMapProps {
   height?: string;
   showDetailPanel?: boolean;
   className?: string;
+}
+
+type CountryBounds = {
+  type: string;
+  properties?: {
+    name?: string;
+  };
+  geometry: {
+    type: string;
+    coordinates: unknown;
+  };
+};
+
+type CountryFeatureCollection = {
+  type: "FeatureCollection";
+  features: CountryBounds[];
+};
+
+const COUNTRY_NAME_TO_ISO3: Record<string, string> = {
+  italy: "ITA",
+  switzerland: "CHE",
+  portugal: "PRT",
+  "czech republic": "CZE",
+  hungary: "HUN",
+  netherlands: "NLD",
+  ireland: "IRL",
+  france: "FRA",
+  malta: "MLT"
+};
+
+const COUNTRY_GEOJSON_BASE =
+  "https://raw.githubusercontent.com/johan/world.geo.json/master/countries";
+
+function normalizeCountry(country: string): string {
+  return country.trim().toLowerCase();
 }
 
 interface DetailPanelProps {
@@ -159,6 +194,76 @@ export function InteractiveMap({
 }: InteractiveMapProps) {
   const [selected, setSelected] = useState<MapEntry | null>(null);
   const [map, setMap] = useState<LeafletMap | null>(null);
+  const [visitedCountryGeoJson, setVisitedCountryGeoJson] =
+    useState<CountryFeatureCollection | null>(null);
+
+  const visitedCountryCodes = useMemo(
+    () =>
+      Array.from(
+        new Set(
+          entries
+            .map((entry) => COUNTRY_NAME_TO_ISO3[normalizeCountry(entry.country)])
+            .filter((code): code is string => !!code)
+        )
+      ),
+    [entries]
+  );
+
+  useEffect(() => {
+    let cancelled = false;
+
+    async function loadCountryShapes() {
+      if (visitedCountryCodes.length === 0) {
+        setVisitedCountryGeoJson(null);
+        return;
+      }
+
+      try {
+        const responses = await Promise.all(
+          visitedCountryCodes.map((code) =>
+            fetch(`${COUNTRY_GEOJSON_BASE}/${code}.geo.json`).then((res) =>
+              res.ok ? res.json() : null
+            )
+          )
+        );
+
+        if (cancelled) return;
+
+        const features = responses
+          .flatMap((item) => {
+            if (!item || typeof item !== "object") return [];
+            const maybeCollection = item as {
+              type?: string;
+              features?: CountryBounds[];
+            };
+
+            if (
+              maybeCollection.type === "FeatureCollection" &&
+              Array.isArray(maybeCollection.features)
+            ) {
+              return maybeCollection.features;
+            }
+
+            return [item as CountryBounds];
+          })
+          .filter((feature) => feature?.type === "Feature");
+
+        setVisitedCountryGeoJson({
+          type: "FeatureCollection",
+          features
+        });
+      } catch {
+        // If country overlay fails to load, keep map usable without blocking markers.
+        if (!cancelled) setVisitedCountryGeoJson(null);
+      }
+    }
+
+    loadCountryShapes();
+
+    return () => {
+      cancelled = true;
+    };
+  }, [visitedCountryCodes]);
 
   useEffect(() => {
     if (map && selected) {
@@ -201,6 +306,20 @@ export function InteractiveMap({
               attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
               url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             />
+
+            {/* Light pink overlay for countries you've visited */}
+            {visitedCountryGeoJson && visitedCountryGeoJson.features.length > 0 && (
+              <GeoJSON
+                data={visitedCountryGeoJson as unknown as GeoJSON.GeoJsonObject}
+                interactive={false}
+                style={{
+                  color: "#f9a8d4",
+                  weight: 1,
+                  fillColor: "#fbcfe8",
+                  fillOpacity: 0.28
+                }}
+              />
+            )}
 
             {entries.map((entry) => (
               <Marker

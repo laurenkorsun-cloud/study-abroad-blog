@@ -93,5 +93,75 @@
       "https://images.pexels.com/photos/7362872/pexels-photo-7362872.jpeg?auto=compress&cs=tinysrgb&w=1600"
     ],
     "relatedTripSlugs": ["paris-fall-break"]
+  },
+  {
+    "id": "lisbon-honest-greens",
+    "name": "Honest Greens",
+    "city": "Lisbon",
+    "country": "Portugal",
+    "neighborhood": "",
+    "lat": 38.718,
+    "lng": -9.142,
+    "rating": 0,
+    "notes": "Add your review and notes here.",
+    "highlight": "Add your highlight here.",
+    "imageUrls": [],
+    "relatedTripSlugs": ["Lisbon"]
+  },
+  {
+    "id": "lisbon-da-noi",
+    "name": "Da Noi",
+    "city": "Lisbon",
+    "country": "Portugal",
+    "neighborhood": "Madragoa",
+    "lat": 38.70881,
+    "lng": -9.156186,
+    "rating": 0,
+    "notes": "Add your review and notes here.",
+    "highlight": "Add your highlight here.",
+    "imageUrls": [],
+    "relatedTripSlugs": ["Lisbon"]
+  },
+  {
+    "id": "lisbon-o-petit",
+    "name": "O Petit",
+    "city": "Lisbon",
+    "country": "Portugal",
+    "neighborhood": "",
+    "lat": 38.7173562,
+    "lng": -9.1302824,
+    "rating": 0,
+    "notes": "Add your review and notes here.",
+    "highlight": "Add your highlight here.",
+    "imageUrls": [],
+    "relatedTripSlugs": ["Lisbon"]
+  },
+  {
+    "id": "lisbon-peixola",
+    "name": "Peixola",
+    "city": "Lisbon",
+    "country": "Portugal",
+    "neighborhood": "Chiado",
+    "lat": 38.7089,
+    "lng": -9.1448,
+    "rating": 0,
+    "notes": "Add your review and notes here.",
+    "highlight": "Add your highlight here.",
+    "imageUrls": [],
+    "relatedTripSlugs": ["Lisbon"]
+  },
+  {
+    "id": "lisbon-manteigaria",
+    "name": "Manteigaria",
+    "city": "Lisbon",
+    "country": "Portugal",
+    "neighborhood": "Chiado",
+    "lat": 38.7107605,
+    "lng": -9.1439932,
+    "rating": 0,
+    "notes": "Add your review and notes here.",
+    "highlight": "Add your highlight here.",
+    "imageUrls": [],
+    "relatedTripSlugs": ["Lisbon"]
   }
 ]
