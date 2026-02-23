@@ -105,7 +105,9 @@
     "rating": 0,
     "notes": "Add your review and notes here.",
     "highlight": "Add your highlight here.",
-    "imageUrls": [],
+    "imageUrls": [
+      "/honest-greens-lisbon.png"
+    ],
     "relatedTripSlugs": ["Lisbon"]
   },
   {
@@ -119,7 +121,10 @@
     "rating": 0,
     "notes": "Add your review and notes here.",
     "highlight": "Add your highlight here.",
-    "imageUrls": [],
+    "imageUrls": [
+      "/de-noi-1.png",
+      "/de-noi-2.png"
+    ],
     "relatedTripSlugs": ["Lisbon"]
   },
   {
@@ -133,7 +138,11 @@
     "rating": 0,
     "notes": "Add your review and notes here.",
     "highlight": "Add your highlight here.",
-    "imageUrls": [],
+    "imageUrls": [
+      "/o-petit-1.png",
+      "/o-petit-2.png",
+      "/o-petit-3.png"
+    ],
     "relatedTripSlugs": ["Lisbon"]
   },
   {
@@ -147,7 +156,13 @@
     "rating": 0,
     "notes": "Add your review and notes here.",
     "highlight": "Add your highlight here.",
-    "imageUrls": [],
+    "imageUrls": [
+      "/paixolo-1.png",
+      "/paixolo-2.png",
+      "/paixolo-3.png",
+      "/paixolo-4.png",
+      "/paixolo-5.png"
+    ],
     "relatedTripSlugs": ["Lisbon"]
   },
   {
@@ -161,7 +176,9 @@
     "rating": 0,
     "notes": "Add your review and notes here.",
     "highlight": "Add your highlight here.",
-    "imageUrls": [],
+    "imageUrls": [
+      "/manteigaria-1.png"
+    ],
     "relatedTripSlugs": ["Lisbon"]
   }
 ]

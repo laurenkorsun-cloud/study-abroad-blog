@@ -233,7 +233,9 @@ export const TRIP_PAGES: TripPage[] = [
         date: "February 6, 2026",
         label: "Portugal · Lisbon",
         description: "Add your notes about breakfast at Honest Greens.",
-        images: [],
+        images: [
+          { imageUrl: "/honest-greens-lisbon.png" }
+        ],
         mapEntryId: "lisbon-honest-greens"
       },
       {
@@ -242,7 +244,13 @@ export const TRIP_PAGES: TripPage[] = [
         date: "February 6, 2026",
         label: "Portugal · Lisbon",
         description: "Add your notes for the first day.",
-        images: []
+        images: [
+          { imageUrl: "/sintra-1.png" },
+          { imageUrl: "/sintra-2.png" },
+          { imageUrl: "/sintra-3.png" },
+          { imageUrl: "/sintra-4.png" },
+          { imageUrl: "/sintra-5.png" }
+        ]
       },
       {
         id: "lisbon-day-2",
@@ -250,7 +258,10 @@ export const TRIP_PAGES: TripPage[] = [
         date: "February 7, 2026",
         label: "Portugal · Lisbon",
         description: "Add your notes for the second day.",
-        images: [],
+        images: [
+          { imageUrl: "/de-noi-1.png" },
+          { imageUrl: "/de-noi-2.png" }
+        ],
         mapEntryId: "lisbon-da-noi"
       },
       {
@@ -259,7 +270,14 @@ export const TRIP_PAGES: TripPage[] = [
         date: "February 8, 2026",
         label: "Portugal · Lisbon",
         description: "Add your notes for the third day.",
-        images: []
+        images: [
+          { imageUrl: "/lisbon-tour-1.png" },
+          { imageUrl: "/lisbon-tour-2.png" },
+          { imageUrl: "/lisbon-tour-3.png" },
+          { imageUrl: "/lisbon-tour-4.png" },
+          { imageUrl: "/lisbon-tour-5.png" },
+          { imageUrl: "/lisbon-tour-6.png" }
+        ]
       },
       {
         id: "lisbon-pasteis-manteigaria",
@@ -267,7 +285,9 @@ export const TRIP_PAGES: TripPage[] = [
         date: "February 8, 2026",
         label: "Portugal · Lisbon",
         description: "Add your notes about stopping for pastéis de nata at Manteigaria.",
-        images: [],
+        images: [
+          { imageUrl: "/manteigaria-1.png" }
+        ],
         mapEntryId: "lisbon-manteigaria"
       },
       {
@@ -276,7 +296,11 @@ export const TRIP_PAGES: TripPage[] = [
         date: "February 9, 2026",
         label: "Portugal · Lisbon",
         description: "Add your notes for the last day.",
-        images: [],
+        images: [
+          { imageUrl: "/o-petit-1.png" },
+          { imageUrl: "/o-petit-2.png" },
+          { imageUrl: "/o-petit-3.png" }
+        ],
         mapEntryId: "lisbon-o-petit"
       },
       {
@@ -285,7 +309,13 @@ export const TRIP_PAGES: TripPage[] = [
         date: "February 9, 2026",
         label: "Portugal · Lisbon",
         description: "Add your notes about dinner at Paixolo.",
-        images: [],
+        images: [
+          { imageUrl: "/paixolo-1.png" },
+          { imageUrl: "/paixolo-2.png" },
+          { imageUrl: "/paixolo-3.png" },
+          { imageUrl: "/paixolo-4.png" },
+          { imageUrl: "/paixolo-5.png" }
+        ],
         mapEntryId: "lisbon-peixola"
       }
     ]

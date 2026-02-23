@@ -1,44 +1,44 @@
 {
   "hero": {
     "label": "Semester Abroad · 2026",
-    "title": "A visual diary of the months I called Europe home.",
-    "description": "From slow mornings in Rome to spontaneous weekend trains, this journal gathers the small details, the messy in-betweens, and the moments I never want to forget.",
+    "title": "Abroad Adventures!",
+    "description": "",
     "primaryButton": "Start in Rome",
     "primaryButtonHref": "/rome",
     "secondaryButton": "Browse weekend trips",
     "secondaryButtonHref": "/weekend-trips",
-    "backgroundImage": "https://images.pexels.com/photos/4606725/pexels-photo-4606725.jpeg?auto=compress&cs=tinysrgb&w=1600"
+    "backgroundImage": "/home-hero-rome.png"
   },
   "sections": [
     {
       "id": "rome",
       "label": "Rome",
-      "title": "Finding a rhythm in the city of endless layers",
-      "description": "My home base: cobblestone streets, grocery runs in Italian, late-afternoon light on terracotta rooftops, and the tiny routines that slowly turned Rome into home.",
+      "title": "Life in Rome!",
+      "description": "Trastevere: cobblestone streets, grocery runs in Italian and late-night gelato runs.",
       "href": "/rome",
       "imageUrl": "/rome-home-base.png"
     },
     {
       "id": "weekend-trips",
       "label": "Weekend Trips",
-      "title": "Chasing new cities between classes and deadlines",
-      "description": "Fast trains, packed backpacks, and just enough time to fall in love with somewhere new. These are the quick escapes that shaped the semester in unexpected ways.",
+      "title": "My Trips",
+      "description": "These were my quick glimpses around the world.",
       "href": "/weekend-trips",
-      "imageUrl": "https://images.pexels.com/photos/286763/pexels-photo-286763.jpeg?auto=compress&cs=tinysrgb&w=1600"
+      "imageUrl": "/my-trips.png"
     },
     {
       "id": "food",
       "label": "Food",
-      "title": "Meals that anchored me to each place",
-      "description": "Plates of cacio e pepe, flaky pastries eaten on the go, market finds, and long dinners with new friends. This space is for the flavors I never want to forget.",
+      "title": "Food of the World",
+      "description": "All the restaurants, cafes, and more I ate in throughout the semester.",
       "href": "/food",
-      "imageUrl": "https://images.pexels.com/photos/1437267/pexels-photo-1437267.jpeg?auto=compress&cs=tinysrgb&w=1600"
+      "imageUrl": "/food-home.png"
     }
   ],
   "mapPreview": {
     "label": "Map Preview",
     "title": "Tracing everywhere this semester takes me",
-    "description": "A real map view of Rome and the weekend trips that orbit around it. Each marker is a place I'll eventually fill with photos and stories.",
+    "description": "",
     "ctaButton": "View weekend trips",
     "ctaHref": "/weekend-trips"
   }

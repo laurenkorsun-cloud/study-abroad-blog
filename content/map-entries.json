@@ -249,7 +249,9 @@
     "city": "Lisbon",
     "country": "Portugal",
     "pageSlug": "/weekend-trips/Lisbon",
-    "images": [],
+    "images": [
+      "/honest-greens-lisbon.png"
+    ],
     "notes": "Add your review and notes here.",
     "rating": 0,
     "tags": ["lisbon", "restaurant", "healthy"]
@@ -263,7 +265,10 @@
     "city": "Lisbon",
     "country": "Portugal",
     "pageSlug": "/weekend-trips/Lisbon",
-    "images": [],
+    "images": [
+      "/de-noi-1.png",
+      "/de-noi-2.png"
+    ],
     "notes": "Add your review and notes here.",
     "rating": 0,
     "tags": ["lisbon", "restaurant", "dinner"]
@@ -277,7 +282,11 @@
     "city": "Lisbon",
     "country": "Portugal",
     "pageSlug": "/weekend-trips/Lisbon",
-    "images": [],
+    "images": [
+      "/o-petit-1.png",
+      "/o-petit-2.png",
+      "/o-petit-3.png"
+    ],
     "notes": "Add your review and notes here.",
     "rating": 0,
     "tags": ["lisbon", "restaurant", "lunch"]
@@ -291,7 +300,13 @@
     "city": "Lisbon",
     "country": "Portugal",
     "pageSlug": "/weekend-trips/Lisbon",
-    "images": [],
+    "images": [
+      "/paixolo-1.png",
+      "/paixolo-2.png",
+      "/paixolo-3.png",
+      "/paixolo-4.png",
+      "/paixolo-5.png"
+    ],
     "notes": "Add your review and notes here.",
     "rating": 0,
     "tags": ["lisbon", "restaurant", "seafood"]
@@ -305,7 +320,9 @@
     "city": "Lisbon",
     "country": "Portugal",
     "pageSlug": "/weekend-trips/Lisbon",
-    "images": [],
+    "images": [
+      "/manteigaria-1.png"
+    ],
     "notes": "Add your review and notes here.",
     "rating": 0,
     "tags": ["lisbon", "bakery", "pastel-de-nata"]

@@ -32,14 +32,14 @@ function SectionCard({
       <div
         className="pointer-events-none absolute inset-0"
         style={{
-          backgroundImage: `linear-gradient(to bottom, rgba(15,23,42,0.2), rgba(15,23,42,0.85)), url(${imageUrl})`,
+          backgroundImage: `linear-gradient(to bottom, rgba(15,23,42,0.12), rgba(15,23,42,0.62)), url(${imageUrl})`,
           backgroundSize: "cover",
           backgroundPosition: "center"
         }}
         aria-hidden="true"
       />
 
-      <div className="relative z-10 flex flex-col justify-between gap-6 px-6 py-10 md:flex-row md:items-center md:px-10 md:py-14">
+      <div className="relative z-10 flex min-h-[42vh] flex-col justify-between gap-6 px-6 py-12 md:min-h-[50vh] md:flex-row md:items-center md:px-10 md:py-16">
         <div className="space-y-3 md:max-w-lg">
           <p className="text-xs font-semibold uppercase tracking-[0.25em] text-slate-300">
             {label}
@@ -77,8 +77,8 @@ export default function HomePage() {
           aria-hidden="true"
         />
 
-        <div className="relative z-10 px-6 py-14 md:px-10 md:py-20">
-          <div className="max-w-xl space-y-5">
+        <div className="relative z-10 flex min-h-[68vh] items-center px-6 py-14 md:min-h-[80vh] md:px-10 md:py-20">
+          <div className="mx-auto w-full max-w-5xl space-y-5 text-center">
             <p className="text-xs font-semibold uppercase tracking-[0.3em] text-slate-300">
               {homeHero.label}
             </p>
@@ -88,7 +88,7 @@ export default function HomePage() {
             <p className="text-sm text-slate-200 md:text-base">
               {homeHero.description}
             </p>
-            <div className="flex flex-wrap gap-3 pt-2">
+            <div className="flex flex-wrap justify-center gap-3 pt-2">
               <Link
                 href={homeHero.primaryButtonHref}
                 className="inline-flex items-center justify-center rounded-full bg-white px-5 py-2.5 text-sm font-medium text-text-primary shadow-lg transition hover:bg-slate-100"
