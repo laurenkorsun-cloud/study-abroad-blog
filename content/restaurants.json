@@ -231,5 +231,56 @@
       "/prague-la-republica-1.png"
     ],
     "relatedTripSlugs": ["prague"]
+  },
+  {
+    "id": "vienna-schnitzel-wirt",
+    "name": "Schnitzel Wirt",
+    "city": "Vienna",
+    "country": "Austria",
+    "neighborhood": "Neubau",
+    "lat": 48.1999,
+    "lng": 16.3497,
+    "rating": 0,
+    "notes": "Add your review and notes here.",
+    "highlight": "Add your highlight here.",
+    "imageUrls": [
+      "/vienna-schnitzel-wirt-1.png",
+      "/vienna-schnitzel-wirt-2.png"
+    ],
+    "relatedTripSlugs": ["budapest-vienna"]
+  },
+  {
+    "id": "budapest-retek-bistro",
+    "name": "Retek Bistro",
+    "city": "Budapest",
+    "country": "Hungary",
+    "neighborhood": "Buda",
+    "lat": 47.5037,
+    "lng": 19.0324,
+    "rating": 0,
+    "notes": "Dinner at Retek Bistro with Erica!",
+    "highlight": "A cozy Budapest dinner with Erica.",
+    "imageUrls": [
+      "/retek-bistro-1.png",
+      "/retek-bistro-2.png",
+      "/retek-bistro-3.png"
+    ],
+    "relatedTripSlugs": ["budapest-vienna"]
+  },
+  {
+    "id": "budapest-breakfast-tbd",
+    "name": "Breakfast spot (name TBD)",
+    "city": "Budapest",
+    "country": "Hungary",
+    "neighborhood": "Add neighborhood",
+    "lat": 47.4979,
+    "lng": 19.0402,
+    "rating": 0,
+    "notes": "Breakfast in Budapest - add the exact restaurant name later.",
+    "highlight": "Cozy breakfast stop in Budapest.",
+    "imageUrls": [
+      "/budapest-breakfast-tbd-1.png"
+    ],
+    "relatedTripSlugs": ["budapest-vienna"]
   }
 ]

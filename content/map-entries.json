@@ -295,6 +295,183 @@
     "tags": ["accommodation", "airbnb", "budapest"]
   },
   {
+    "id": "vienna-belvedere-palace",
+    "title": "Vienna Belvedere Palace",
+    "type": "landmark",
+    "latitude": 48.1913,
+    "longitude": 16.3802,
+    "city": "Vienna",
+    "country": "Austria",
+    "pageSlug": "/weekend-trips/budapest-vienna",
+    "images": [
+      "/vienna-belvedere-1.png",
+      "/vienna-belvedere-2.png",
+      "/vienna-belvedere-3.png",
+      "/vienna-belvedere-4.png",
+      "/vienna-belvedere-5.png",
+      "/vienna-belvedere-6.png",
+      "/vienna-belvedere-7.png",
+      "/vienna-belvedere-8.png"
+    ],
+    "notes": "Belvedere Palace and museum highlights in Vienna.",
+    "tags": ["vienna", "belvedere", "palace", "museum", "klimt"]
+  },
+  {
+    "id": "vienna-st-stephens-cathedral",
+    "title": "St. Stephen's Cathedral",
+    "type": "landmark",
+    "latitude": 48.2085,
+    "longitude": 16.3731,
+    "city": "Vienna",
+    "country": "Austria",
+    "pageSlug": "/weekend-trips/budapest-vienna",
+    "images": [
+      "/vienna-st-stephens-1.png"
+    ],
+    "notes": "Add your notes from visiting St. Stephen's Cathedral.",
+    "tags": ["vienna", "cathedral", "st-stephens", "landmark"]
+  },
+  {
+    "id": "vienna-exploring-streets",
+    "title": "Exploring the Streets",
+    "type": "landmark",
+    "latitude": 48.2067,
+    "longitude": 16.3699,
+    "city": "Vienna",
+    "country": "Austria",
+    "pageSlug": "/weekend-trips/budapest-vienna",
+    "images": [
+      "/vienna-exploring-streets-1.png",
+      "/vienna-exploring-streets-2.png",
+      "/vienna-exploring-streets-3.png",
+      "/vienna-exploring-streets-4.png"
+    ],
+    "notes": "A walk through Vienna's streets and neighborhoods.",
+    "tags": ["vienna", "city-walk", "streets", "architecture"]
+  },
+  {
+    "id": "vienna-hofburg-palace",
+    "title": "Hofburg Palace",
+    "type": "landmark",
+    "latitude": 48.2065,
+    "longitude": 16.3669,
+    "city": "Vienna",
+    "country": "Austria",
+    "pageSlug": "/weekend-trips/budapest-vienna",
+    "images": [
+      "/vienna-hofburg-1.png",
+      "/vienna-hofburg-2.png",
+      "/vienna-hofburg-3.png",
+      "/vienna-hofburg-4.png",
+      "/vienna-hofburg-5.png"
+    ],
+    "notes": "Add your notes from visiting Hofburg Palace.",
+    "tags": ["vienna", "hofburg", "palace", "landmark"]
+  },
+  {
+    "id": "budapest-second-airbnb",
+    "title": "Our second Airbnb in Budapest",
+    "type": "experience",
+    "latitude": 47.5065,
+    "longitude": 19.0631,
+    "city": "Budapest",
+    "country": "Hungary",
+    "pageSlug": "/weekend-trips/budapest-vienna",
+    "images": [],
+    "notes": "Add your accommodation notes here.",
+    "date": "2026-03-01",
+    "tags": ["accommodation", "airbnb", "budapest"]
+  },
+  {
+    "id": "budapest-danube-prosecco-cruise",
+    "title": "Prosecco Cruise on the Danube",
+    "type": "experience",
+    "latitude": 47.4984,
+    "longitude": 19.0458,
+    "city": "Budapest",
+    "country": "Hungary",
+    "pageSlug": "/weekend-trips/budapest-vienna",
+    "images": [
+      "/danube-prosecco-cruise-1.png",
+      "/danube-prosecco-cruise-2.png",
+      "/danube-prosecco-cruise-3.png"
+    ],
+    "notes": "Evening Prosecco cruise on the Danube with city lights and Parliament views.",
+    "date": "2026-02-28",
+    "tags": ["budapest", "danube", "cruise", "prosecco", "night"]
+  },
+  {
+    "id": "budapest-fishermans-bastion-buda-castle",
+    "title": "Fisherman's Bastion and Buda Castle",
+    "type": "landmark",
+    "latitude": 47.5001,
+    "longitude": 19.0368,
+    "city": "Budapest",
+    "country": "Hungary",
+    "pageSlug": "/weekend-trips/budapest-vienna",
+    "images": [
+      "/fishermans-bastion-buda-castle-1.png",
+      "/fishermans-bastion-buda-castle-2.png",
+      "/fishermans-bastion-buda-castle-3.png",
+      "/fishermans-bastion-buda-castle-4.png",
+      "/fishermans-bastion-buda-castle-5.png"
+    ],
+    "notes": "Views and architecture around Fisherman's Bastion and Buda Castle.",
+    "date": "2026-02-28",
+    "tags": ["budapest", "fishermans-bastion", "buda-castle", "landmark", "views"]
+  },
+  {
+    "id": "vienna-schnitzel-wirt",
+    "title": "Schnitzel Wirt",
+    "type": "restaurant",
+    "latitude": 48.1999,
+    "longitude": 16.3497,
+    "city": "Vienna",
+    "country": "Austria",
+    "pageSlug": "/weekend-trips/budapest-vienna",
+    "images": [
+      "/vienna-schnitzel-wirt-1.png",
+      "/vienna-schnitzel-wirt-2.png"
+    ],
+    "notes": "Add your review and notes here.",
+    "rating": 0,
+    "tags": ["vienna", "restaurant", "schnitzel", "austrian", "dinner"]
+  },
+  {
+    "id": "budapest-retek-bistro",
+    "title": "Retek Bistro",
+    "type": "restaurant",
+    "latitude": 47.5037,
+    "longitude": 19.0324,
+    "city": "Budapest",
+    "country": "Hungary",
+    "pageSlug": "/weekend-trips/budapest-vienna",
+    "images": [
+      "/retek-bistro-1.png",
+      "/retek-bistro-2.png",
+      "/retek-bistro-3.png"
+    ],
+    "notes": "Dinner at Retek Bistro with Erica!",
+    "rating": 0,
+    "tags": ["budapest", "restaurant", "retek-bistro", "dinner", "hungarian"]
+  },
+  {
+    "id": "budapest-breakfast-tbd",
+    "title": "Breakfast at (name TBD)",
+    "type": "restaurant",
+    "latitude": 47.4979,
+    "longitude": 19.0402,
+    "city": "Budapest",
+    "country": "Hungary",
+    "pageSlug": "/weekend-trips/budapest-vienna",
+    "images": [
+      "/budapest-breakfast-tbd-1.png"
+    ],
+    "notes": "Breakfast in Budapest - add the restaurant name later.",
+    "rating": 0,
+    "tags": ["budapest", "restaurant", "breakfast", "tbd"]
+  },
+  {
     "id": "amsterdam-airbnb",
     "title": "Our Airbnb in Amsterdam",
     "type": "experience",

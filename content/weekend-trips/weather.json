@@ -107,9 +107,9 @@
       "location": "Budapest/Vienna",
       "dateRange": "Feb 27 – Mar 1, 2026",
       "days": [
-        { "label": "Fri", "high": 44, "low": 33, "summary": "Cold overall with some sun.", "icon": "⛅" },
-        { "label": "Sat", "high": 45, "low": 34, "summary": "Chilly day, partly cloudy.", "icon": "☁️" },
-        { "label": "Sun", "high": 43, "low": 32, "summary": "Cold morning with light cloud.", "icon": "❄️" }
+        { "label": "Fri", "high": 45, "low": 33, "summary": "Budapest cool and partly cloudy; Vienna a touch cooler later in the day.", "icon": "⛅" },
+        { "label": "Sat", "high": 47, "low": 34, "summary": "Budapest slightly milder in afternoon sun; Vienna stays crisp.", "icon": "🌤️" },
+        { "label": "Sun", "high": 42, "low": 30, "summary": "Colder overall across both cities with a chilly morning start.", "icon": "☁️" }
       ]
     },
     {
