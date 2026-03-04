@@ -8,7 +8,8 @@
     { "href": "/", "label": "Home" },
     { "href": "/food", "label": "Food" },
     { "href": "/rome", "label": "Rome" },
-    { "href": "/weekend-trips", "label": "Weekend Trips" }
+    { "href": "/weekend-trips", "label": "Weekend Trips" },
+    { "href": "/unesco-sights", "label": "UNESCO Sights" }
   ],
   "ui": {
     "loadingMap": "Loading map…",

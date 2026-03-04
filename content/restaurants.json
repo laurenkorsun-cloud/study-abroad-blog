@@ -49,6 +49,23 @@
     "relatedTripSlugs": ["florence-first-weekend"]
   },
   {
+    "id": "florence-la-giostra",
+    "name": "La Giostra",
+    "city": "Florence",
+    "country": "Italy",
+    "neighborhood": "Centro Storico",
+    "lat": 43.7769,
+    "lng": 11.2606,
+    "rating": 0,
+    "notes": "Add your review and notes here.",
+    "highlight": "Add your highlight here.",
+    "imageUrls": [
+      "/la-giostra-1.png",
+      "/la-giostra-2.png"
+    ],
+    "relatedTripSlugs": ["florence-first-weekend"]
+  },
+  {
     "id": "amalfi-lemon",
     "name": "Pasticceria Limone",
     "city": "Amalfi",
@@ -180,5 +197,39 @@
       "/manteigaria-1.png"
     ],
     "relatedTripSlugs": ["Lisbon"]
+  },
+  {
+    "id": "prague-the-dubliner",
+    "name": "The Dubliner",
+    "city": "Prague",
+    "country": "Czech Republic",
+    "neighborhood": "Old Town",
+    "lat": 50.0872,
+    "lng": 14.4207,
+    "rating": 0,
+    "notes": "Add your review and notes here.",
+    "highlight": "Add your highlight here.",
+    "imageUrls": [
+      "/prague-dubliner-1.png",
+      "/prague-dubliner-2.png",
+      "/prague-dubliner-3.png"
+    ],
+    "relatedTripSlugs": ["prague"]
+  },
+  {
+    "id": "prague-la-republica",
+    "name": "La Republica",
+    "city": "Prague",
+    "country": "Czech Republic",
+    "neighborhood": "Old Town",
+    "lat": 50.0877,
+    "lng": 14.4273,
+    "rating": 0,
+    "notes": "Dinner at La Republica.",
+    "highlight": "Classic Czech dinner in Prague.",
+    "imageUrls": [
+      "/prague-la-republica-1.png"
+    ],
+    "relatedTripSlugs": ["prague"]
   }
 ]

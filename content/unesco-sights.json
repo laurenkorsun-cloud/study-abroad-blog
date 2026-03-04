@@ -1,0 +1,88 @@
+{
+  "pageHeader": {
+    "label": "UNESCO Sights",
+    "title": "World Heritage Tracker",
+    "description": "A running list of UNESCO World Heritage sights I have visited, want to revisit, and still have on my bucket list."
+  },
+  "statuses": [
+    {
+      "id": "visited",
+      "label": "Visited",
+      "description": "Sights already explored in person."
+    },
+    {
+      "id": "next-up",
+      "label": "Next Up",
+      "description": "High-priority spots for upcoming trips."
+    },
+    {
+      "id": "wishlist",
+      "label": "Wishlist",
+      "description": "Dream sights to explore one day."
+    }
+  ],
+  "sights": [
+    {
+      "id": "rome-historic-centre",
+      "name": "Historic Centre of Rome",
+      "city": "Rome",
+      "country": "Italy",
+      "unescoCategory": "Cultural",
+      "status": "visited",
+      "visitDate": "2025-09-18",
+      "inscriptionYear": 1980,
+      "memory": "Daily life in Trastevere made this UNESCO site feel like home.",
+      "notes": "Include favorite piazzas, churches, and sunset viewpoints.",
+      "lat": 41.8902,
+      "lng": 12.4922,
+      "imageUrls": [],
+      "tags": ["Rome", "Trastevere", "Italy"]
+    },
+    {
+      "id": "sintra-cultural-landscape",
+      "name": "Cultural Landscape of Sintra",
+      "city": "Sintra",
+      "country": "Portugal",
+      "unescoCategory": "Cultural",
+      "status": "visited",
+      "visitDate": "2026-02-07",
+      "inscriptionYear": 1995,
+      "memory": "A dreamy day trip with colorful palaces and foggy hills.",
+      "notes": "Add highlights from Pena Palace and favorite photo spots.",
+      "lat": 38.7876,
+      "lng": -9.3904,
+      "imageUrls": [],
+      "tags": ["Sintra", "Portugal", "Day Trip"]
+    },
+    {
+      "id": "pompeii-archaeological-areas",
+      "name": "Archaeological Areas of Pompeii, Herculaneum and Torre Annunziata",
+      "city": "Pompeii",
+      "country": "Italy",
+      "unescoCategory": "Cultural",
+      "status": "next-up",
+      "inscriptionYear": 1997,
+      "memory": "",
+      "notes": "Plan this as a long weekend from Rome.",
+      "lat": 40.7485,
+      "lng": 14.4844,
+      "imageUrls": [],
+      "tags": ["Italy", "Archaeology"]
+    },
+    {
+      "id": "alhambra-generalife-albayzin",
+      "name": "Alhambra, Generalife and Albayzin, Granada",
+      "city": "Granada",
+      "country": "Spain",
+      "unescoCategory": "Cultural",
+      "status": "wishlist",
+      "inscriptionYear": 1984,
+      "memory": "",
+      "notes": "Book timed tickets in advance.",
+      "lat": 37.1761,
+      "lng": -3.5881,
+      "imageUrls": [],
+      "tags": ["Spain", "Architecture"]
+    }
+  ]
+}

@@ -53,10 +53,31 @@
     "city": "Florence",
     "country": "Italy",
     "pageSlug": "/weekend-trips/florence-first-weekend",
-    "images": [],
+    "images": [
+      "/florence-duomo-1.png",
+      "/florence-duomo-2.png",
+      "/florence-duomo-3.png"
+    ],
     "notes": "Climbed up just before golden hour. The whole city opened up below.",
     "date": "2026-09-06",
     "tags": ["view", "sunset", "duomo"]
+  },
+  {
+    "id": "florence-uffizi-gallery",
+    "title": "Uffizi Gallery",
+    "type": "landmark",
+    "latitude": 43.7687,
+    "longitude": 11.255,
+    "city": "Florence",
+    "country": "Italy",
+    "pageSlug": "/weekend-trips/florence-first-weekend",
+    "images": [
+      "/florence-uffizi-1.png",
+      "/florence-uffizi-2.png",
+      "/florence-uffizi-3.png"
+    ],
+    "notes": "Add your notes about visiting the Uffizi Gallery.",
+    "tags": ["florence", "museum", "landmark", "uffizi"]
   },
   {
     "id": "florence-gelato-riverside",
@@ -75,6 +96,38 @@
     "tags": ["gelato", "dessert", "riverside"]
   },
   {
+    "id": "florence-la-giostra",
+    "title": "La Giostra",
+    "type": "restaurant",
+    "latitude": 43.7769,
+    "longitude": 11.2606,
+    "city": "Florence",
+    "country": "Italy",
+    "pageSlug": "/weekend-trips/florence-first-weekend",
+    "images": [
+      "/la-giostra-1.png",
+      "/la-giostra-2.png"
+    ],
+    "notes": "Add your review and notes here.",
+    "rating": 0,
+    "tags": ["florence", "restaurant", "dinner"]
+  },
+  {
+    "id": "florence-statue-of-david",
+    "title": "Statue of David",
+    "type": "landmark",
+    "latitude": 43.776,
+    "longitude": 11.2584,
+    "city": "Florence",
+    "country": "Italy",
+    "pageSlug": "/weekend-trips/florence-first-weekend",
+    "images": [
+      "/florence-david-1.png"
+    ],
+    "notes": "Add your notes about visiting Michelangelo's David.",
+    "tags": ["florence", "museum", "landmark", "david"]
+  },
+  {
     "id": "prague-airbnb",
     "title": "Our Airbnb in Prague",
     "type": "experience",
@@ -87,6 +140,145 @@
     "notes": "Add your accommodation notes here.",
     "date": "2026-02-20",
     "tags": ["accommodation", "airbnb", "prague"]
+  },
+  {
+    "id": "prague-the-dubliner",
+    "title": "The Dubliner",
+    "type": "restaurant",
+    "latitude": 50.0872,
+    "longitude": 14.4207,
+    "city": "Prague",
+    "country": "Czech Republic",
+    "pageSlug": "/weekend-trips/prague",
+    "images": [
+      "/prague-dubliner-1.png",
+      "/prague-dubliner-2.png",
+      "/prague-dubliner-3.png"
+    ],
+    "notes": "Add your review and notes here.",
+    "rating": 0,
+    "tags": ["prague", "restaurant", "pub", "the-dubliner"]
+  },
+  {
+    "id": "prague-astronomical-clock",
+    "title": "Prague Astronomical Clock",
+    "type": "landmark",
+    "latitude": 50.087,
+    "longitude": 14.4208,
+    "city": "Prague",
+    "country": "Czech Republic",
+    "pageSlug": "/weekend-trips/prague",
+    "images": [
+      "/prague-clock-1.png"
+    ],
+    "notes": "Add your notes about seeing the Prague Astronomical Clock.",
+    "tags": ["prague", "old-town", "clock", "landmark"]
+  },
+  {
+    "id": "prague-charles-bridge",
+    "title": "Charles Bridge",
+    "type": "landmark",
+    "latitude": 50.0865,
+    "longitude": 14.4114,
+    "city": "Prague",
+    "country": "Czech Republic",
+    "pageSlug": "/weekend-trips/prague",
+    "images": [
+      "/prague-charles-bridge-1.png",
+      "/prague-charles-bridge-2.png",
+      "/prague-charles-bridge-3.png",
+      "/prague-charles-bridge-4.png",
+      "/prague-charles-bridge-5.png",
+      "/prague-charles-bridge-6.png"
+    ],
+    "notes": "Add your notes about Charles Bridge.",
+    "tags": ["prague", "charles-bridge", "landmark"]
+  },
+  {
+    "id": "prague-exploring-city",
+    "title": "Exploring the City",
+    "type": "landmark",
+    "latitude": 50.0878,
+    "longitude": 14.423,
+    "city": "Prague",
+    "country": "Czech Republic",
+    "pageSlug": "/weekend-trips/prague",
+    "images": [
+      "/prague-exploring-city-1.png",
+      "/prague-exploring-city-2.png",
+      "/prague-exploring-city-3.png",
+      "/prague-exploring-city-4.png",
+      "/prague-exploring-city-5.png",
+      "/prague-exploring-city-6.png"
+    ],
+    "notes": "Add your notes from exploring the city center and markets.",
+    "tags": ["prague", "old-town", "city-walk", "market"]
+  },
+  {
+    "id": "prague-castle",
+    "title": "Prague Castle",
+    "type": "landmark",
+    "latitude": 50.0909,
+    "longitude": 14.4005,
+    "city": "Prague",
+    "country": "Czech Republic",
+    "pageSlug": "/weekend-trips/prague",
+    "images": [
+      "/prague-castle-1.png",
+      "/prague-castle-2.png",
+      "/prague-castle-3.png"
+    ],
+    "notes": "Add your notes from visiting Prague Castle.",
+    "tags": ["prague", "prague-castle", "cathedral", "landmark"]
+  },
+  {
+    "id": "prague-la-republica",
+    "title": "La Republica",
+    "type": "restaurant",
+    "latitude": 50.0877,
+    "longitude": 14.4273,
+    "city": "Prague",
+    "country": "Czech Republic",
+    "pageSlug": "/weekend-trips/prague",
+    "images": [
+      "/prague-la-republica-1.png"
+    ],
+    "notes": "Dinner at La Republica.",
+    "rating": 0,
+    "tags": ["prague", "restaurant", "czech", "dinner", "la-republica"]
+  },
+  {
+    "id": "prague-folklore-dinner",
+    "title": "Traditional Czech Folklore Dinner",
+    "type": "experience",
+    "latitude": 50.0877,
+    "longitude": 14.4273,
+    "city": "Prague",
+    "country": "Czech Republic",
+    "pageSlug": "/weekend-trips/prague",
+    "images": [
+      "/prague-folklore-dinner-1.png",
+      "/prague-folklore-dinner-2.png",
+      "/prague-folklore-dinner-3.png"
+    ],
+    "notes": "Traditional Czech folklore dinner with live music and dancing.",
+    "tags": ["prague", "czech", "folklore", "dinner", "live-music"]
+  },
+  {
+    "id": "prague-communism-museum",
+    "title": "The Communism Museum",
+    "type": "landmark",
+    "latitude": 50.0872,
+    "longitude": 14.4292,
+    "city": "Prague",
+    "country": "Czech Republic",
+    "pageSlug": "/weekend-trips/prague",
+    "images": [
+      "/prague-communism-museum-1.png",
+      "/prague-communism-museum-2.png"
+    ],
+    "notes": "Add your notes from visiting the Museum of Communism.",
+    "tags": ["prague", "museum", "communism", "history"]
   },
   {
     "id": "budapest-vienna-airbnb",

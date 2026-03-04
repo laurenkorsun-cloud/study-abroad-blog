@@ -322,21 +322,23 @@ export const TRIP_PAGES: TripPage[] = [
   },
   {
     slug: "florence-first-weekend",
-    title: "Florence – First Weekend Away",
+    title: "Florence",
     location: "Florence",
     country: "Italy",
     dateRange: "Feb 13 – 16, 2026",
     locationTags: ["Florence, Italy"],
     slideshow: [
-      { imageUrl: "https://images.pexels.com/photos/3683056/pexels-photo-3683056.jpeg?auto=compress&cs=tinysrgb&w=1600", caption: "View of Florence and the Duomo." },
-      { imageUrl: "https://images.pexels.com/photos/461430/pexels-photo-461430.jpeg?auto=compress&cs=tinysrgb&w=1600", caption: "Gelato by the Arno at sunset." },
-      { imageUrl: "https://images.pexels.com/photos/210617/pexels-photo-210617.jpeg?auto=compress&cs=tinysrgb&w=1600", caption: "The Arno and Ponte Vecchio." }
+      { imageUrl: "/florence-duomo-1.png", caption: "Visiting the Duomo in Florence." },
+      { imageUrl: "/florence-main-2.png", caption: "Palazzo Vecchio under a bright sky." },
+      { imageUrl: "/florence-main-3.png", caption: "Ponte Vecchio and the Arno view." }
     ],
-    mapEntryIds: ["florence-airbnb", "florence-duomo-view", "florence-gelato-riverside"],
+    mapEntryIds: ["florence-airbnb", "florence-la-giostra", "florence-statue-of-david", "florence-duomo-view", "florence-uffizi-gallery"],
     activities: [
       { id: "florence-airbnb", title: "Our Airbnb in Florence", date: "Feb 13 – 16, 2026", label: "Italy · Florence", description: "Add your accommodation description here.", entryType: "accommodation", link: "https://www.airbnb.com/rooms/YOUR_LISTING_ID", linkLabel: "View on Airbnb", mapEntryId: "florence-airbnb", rating: 5, images: [] },
-      { id: "getting-lost", title: "Getting intentionally lost between museums", date: "February 14, 2026", label: "Florence · Centro Storico", description: "We walked without a map for hours, turning down whatever side street looked most interesting.", mapEntryId: "florence-duomo-view", images: [] },
-      { id: "gelato-twice", title: "Going back for gelato twice in one day", date: "February 15, 2026", label: "Florence · Lungarno", description: "There was a stand along the river that we passed in the afternoon. We went back after dinner, and the staff remembered our order. Pistachio and stracciatella, eaten while watching the sunset turn the Arno golden.", mapEntryId: "florence-gelato-riverside", images: [{ imageUrl: "https://images.pexels.com/photos/461430/pexels-photo-461430.jpeg?auto=compress&cs=tinysrgb&w=1600", caption: "Gelato by the Arno at sunset" }, { imageUrl: "https://images.pexels.com/photos/210617/pexels-photo-210617.jpeg?auto=compress&cs=tinysrgb&w=1600", caption: "The same stand, second visit of the day" }, { imageUrl: "https://images.pexels.com/photos/1796727/pexels-photo-1796727.jpeg?auto=compress&cs=tinysrgb&w=1600", caption: "Pistachio and stracciatella as the sky turned golden" }] }
+      { id: "florence-la-giostra", title: "Dinner at La Giostra", date: "February 13, 2026", label: "Florence · Centro Storico", description: "Add your notes about dinner at La Giostra.", mapEntryId: "florence-la-giostra", images: [{ imageUrl: "/la-giostra-1.png" }, { imageUrl: "/la-giostra-2.png" }] },
+      { id: "florence-statue-of-david", title: "Statue of David", date: "February 14, 2026", label: "Florence · Galleria dell'Accademia", description: "Add your notes about seeing Michelangelo's David.", mapEntryId: "florence-statue-of-david", images: [{ imageUrl: "/florence-david-1.png" }] },
+      { id: "florence-visiting-duomo", title: "Visiting the Duomo", date: "February 14, 2026", label: "Florence · Duomo", description: "Add your notes about visiting the Duomo.", mapEntryId: "florence-duomo-view", images: [{ imageUrl: "/florence-duomo-1.png" }, { imageUrl: "/florence-duomo-2.png" }, { imageUrl: "/florence-duomo-3.png" }] },
+      { id: "florence-uffizi-gallery", title: "Uffizi Gallery", date: "February 14, 2026", label: "Florence · Uffizi", description: "Add your notes about visiting the Uffizi Gallery.", mapEntryId: "florence-uffizi-gallery", images: [{ imageUrl: "/florence-uffizi-1.png" }, { imageUrl: "/florence-uffizi-2.png" }, { imageUrl: "/florence-uffizi-3.png" }] }
     ]
   },
   {
@@ -344,20 +346,24 @@ export const TRIP_PAGES: TripPage[] = [
     title: "Prague",
     location: "Prague",
     country: "Czech Republic",
-    dateRange: "Feb 20 – 23, 2026",
+    dateRange: "Feb 19 – 22, 2026",
     locationTags: ["Prague, Czech Republic"],
     slideshow: [
-      { imageUrl: "https://images.pexels.com/photos/415980/pexels-photo-415980.jpeg?auto=compress&cs=tinysrgb&w=1600", caption: "Charles Bridge at dawn." },
-      { imageUrl: "https://images.pexels.com/photos/545048/pexels-photo-545048.jpeg?auto=compress&cs=tinysrgb&w=1600", caption: "Old Town Square." },
-      { imageUrl: "https://images.pexels.com/photos/1329711/pexels-photo-1329711.jpeg?auto=compress&cs=tinysrgb&w=1600", caption: "Prague Castle." }
+      { imageUrl: "/prague-main-1.png", caption: "Riverside walk by the Vltava." },
+      { imageUrl: "/prague-main-2.png", caption: "Old Town architecture under clear skies." },
+      { imageUrl: "/prague-main-3.png", caption: "Colorful facades in Prague." }
     ],
-    mapEntryIds: ["prague-airbnb"],
+    mapEntryIds: ["prague-airbnb", "prague-the-dubliner", "prague-astronomical-clock", "prague-charles-bridge", "prague-exploring-city", "prague-castle", "prague-la-republica", "prague-folklore-dinner", "prague-communism-museum"],
     activities: [
-      { id: "prague-airbnb", title: "Our Airbnb in Prague", date: "Feb 20 – 23, 2026", label: "Czech Republic · Prague", description: "Add your accommodation description here.", entryType: "accommodation", link: "https://www.airbnb.com/rooms/YOUR_LISTING_ID", linkLabel: "View on Airbnb", mapEntryId: "prague-airbnb", rating: 5, images: [] },
-      { id: "prague-day-1", title: "Arrival", date: "February 20, 2026", label: "Czech Republic · Prague", description: "Add your notes.", images: [] },
-      { id: "prague-day-2", title: "Exploring Prague", date: "February 21, 2026", label: "Czech Republic · Prague", description: "Add your notes.", images: [] },
-      { id: "prague-day-3", title: "Prague", date: "February 22, 2026", label: "Czech Republic · Prague", description: "Add your notes.", images: [] },
-      { id: "prague-day-4", title: "Departure", date: "February 23, 2026", label: "Czech Republic · Prague", description: "Add your notes.", images: [] }
+      { id: "prague-airbnb", title: "Our Airbnb in Prague", date: "Feb 19 – 22, 2026", label: "Czech Republic · Prague", description: "Add your accommodation description here.", entryType: "accommodation", link: "https://www.airbnb.com/rooms/YOUR_LISTING_ID", linkLabel: "View on Airbnb", mapEntryId: "prague-airbnb", rating: 5, images: [] },
+      { id: "prague-day-1", title: "The Dubliner", date: "February 19, 2026", label: "Czech Republic · Prague", description: "Add your notes about The Dubliner.", mapEntryId: "prague-the-dubliner", images: [{ imageUrl: "/prague-dubliner-1.png" }, { imageUrl: "/prague-dubliner-2.png" }, { imageUrl: "/prague-dubliner-3.png" }] },
+      { id: "prague-astronomical-clock", title: "Prague Astronomical Clock", date: "February 20, 2026", label: "Czech Republic · Old Town", description: "Add your notes about seeing the Prague Astronomical Clock.", mapEntryId: "prague-astronomical-clock", images: [{ imageUrl: "/prague-clock-1.png" }] },
+      { id: "prague-day-2", title: "Charles Bridge", date: "February 20, 2026", label: "Czech Republic · Prague", description: "Add your notes about exploring Charles Bridge.", mapEntryId: "prague-charles-bridge", images: [{ imageUrl: "/prague-charles-bridge-1.png" }, { imageUrl: "/prague-charles-bridge-2.png" }, { imageUrl: "/prague-charles-bridge-3.png" }, { imageUrl: "/prague-charles-bridge-4.png" }, { imageUrl: "/prague-charles-bridge-5.png" }, { imageUrl: "/prague-charles-bridge-6.png" }] },
+      { id: "prague-day-3", title: "Exploring the City", date: "February 21, 2026", label: "Czech Republic · Prague", description: "Add your notes from exploring the city center and markets.", mapEntryId: "prague-exploring-city", images: [{ imageUrl: "/prague-exploring-city-1.png" }, { imageUrl: "/prague-exploring-city-2.png" }, { imageUrl: "/prague-exploring-city-3.png" }, { imageUrl: "/prague-exploring-city-4.png" }, { imageUrl: "/prague-exploring-city-5.png" }, { imageUrl: "/prague-exploring-city-6.png" }] },
+      { id: "prague-castle", title: "Prague Castle", date: "February 21, 2026", label: "Czech Republic · Prague Castle", description: "Add your notes from visiting Prague Castle.", mapEntryId: "prague-castle", images: [{ imageUrl: "/prague-castle-1.png" }, { imageUrl: "/prague-castle-2.png" }, { imageUrl: "/prague-castle-3.png" }] },
+      { id: "prague-la-republica-dinner", title: "Dinner at La Republica", date: "February 21, 2026", label: "Czech Republic · Prague", description: "Dinner at La Republica.", mapEntryId: "prague-la-republica", images: [{ imageUrl: "/prague-la-republica-1.png" }] },
+      { id: "prague-folklore-dinner", title: "Traditional Czech Folklore Dinner", date: "February 21, 2026", label: "Czech Republic · Prague", description: "Traditional Czech folklore dinner with live music and dancing.", mapEntryId: "prague-folklore-dinner", images: [{ imageUrl: "/prague-folklore-dinner-1.png" }, { imageUrl: "/prague-folklore-dinner-2.png" }, { imageUrl: "/prague-folklore-dinner-3.png" }] },
+      { id: "prague-day-4", title: "The Communism Museum", date: "February 22, 2026", label: "Czech Republic · Prague", description: "Add your notes from visiting the Museum of Communism.", mapEntryId: "prague-communism-museum", images: [{ imageUrl: "/prague-communism-museum-1.png" }, { imageUrl: "/prague-communism-museum-2.png" }] }
     ]
   },
   {
@@ -365,20 +371,20 @@ export const TRIP_PAGES: TripPage[] = [
     title: "Budapest & Vienna",
     location: "Budapest",
     country: "Hungary",
-    dateRange: "Feb 27 – Mar 2, 2026",
+    dateRange: "Feb 27 – Mar 1, 2026",
     locationTags: ["Budapest, Hungary", "Vienna, Austria"],
     slideshow: [
-      { imageUrl: "https://images.pexels.com/photos/1329711/pexels-photo-1329711.jpeg?auto=compress&cs=tinysrgb&w=1600", caption: "Parliament on the Danube." },
-      { imageUrl: "https://images.pexels.com/photos/326057/pexels-photo-326057.jpeg?auto=compress&cs=tinysrgb&w=1600", caption: "Széchenyi thermal baths." },
-      { imageUrl: "https://images.pexels.com/photos/208702/pexels-photo-208702.jpeg?auto=compress&cs=tinysrgb&w=1600", caption: "Vienna." }
+      { imageUrl: "/budapest-vienna-main-1.png", caption: "Budapest Parliament lit up at night." },
+      { imageUrl: "/budapest-vienna-main-2.png", caption: "Fisherman's Bastion and city views in Budapest." },
+      { imageUrl: "/budapest-vienna-main-3.png", caption: "Vienna architecture and museum district." }
     ],
     mapEntryIds: ["budapest-vienna-airbnb"],
     activities: [
-      { id: "budapest-vienna-airbnb", title: "Our Airbnb", date: "Feb 27 – Mar 2, 2026", label: "Hungary · Budapest", description: "Add your accommodation description here.", entryType: "accommodation", link: "https://www.airbnb.com/rooms/YOUR_LISTING_ID", linkLabel: "View on Airbnb", mapEntryId: "budapest-vienna-airbnb", rating: 5, images: [] },
+      { id: "budapest-vienna-airbnb", title: "Our Airbnb", date: "Feb 27 – Mar 1, 2026", label: "Hungary · Budapest", description: "Add your accommodation description here.", entryType: "accommodation", link: "https://www.airbnb.com/rooms/YOUR_LISTING_ID", linkLabel: "View on Airbnb", mapEntryId: "budapest-vienna-airbnb", rating: 5, images: [] },
       { id: "budapest-vienna-day-1", title: "Arrival", date: "February 27, 2026", label: "Budapest", description: "Add your notes.", images: [] },
       { id: "budapest-vienna-day-2", title: "Exploring", date: "February 28, 2026", label: "Budapest", description: "Add your notes.", images: [] },
       { id: "budapest-vienna-day-3", title: "Budapest or Vienna", date: "March 1, 2026", label: "Budapest/Vienna", description: "Add your notes.", images: [] },
-      { id: "budapest-vienna-day-4", title: "Departure", date: "March 2, 2026", label: "Budapest/Vienna", description: "Add your notes.", images: [] }
+      { id: "budapest-vienna-day-4", title: "Departure", date: "March 1, 2026", label: "Budapest/Vienna", description: "Add your notes.", images: [] }
     ]
   },
   {
