@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { InteractiveMap } from "./components/MapWrapper";
 import {
   homeHero,
   homeSections,
@@ -7,7 +6,7 @@ import {
 } from "../data/homeContent";
 import { uiStrings } from "../data/siteContent";
 import { getAllEntries } from "../data/mapEntries";
-import { HomeCover, type HomeCoverVariant } from "./components/home/HomeCoverVariants";
+import { HomeCover } from "./components/home/HomeCoverVariants";
 
 // ═══════════════════════════════════════════════════════════════════════════
 // HOME PAGE - All content from data/homeContent.ts
@@ -61,30 +60,10 @@ function SectionCard({
   );
 }
 
-function parseCoverVariant(value: unknown): HomeCoverVariant {
-  if (typeof value !== "string") return "classic";
-  const v = value.toLowerCase();
-  if (v === "classic" || v === "minimal" || v === "bold" || v === "editorial" || v === "startup") {
-    return v;
-  }
-  return "classic";
-}
-
-export default function HomePage({
-  searchParams
-}: {
-  searchParams?: Record<string, string | string[] | undefined>;
-}) {
+export default function HomePage() {
   const entries = getAllEntries();
-  const coverVariant = parseCoverVariant(searchParams?.cover);
 
   return (
-    <HomeCover
-      variant={coverVariant}
-      hero={homeHero}
-      sections={homeSections}
-      mapPreview={homeMapPreview}
-      entries={entries}
-    />
+    <HomeCover hero={homeHero} sections={homeSections} mapPreview={homeMapPreview} entries={entries} />
   );
 }

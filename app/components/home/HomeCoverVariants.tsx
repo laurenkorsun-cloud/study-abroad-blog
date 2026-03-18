@@ -1,7 +1,10 @@
+"use client";
+
 import Link from "next/link";
 import { uiStrings } from "../../../data/siteContent";
 import type { MapEntry } from "../../../data/mapEntries";
 import { InteractiveMap } from "../MapWrapper";
+import { useSearchParams } from "next/navigation";
 
 type HomeHero = {
   label: string;
@@ -34,7 +37,6 @@ type HomeMapPreview = {
 export type HomeCoverVariant = "minimal" | "bold" | "editorial" | "startup" | "classic";
 
 type HomeCoverProps = {
-  variant: HomeCoverVariant;
   hero: HomeHero;
   sections: HomeSection[];
   mapPreview: HomeMapPreview;
@@ -615,7 +617,20 @@ function HeroStartup({ hero }: { hero: HomeHero }) {
   );
 }
 
-export function HomeCover({ variant, hero, sections, mapPreview, entries }: HomeCoverProps) {
+function getVariantFromSearchParams(searchParams: URLSearchParams | null): HomeCoverVariant {
+  if (!searchParams) return "classic";
+  const raw = searchParams.get("cover") ?? "";
+  const v = raw.toLowerCase();
+  if (v === "classic" || v === "minimal" || v === "bold" || v === "editorial" || v === "startup") {
+    return v;
+  }
+  return "classic";
+}
+
+export function HomeCover({ hero, sections, mapPreview, entries }: HomeCoverProps) {
+  const searchParams = useSearchParams();
+  const variant = getVariantFromSearchParams(searchParams);
+
   return (
     <div className="flex flex-col">
       <VariantPills current={variant} />
