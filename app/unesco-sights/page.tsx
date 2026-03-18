@@ -6,7 +6,6 @@ import type { MapEntry } from "../../data/mapEntries";
 import {
   getAllUnescoSights,
   unescoPageHeader,
-  unescoStatuses,
   type UnescoSight,
   type UnescoStatus
 } from "../../data/unescoSights";
@@ -22,10 +21,101 @@ function formatVisitDate(date: string | undefined) {
   });
 }
 
+function isVisited(status: UnescoStatus) {
+  return status === "visited";
+}
+
+function SightCard({ sight }: { sight: UnescoSight }) {
+  const cover = sight.imageUrls?.[0];
+  const visited = isVisited(sight.status);
+
+  return (
+    <article className="content-box overflow-hidden p-0">
+      <div className="relative">
+        <div
+          className="h-52 w-full bg-slate-200 bg-cover bg-center md:h-56"
+          style={{
+            backgroundImage: cover
+              ? `linear-gradient(to bottom, rgba(15,23,42,0.10), rgba(15,23,42,0.55)), url(${cover})`
+              : "linear-gradient(to bottom, rgba(15,23,42,0.06), rgba(15,23,42,0.14))"
+          }}
+        />
+
+        <div className="absolute left-4 top-4 flex items-center gap-2">
+          <div
+            className={`flex h-7 w-7 items-center justify-center rounded-full border bg-white/95 text-sm shadow-sm ${
+              visited ? "border-slate-300 text-slate-900" : "border-slate-200 text-slate-300"
+            }`}
+            aria-label={visited ? "Visited" : "Not visited"}
+            title={visited ? "Visited" : "Not visited"}
+          >
+            {visited ? "✓" : ""}
+          </div>
+          <span className="rounded-full bg-white/90 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-text-primary">
+            {visited ? "Visited" : "To visit"}
+          </span>
+        </div>
+      </div>
+
+      <div className="space-y-3 p-5">
+        <div className="space-y-1">
+          <div className="flex flex-wrap items-start justify-between gap-2">
+            <h3 className="text-base font-semibold text-text-primary md:text-lg">
+              {sight.name}
+            </h3>
+            <span className="tag">{sight.unescoCategory}</span>
+          </div>
+          <p className="text-xs text-text-muted">
+            {sight.city}, {sight.country}
+            {typeof sight.inscriptionYear === "number"
+              ? ` · UNESCO since ${sight.inscriptionYear}`
+              : ""}
+          </p>
+          <p className="text-xs text-text-muted">
+            {visited ? "Visited:" : "Planned:"} {formatVisitDate(sight.visitDate)}
+          </p>
+        </div>
+
+        <p className="text-sm leading-relaxed text-text-secondary">
+          {sight.memory || sight.notes || "Add your notes here."}
+        </p>
+
+        {Array.isArray(sight.imageUrls) && sight.imageUrls.length > 1 && (
+          <div className="grid grid-cols-3 gap-2">
+            {sight.imageUrls.slice(0, 3).map((url, idx) => (
+              <div
+                key={`${sight.id}-${idx}`}
+                className="h-20 overflow-hidden rounded-xl bg-slate-200"
+              >
+                <div
+                  className="h-full w-full bg-cover bg-center"
+                  style={{ backgroundImage: `url(${url})` }}
+                />
+              </div>
+            ))}
+          </div>
+        )}
+
+        {Array.isArray(sight.tags) && sight.tags.length > 0 && (
+          <div className="flex flex-wrap gap-2">
+            {sight.tags.slice(0, 6).map((tag) => (
+              <span
+                key={tag}
+                className="rounded-full bg-white px-2.5 py-1 text-[11px] text-slate-600"
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
+        )}
+      </div>
+    </article>
+  );
+}
+
 export default function UnescoSightsPage() {
   const sights = getAllUnescoSights();
   const [searchQuery, setSearchQuery] = useState("");
-  const [statusFilter, setStatusFilter] = useState<UnescoStatus | "all">("all");
   const [countryFilter, setCountryFilter] = useState<string>("all");
 
   const countries = useMemo(
@@ -36,7 +126,6 @@ export default function UnescoSightsPage() {
   const filteredSights = useMemo(() => {
     const query = searchQuery.trim().toLowerCase();
     return sights.filter((sight) => {
-      const statusMatches = statusFilter === "all" || sight.status === statusFilter;
       const countryMatches = countryFilter === "all" || sight.country === countryFilter;
       const queryMatches =
         !query ||
@@ -44,22 +133,9 @@ export default function UnescoSightsPage() {
           .join(" ")
           .toLowerCase()
           .includes(query);
-      return statusMatches && countryMatches && queryMatches;
+      return countryMatches && queryMatches;
     });
-  }, [countryFilter, searchQuery, sights, statusFilter]);
-
-  const sightsByStatus = useMemo(() => {
-    const grouped: Record<UnescoStatus, UnescoSight[]> = {
-      visited: [],
-      "next-up": [],
-      wishlist: []
-    };
-    filteredSights.forEach((sight) => grouped[sight.status].push(sight));
-    (Object.keys(grouped) as UnescoStatus[]).forEach((status) => {
-      grouped[status].sort((a, b) => a.name.localeCompare(b.name));
-    });
-    return grouped;
-  }, [filteredSights]);
+  }, [countryFilter, searchQuery, sights]);
 
   const visitedCount = sights.filter((s) => s.status === "visited").length;
   const plannedCount = sights.filter((s) => s.status !== "visited").length;
@@ -77,6 +153,15 @@ export default function UnescoSightsPage() {
     images: sight.imageUrls,
     tags: [sight.unescoCategory, ...sight.tags]
   }));
+
+  const sortedSights = useMemo(() => {
+    return [...filteredSights].sort((a, b) => {
+      const aVisited = isVisited(a.status);
+      const bVisited = isVisited(b.status);
+      if (aVisited !== bVisited) return aVisited ? -1 : 1;
+      return a.name.localeCompare(b.name);
+    });
+  }, [filteredSights]);
 
   return (
     <div className="flex flex-col">
@@ -98,7 +183,7 @@ export default function UnescoSightsPage() {
       </section>
 
       <section className="section-container border-b border-slate-100 bg-box-bg">
-        <div className="grid gap-3 md:grid-cols-3">
+        <div className="grid gap-3 md:grid-cols-2">
           <input
             type="search"
             value={searchQuery}
@@ -106,19 +191,6 @@ export default function UnescoSightsPage() {
             placeholder="Search sights, countries, tags..."
             className="w-full rounded-full border border-slate-300 bg-white px-4 py-2 text-sm text-text-primary placeholder:text-slate-400 focus:border-slate-500 focus:outline-none"
           />
-
-          <select
-            value={statusFilter}
-            onChange={(e) => setStatusFilter(e.target.value as UnescoStatus | "all")}
-            className="w-full rounded-full border border-slate-300 bg-white px-4 py-2 text-sm text-text-primary focus:border-slate-500 focus:outline-none"
-          >
-            <option value="all">All statuses</option>
-            {unescoStatuses.map((status) => (
-              <option key={status.id} value={status.id}>
-                {status.label}
-              </option>
-            ))}
-          </select>
 
           <select
             value={countryFilter}
@@ -135,53 +207,38 @@ export default function UnescoSightsPage() {
         </div>
       </section>
 
-      <section className="section-container">
-        <InteractiveMap entries={mapEntries} center={[43.2, 12.7]} zoom={4} height="62vh" />
+      {/* Photo-first grid */}
+      <section className="section-container bg-white">
+        <div className="space-y-4">
+          <div className="flex flex-wrap items-end justify-between gap-3">
+            <div className="space-y-1">
+              <h2 className="box-title">Checklist</h2>
+              <p className="text-sm text-text-secondary">
+                Checkmarks show what you&apos;ve visited. (Edit each item&apos;s
+                `status` in `content/unesco-sights.json`.)
+              </p>
+            </div>
+            <span className="tag">{sortedSights.length} shown</span>
+          </div>
+
+          {sortedSights.length === 0 ? (
+            <div className="content-box">
+              <p className="text-sm text-text-secondary">
+                No UNESCO sites match your search and filters.
+              </p>
+            </div>
+          ) : (
+            <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+              {sortedSights.map((sight) => (
+                <SightCard key={sight.id} sight={sight} />
+              ))}
+            </div>
+          )}
+        </div>
       </section>
 
-      <section className="section-container border-t border-slate-100 bg-box-bg">
-        <div className="space-y-4">
-          <h2 className="box-title">Organized by Progress</h2>
-          <div className="grid gap-5 lg:grid-cols-3">
-            {unescoStatuses.map((status) => (
-              <div key={status.id} className="content-box space-y-3">
-                <div>
-                  <h3 className="text-lg font-semibold text-text-primary">{status.label}</h3>
-                  <p className="text-sm text-text-muted">{status.description}</p>
-                </div>
-
-                <div className="space-y-3">
-                  {sightsByStatus[status.id].length === 0 && (
-                    <p className="rounded-box border border-dashed border-slate-300 px-3 py-4 text-xs text-text-muted">
-                      No sights match the current filters.
-                    </p>
-                  )}
-
-                  {sightsByStatus[status.id].map((sight) => (
-                    <article key={sight.id} className="rounded-box border border-slate-200 bg-white p-4">
-                      <div className="mb-2 flex flex-wrap items-center justify-between gap-2">
-                        <p className="font-medium text-text-primary">{sight.name}</p>
-                        <span className="tag">{sight.unescoCategory}</span>
-                      </div>
-                      <p className="text-xs text-text-muted">
-                        {sight.city}, {sight.country}
-                      </p>
-                      <p className="mt-2 text-sm text-text-secondary">
-                        {sight.memory || sight.notes || "Add your notes here."}
-                      </p>
-                      <p className="mt-3 text-xs text-text-muted">
-                        Visit date: {formatVisitDate(sight.visitDate)}
-                        {typeof sight.inscriptionYear === "number"
-                          ? ` | UNESCO since ${sight.inscriptionYear}`
-                          : ""}
-                      </p>
-                    </article>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
+      <section className="section-container">
+        <InteractiveMap entries={mapEntries} center={[43.2, 12.7]} zoom={4} height="62vh" />
       </section>
     </div>
   );

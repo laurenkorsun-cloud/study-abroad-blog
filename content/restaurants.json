@@ -282,5 +282,133 @@
       "/budapest-breakfast-tbd-1.png"
     ],
     "relatedTripSlugs": ["budapest-vienna"]
+  },
+  {
+    "id": "rome-nonarella",
+    "name": "Nonarella",
+    "city": "Rome",
+    "country": "Italy",
+    "neighborhood": "Trastevere",
+    "lat": 41.8902,
+    "lng": 12.4708,
+    "rating": 0,
+    "notes": "Cozy fallback trattoria for nights when no one could decide where to eat. Plates of pasta and carafes of house wine that made long conversations stretch late.",
+    "highlight": "Shared plates, shared stories, and the feeling of having a \"regular\" place in Rome.",
+    "imageUrls": [
+      "https://images.pexels.com/photos/6267/menu-restaurant-vintage-table.jpg?auto=compress&cs=tinysrgb&w=1600"
+    ],
+    "relatedTripSlugs": []
+  },
+  {
+    "id": "rome-fior-di-luna",
+    "name": "Fior di Luna",
+    "city": "Rome",
+    "country": "Italy",
+    "neighborhood": "Trastevere",
+    "lat": 41.8895,
+    "lng": 12.4702,
+    "rating": 0,
+    "notes": "One of the go-to gelato spots in Trastevere for late-night cones and flavor debates.",
+    "highlight": "Pistachio and stracciatella eaten on cobblestones while the neighborhood buzzed around us.",
+    "imageUrls": [
+      "https://images.pexels.com/photos/461430/pexels-photo-461430.jpeg?auto=compress&cs=tinysrgb&w=1600"
+    ],
+    "relatedTripSlugs": []
+  },
+  {
+    "id": "rome-essenza",
+    "name": "Essenza",
+    "city": "Rome",
+    "country": "Italy",
+    "neighborhood": "Trastevere",
+    "lat": 41.8898,
+    "lng": 12.471,
+    "rating": 0,
+    "notes": "Wine, small plates, and cozy evening conversations that stretched far past when we meant to go home.",
+    "highlight": "Sharing a bottle of red under warm string lights on a random Tuesday.",
+    "imageUrls": [
+      "https://images.pexels.com/photos/5531529/pexels-photo-5531529.jpeg?auto=compress&cs=tinysrgb&w=1600"
+    ],
+    "relatedTripSlugs": []
+  },
+  {
+    "id": "rome-osteria-del-gallo",
+    "name": "Osteria del Gallo",
+    "city": "Rome",
+    "country": "Italy",
+    "neighborhood": "Centro Storico",
+    "lat": 41.8985,
+    "lng": 12.4725,
+    "rating": 0,
+    "notes": "Classic Roman osteria energy: small room, handwritten menu, and waiters who pretend not to understand when you try to split dishes.",
+    "highlight": "A dinner that felt like being squeezed into someone else’s family gathering.",
+    "imageUrls": [
+      "https://images.pexels.com/photos/262978/pexels-photo-262978.jpeg?auto=compress&cs=tinysrgb&w=1600"
+    ],
+    "relatedTripSlugs": []
+  },
+  {
+    "id": "rome-fatamorgana",
+    "name": "Fatamorgana",
+    "city": "Rome",
+    "country": "Italy",
+    "neighborhood": "Trastevere",
+    "lat": 41.8891,
+    "lng": 12.4689,
+    "rating": 0,
+    "notes": "Gelato with wild flavor combinations that made us feel like we had to try something new every time.",
+    "highlight": "Sampling flavors with names we couldn’t pronounce and picking favorites anyway.",
+    "imageUrls": [
+      "https://images.pexels.com/photos/461430/pexels-photo-461430.jpeg?auto=compress&cs=tinysrgb&w=1600"
+    ],
+    "relatedTripSlugs": []
+  },
+  {
+    "id": "rome-donkey-punch",
+    "name": "Donkey Punch",
+    "city": "Rome",
+    "country": "Italy",
+    "neighborhood": "Trastevere",
+    "lat": 41.8897,
+    "lng": 12.4698,
+    "rating": 0,
+    "notes": "Sandwiches and drinks in a spot that always felt a little too cool for us, in the best way.",
+    "highlight": "A quick bite that almost always turned into a longer night than planned.",
+    "imageUrls": [
+      "https://images.pexels.com/photos/1600711/pexels-photo-1600711.jpeg?auto=compress&cs=tinysrgb&w=1600"
+    ],
+    "relatedTripSlugs": []
+  },
+  {
+    "id": "rome-da-enzo",
+    "name": "Da Enzo",
+    "city": "Rome",
+    "country": "Italy",
+    "neighborhood": "Trastevere",
+    "lat": 41.8889,
+    "lng": 12.4715,
+    "rating": 0,
+    "notes": "Worth-the-wait trattoria where every plate felt like a tiny love letter to Roman food.",
+    "highlight": "A long dinner that felt like the definition of \"we're really in Rome.\"",
+    "imageUrls": [
+      "https://images.pexels.com/photos/958545/pexels-photo-958545.jpeg?auto=compress&cs=tinysrgb&w=1600"
+    ],
+    "relatedTripSlugs": []
+  },
+  {
+    "id": "rome-santi-40",
+    "name": "Santi 40",
+    "city": "Rome",
+    "country": "Italy",
+    "neighborhood": "Trastevere",
+    "lat": 41.8901,
+    "lng": 12.4695,
+    "rating": 0,
+    "notes": "Casual spot for drinks and snacks when we didn’t want the night to end yet.",
+    "highlight": "A table that slowly filled with friends, glasses, and inside jokes.",
+    "imageUrls": [
+      "https://images.pexels.com/photos/5531548/pexels-photo-5531548.jpeg?auto=compress&cs=tinysrgb&w=1600"
+    ],
+    "relatedTripSlugs": []
   }
 ]

@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
-import { Header } from "./components/Header";
+import { ResponsiveLayout } from "./components/ResponsiveLayout";
 import { siteMeta } from "../data/siteContent";
 
 export const metadata: Metadata = {
@@ -21,10 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="flex min-h-screen flex-col bg-white text-slate-900">
-        <Header />
-        <main className="flex w-full flex-1 flex-col px-0 py-0">
-          {children}
-        </main>
+        <ResponsiveLayout>{children}</ResponsiveLayout>
       </body>
     </html>
   );

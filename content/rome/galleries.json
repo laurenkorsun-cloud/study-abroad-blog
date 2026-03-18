@@ -20,6 +20,48 @@
       "location": "Campo de' Fiori",
       "imageUrl": "https://images.pexels.com/photos/1797124/pexels-photo-1797124.jpeg?auto=compress&cs=tinysrgb&w=1600",
       "aspect": "landscape"
+    },
+    {
+      "id": "pantheon-dusk",
+      "title": "Pantheon at blue hour",
+      "location": "Pantheon",
+      "imageUrl": "https://images.pexels.com/photos/2082203/pexels-photo-2082203.jpeg?auto=compress&cs=tinysrgb&w=1600",
+      "aspect": "landscape"
+    },
+    {
+      "id": "trevi-fountain-night",
+      "title": "Trevi Fountain glow",
+      "location": "Trevi Fountain",
+      "imageUrl": "https://images.pexels.com/photos/1797125/pexels-photo-1797125.jpeg?auto=compress&cs=tinysrgb&w=1600",
+      "aspect": "portrait"
+    },
+    {
+      "id": "spanish-steps-sunset",
+      "title": "Spanish Steps at sunset",
+      "location": "Spanish Steps",
+      "imageUrl": "https://images.pexels.com/photos/2082109/pexels-photo-2082109.jpeg?auto=compress&cs=tinysrgb&w=1600",
+      "aspect": "landscape"
+    },
+    {
+      "id": "villa-borghese-green",
+      "title": "Afternoon in Villa Borghese",
+      "location": "Villa Borghese",
+      "imageUrl": "https://images.pexels.com/photos/4606805/pexels-photo-4606805.jpeg?auto=compress&cs=tinysrgb&w=1600",
+      "aspect": "landscape"
+    },
+    {
+      "id": "garum-cooking-class",
+      "title": "Rolling pasta at The Garum",
+      "location": "Centro Storico",
+      "imageUrl": "https://images.pexels.com/photos/8478055/pexels-photo-8478055.jpeg?auto=compress&cs=tinysrgb&w=1600",
+      "aspect": "landscape"
+    },
+    {
+      "id": "gaeta-coast",
+      "title": "Sea views in Gaeta",
+      "location": "Gaeta",
+      "imageUrl": "https://images.pexels.com/photos/4606802/pexels-photo-4606802.jpeg?auto=compress&cs=tinysrgb&w=1600",
+      "aspect": "landscape"
     }
   ],
   "apartment": [

@@ -421,6 +421,24 @@
     "tags": ["budapest", "fishermans-bastion", "buda-castle", "landmark", "views"]
   },
   {
+    "id": "budapest-exploring-buda-side",
+    "title": "Exploring Buda Side",
+    "type": "landmark",
+    "latitude": 47.5015,
+    "longitude": 19.0349,
+    "city": "Budapest",
+    "country": "Hungary",
+    "pageSlug": "/weekend-trips/budapest-vienna",
+    "images": [
+      "/budapest-exploring-buda-side-1.png",
+      "/budapest-exploring-buda-side-2.png",
+      "/budapest-exploring-buda-side-3.png"
+    ],
+    "notes": "Exploring the Buda side streets and viewpoints.",
+    "date": "2026-02-28",
+    "tags": ["budapest", "buda-side", "streets", "walking", "views"]
+  },
+  {
     "id": "vienna-schnitzel-wirt",
     "title": "Schnitzel Wirt",
     "type": "restaurant",

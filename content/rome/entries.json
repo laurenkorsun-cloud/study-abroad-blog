@@ -1,23 +1,212 @@
 [
   {
-    "id": "first-morning",
-    "title": "First Morning: Market Coffee and Cobblestones",
-    "date": "Sept 2, 2026",
-    "label": "Daily Life · Trastevere",
-    "description": "I woke up to the sound of the street below coming to life — carts, voices, and the soft clink of espresso cups. I walked to the corner bar where no one spoke English, ordered my first cappuccino entirely in broken Italian, and watched the city stretch awake."
+    "id": "conad-grocery",
+    "title": "CONAD: My Roman Pantry",
+    "date": "Sept 5, 2026",
+    "label": "Everyday Errands · Trastevere",
+    "description": "This became the default stop on the walk home — grabbing pasta, fruit, and emergency chocolate when the apartment cabinets were bare. Somewhere between deciphering labels in Italian and memorizing the aisles, CONAD stopped feeling like a random grocery store and started feeling like part of my daily rhythm.",
+    "images": [
+      { "imageUrl": "/rome-conad-grocery-1.jpg", "caption": "CONAD run on the walk home." }
+    ]
   },
   {
-    "id": "getting-lost",
-    "title": "Getting Lost on Purpose After Class",
-    "date": "Sept 12, 2026",
-    "label": "Daily Life · Centro Storico",
-    "description": "Instead of taking the tram home, I decided to walk with no map — just following whatever alley looked most interesting. I kept stumbling onto tiny churches, laundry hanging overhead, and little pockets of quiet that made the city feel strangely intimate."
+    "id": "porta-portese",
+    "title": "Sunday Mornings at Porta Portese",
+    "date": "Sept 7, 2026",
+    "label": "Markets · Trastevere",
+    "description": "Porta Portese stretched on forever: crates of records, piles of vintage coats, and vendors shouting over each other. I learned to weave through the chaos with a coffee in hand, digging for little treasures and watching whole families spend their Sunday bargaining over everything from lamps to leather jackets.",
+    "images": [
+      { "imageUrl": "/rome-porta-portese-1.jpg", "caption": "Sunday chaos at Porta Portese." }
+    ]
   },
   {
-    "id": "routine-forms",
-    "title": "When a Routine Finally Started to Form",
-    "date": "Oct 1, 2026",
-    "label": "Daily Life · Testaccio",
-    "description": "Somewhere between the morning walk across the Tiber, afternoon classes, and evening grocery runs, life here stopped feeling like a trip and more like a life I belonged to, even if only temporarily."
+    "id": "eco-vintage",
+    "title": "Vintage Hunting at Eco Vintage",
+    "date": "Sept 14, 2026",
+    "label": "Markets · Trastevere",
+    "description": "Eco Vintage became the reward for surviving a long week of classes. Racks of secondhand jackets, old band tees, and pieces that looked like they’d already lived a whole life in Rome before finding me. I never knew if I’d walk out with something or not, but just browsing made me feel a little more at home in the city.",
+    "images": [
+      { "imageUrl": "/rome-eco-vintage-1.jpg", "caption": "Digging through the racks at Eco Vintage." }
+    ]
+  },
+  {
+    "id": "pantheon-evening",
+    "title": "First Time Stepping Inside the Pantheon",
+    "date": "Sept 8, 2026",
+    "label": "Iconic Rome · Centro Storico",
+    "description": "I’d seen a thousand photos of the Pantheon and still wasn’t ready for how big it felt standing underneath the dome. We arrived at blue hour, when the piazza was buzzing but the sky was still deep blue, and stepping inside felt like walking into a quiet pocket of time suspended over the centuries.",
+    "images": [
+      {
+        "imageUrl": "/rome-pantheon-1.jpg",
+        "caption": "Pantheon at blue hour, just before we went inside."
+      },
+      {
+        "imageUrl": "/rome-pantheon-2.jpg",
+        "caption": "Looking up at the oculus from the center of the room."
+      }
+    ]
+  },
+  {
+    "id": "trevi-fountain-night",
+    "title": "Throwing Coins into the Trevi Fountain",
+    "date": "Sept 9, 2026",
+    "label": "Iconic Rome · Centro Storico",
+    "description": "The Trevi Fountain was chaos in the best way — cameras everywhere, strangers squeezing in for a quick wish. We pushed our way to the edge, tried not to hit anyone with our coins, and laughed at how seriously we took a superstition we secretly hoped would work.",
+    "images": [
+      { "imageUrl": "/rome-trevi-fountain-1.jpg", "caption": "Trevi Fountain at night." }
+    ]
+  },
+  {
+    "id": "spanish-steps-sunset",
+    "title": "Sunset from the Spanish Steps",
+    "date": "Sept 10, 2026",
+    "label": "Views · Centro Storico",
+    "description": "We climbed the Spanish Steps just as the sun started to dip, the city turning soft and golden below us. Sitting on the steps with gelato and sore legs, it finally hit me that this wasn’t a vacation postcard anymore — this was the backdrop of my actual life for the next few months.",
+    "images": [
+      { "imageUrl": "/rome-spanish-steps-1.jpg", "caption": "Sunset from the Spanish Steps." }
+    ]
+  },
+  {
+    "id": "nonarella-dinner",
+    "title": "Comfort Dinners at Nonarella",
+    "date": "Sept 15, 2026",
+    "label": "Food Spots · Trastevere",
+    "description": "Nonarella became our \"we can’t decide where to eat\" backup plan. House wine, plates passed around the table, and a cozy hum of conversation that made even an ordinary Tuesday night feel like a little event.",
+    "images": [
+      {
+        "imageUrl": "/rome-nonarella-1.jpg",
+        "caption": "Our table at Nonarella, covered in plates and glasses."
+      }
+    ]
+  },
+  {
+    "id": "fior-di-luna-gelato",
+    "title": "Late-Night Gelato at Fior di Luna",
+    "date": "Sept 16, 2026",
+    "label": "Food Spots · Trastevere",
+    "description": "Fior di Luna was where serious gelato opinions were formed. Pistachio vs. hazelnut debates, trying new flavors just because the line looked promising, and wandering home with cold hands and sticky napkins.",
+    "images": [
+      { "imageUrl": "/rome-fior-di-luna-1.jpg", "caption": "Gelato at Fior di Luna." }
+    ]
+  },
+  {
+    "id": "essenza-evening",
+    "title": "Wine and Small Plates at Essenza",
+    "date": "Sept 18, 2026",
+    "label": "Food Spots · Trastevere",
+    "description": "Essenza was for nights when we wanted to feel a little grown-up — sharing small plates, lingering over a bottle of red, and losing track of time under warm lights and half-whispered conversations.",
+    "images": [
+      { "imageUrl": "/rome-essenza-1.jpg", "caption": "Wine and small plates at Essenza." }
+    ]
+  },
+  {
+    "id": "fatamorgana-gelato",
+    "title": "Trying Wild Flavors at Fatamorgana",
+    "date": "Sept 20, 2026",
+    "label": "Food Spots · Trastevere",
+    "description": "Fatamorgana pushed us out of our comfort zone with flavors we’d never heard of and couldn’t pronounce. We turned it into a game: everyone ordered something different, and we passed cones around until we forgot whose was whose.",
+    "images": [
+      { "imageUrl": "/rome-fatamorgana-1.jpg", "caption": "Wild flavors at Fatamorgana." }
+    ]
+  },
+  {
+    "id": "donkey-punch-night",
+    "title": "Sandwiches and Night Energy at Donkey Punch",
+    "date": "Sept 22, 2026",
+    "label": "Food Spots · Trastevere",
+    "description": "Donkey Punch was the place we ended up when we \"weren’t that hungry\" and somehow left full anyway. Loud music, stacked sandwiches, and the kind of energy that made you feel like the night could go in any direction.",
+    "images": [
+      { "imageUrl": "/rome-donkey-punch-1.jpg", "caption": "Sandwiches at Donkey Punch." }
+    ]
+  },
+  {
+    "id": "da-enzo-dinner",
+    "title": "A Long-Awaited Dinner at Da Enzo",
+    "date": "Sept 25, 2026",
+    "label": "Food Spots · Trastevere",
+    "description": "We waited in line outside Da Enzo with everyone else, watching plates fly past the window and hoping it would be worth it. It was. By the time we sat down, every bite of pasta felt like a little reward for our patience.",
+    "images": [
+      { "imageUrl": "/rome-da-enzo-1.jpg", "caption": "Dinner at Da Enzo." }
+    ]
+  },
+  {
+    "id": "santi-40-drinks",
+    "title": "Drinks that Turned into Nights at Santi 40",
+    "date": "Sept 27, 2026",
+    "label": "Food Spots · Trastevere",
+    "description": "Santi 40 was supposed to be \"just one drink\" and almost never was. Small tables, familiar faces, and the kind of nights that stretched on simply because no one wanted to be the first to go home.",
+    "images": [
+      { "imageUrl": "/rome-santi-40-1.jpg", "caption": "Drinks at Santi 40." }
+    ]
+  },
+  {
+    "id": "aur-cats",
+    "title": "Meeting the AUR Campus Cats",
+    "date": "Sept 18, 2026",
+    "label": "Campus Life · AUR",
+    "description": "The AUR cats showed up like they owned the place — weaving between our chairs, sunbathing on steps, or watching us from a distance like tiny furry supervisors. On stressful days, they were the reminder to sit in the sun for a second and breathe.",
+    "images": [
+      { "imageUrl": "/rome-aur-cats-1.jpg", "caption": "AUR campus cat." }
+    ]
+  },
+  {
+    "id": "villa-borghese-walk",
+    "title": "Afternoon Walks in Villa Borghese",
+    "date": "Sept 23, 2026",
+    "label": "Green Spaces · Villa Borghese",
+    "description": "Villa Borghese was my favorite way to hit reset: gravel paths, people on bikes, couples in rowboats, and long stretches of shade. I’d grab a panino, find a bench, and let the noise of the city fade to a soft background hum.",
+    "images": [
+      { "imageUrl": "/rome-villa-borghese-1.jpg", "caption": "Afternoon in Villa Borghese." }
+    ]
+  },
+  {
+    "id": "vatican-museums-day",
+    "title": "Overwhelmed in the Vatican Museums",
+    "date": "Oct 3, 2026",
+    "label": "Big Days · Vatican",
+    "description": "Room after room of art, sculptures, and ceilings so detailed they didn’t feel real. By the time we shuffled into the Sistine Chapel, my neck hurt from looking up and my brain was full of color and stories I only half remembered from history class.",
+    "images": [
+      { "imageUrl": "/rome-vatican-museums-1.jpg", "caption": "Inside the Vatican Museums." }
+    ]
+  },
+  {
+    "id": "garum-cooking-class",
+    "title": "Learning Cacio e Pepe at The Garum",
+    "date": "Oct 3, 2026",
+    "label": "Food & Friends · Centro Storico",
+    "description": "Flour on our clothes, pasta dough under our nails, and a teacher who kept insisting we \"trust the starch.\" The cooking class at The Garum turned a classic Roman dish into something I now associate with laughter, mistakes, and a very full table.",
+    "images": [
+      { "imageUrl": "/rome-garum-cooking-1.jpg", "caption": "Cooking class at The Garum." }
+    ]
+  },
+  {
+    "id": "il-tuliperno-evening",
+    "title": "Evening Around Il Tuliperno",
+    "date": "Oct 4, 2026",
+    "label": "Neighborhood Nights · Rome",
+    "description": "We wandered past Il Tuliperno on our way home, the kind of place you bookmark in your brain for later. Soft light spilling onto the street, clinking glasses inside, and that familiar feeling of knowing you’ll be back when you need another cozy night out.",
+    "images": [
+      { "imageUrl": "/rome-il-tuliperno-1.jpg", "caption": "Evening at Il Tuliperno." }
+    ]
+  },
+  {
+    "id": "colosseum-visit",
+    "title": "Seeing the Colosseum Up Close",
+    "date": "Oct 6, 2026",
+    "label": "Iconic Rome · Colosseo",
+    "description": "Walking out of the metro and seeing the Colosseum just sitting there like it was no big deal felt surreal. Up close, the stones, arches, and scars of the building made every history class feel suddenly, vividly real.",
+    "images": [
+      { "imageUrl": "/rome-colosseum-1.jpg", "caption": "The Colosseum up close." }
+    ]
+  },
+  {
+    "id": "gaeta-day-trip",
+    "title": "A Saltwater Reset in Gaeta",
+    "date": "Oct 12, 2026",
+    "label": "Day Trip · Lazio Coast",
+    "description": "A train, a bus, and suddenly the ochre buildings of Rome were swapped for bright blue water and pastel houses stacked into the hills of Gaeta. We spent the day climbing stone staircases, ducking into tiny churches, and sitting on the sand until the sun slipped into the horizon and the air turned cool. Coming back to Rome that night, sun-tired and sandy, made the city feel even more like home — the place I was returning to, not just the place I was visiting.",
+    "images": [
+      { "imageUrl": "/rome-gaeta-1.jpg", "caption": "Gaeta coast and pastel houses." }
+    ]
   }
 ]

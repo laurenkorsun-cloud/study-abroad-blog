@@ -378,11 +378,11 @@ export const TRIP_PAGES: TripPage[] = [
       { imageUrl: "/budapest-vienna-main-2.png", caption: "Fisherman's Bastion and city views in Budapest." },
       { imageUrl: "/budapest-vienna-main-3.png", caption: "Vienna architecture and museum district." }
     ],
-    mapEntryIds: ["budapest-vienna-airbnb", "budapest-fishermans-bastion-buda-castle", "vienna-belvedere-palace", "vienna-st-stephens-cathedral", "vienna-exploring-streets", "vienna-hofburg-palace", "vienna-schnitzel-wirt", "budapest-retek-bistro", "budapest-danube-prosecco-cruise", "budapest-breakfast-tbd", "budapest-second-airbnb"],
+    mapEntryIds: ["budapest-vienna-airbnb", "budapest-fishermans-bastion-buda-castle", "budapest-exploring-buda-side", "vienna-belvedere-palace", "vienna-st-stephens-cathedral", "vienna-exploring-streets", "vienna-hofburg-palace", "vienna-schnitzel-wirt", "budapest-retek-bistro", "budapest-danube-prosecco-cruise", "budapest-breakfast-tbd", "budapest-second-airbnb"],
     activities: [
       { id: "budapest-vienna-airbnb", title: "Our Airbnb", date: "Feb 27 – Mar 1, 2026", label: "Hungary · Budapest", description: "Add your accommodation description here.", entryType: "accommodation", link: "https://www.airbnb.com/rooms/YOUR_LISTING_ID", linkLabel: "View on Airbnb", mapEntryId: "budapest-vienna-airbnb", rating: 5, images: [] },
       { id: "budapest-vienna-day-1", title: "Arrival", date: "February 27, 2026", label: "Budapest", description: "Add your notes.", images: [] },
-      { id: "budapest-vienna-day-2", title: "Exploring", date: "February 28, 2026", label: "Budapest", description: "Add your notes.", images: [] },
+      { id: "budapest-vienna-day-2", title: "Exploring Buda Side", date: "February 28, 2026", label: "Hungary · Budapest", description: "Wandering the Buda side streets and viewpoints.", mapEntryId: "budapest-exploring-buda-side", images: [{ imageUrl: "/budapest-exploring-buda-side-1.png" }, { imageUrl: "/budapest-exploring-buda-side-2.png" }, { imageUrl: "/budapest-exploring-buda-side-3.png" }] },
       { id: "budapest-fishermans-bastion-buda-castle", title: "Fisherman's Bastion and Buda Castle", date: "February 28, 2026", label: "Hungary · Budapest", description: "Exploring Fisherman's Bastion and Buda Castle with panoramic city views.", mapEntryId: "budapest-fishermans-bastion-buda-castle", images: [{ imageUrl: "/fishermans-bastion-buda-castle-1.png" }, { imageUrl: "/fishermans-bastion-buda-castle-2.png" }, { imageUrl: "/fishermans-bastion-buda-castle-3.png" }, { imageUrl: "/fishermans-bastion-buda-castle-4.png" }, { imageUrl: "/fishermans-bastion-buda-castle-5.png" }] },
       { id: "budapest-vienna-day-3", title: "Budapest or Vienna", date: "March 1, 2026", label: "Budapest/Vienna", description: "Add your notes.", images: [] },
       { id: "vienna-belvedere-palace", title: "Vienna Belvedere Palace", date: "March 1, 2026", label: "Austria · Vienna", description: "Add your notes from visiting Belvedere Palace.", mapEntryId: "vienna-belvedere-palace", images: [{ imageUrl: "/vienna-belvedere-1.png" }, { imageUrl: "/vienna-belvedere-2.png" }, { imageUrl: "/vienna-belvedere-3.png" }, { imageUrl: "/vienna-belvedere-4.png" }, { imageUrl: "/vienna-belvedere-5.png" }, { imageUrl: "/vienna-belvedere-6.png" }, { imageUrl: "/vienna-belvedere-7.png" }, { imageUrl: "/vienna-belvedere-8.png" }] },
@@ -398,24 +398,24 @@ export const TRIP_PAGES: TripPage[] = [
     ]
   },
   {
-    slug: "amsterdam",
-    title: "Amsterdam",
-    location: "Amsterdam",
-    country: "Netherlands",
-    dateRange: "Mar 6 – 9, 2026",
-    locationTags: ["Amsterdam, Netherlands"],
+    slug: "london",
+    title: "London",
+    location: "London",
+    country: "United Kingdom",
+    dateRange: "Mar 9 – 12, 2026",
+    locationTags: ["London, United Kingdom"],
     slideshow: [
-      { imageUrl: "https://images.pexels.com/photos/1179229/pexels-photo-1179229.jpeg?auto=compress&cs=tinysrgb&w=1600", caption: "Canals of Amsterdam." },
-      { imageUrl: "https://images.pexels.com/photos/358319/pexels-photo-358319.jpeg?auto=compress&cs=tinysrgb&w=1600", caption: "Museum district." },
-      { imageUrl: "https://images.pexels.com/photos/1796727/pexels-photo-1796727.jpeg?auto=compress&cs=tinysrgb&w=1600", caption: "Jordaan." }
+      { imageUrl: "https://images.pexels.com/photos/460740/pexels-photo-460740.jpeg?auto=compress&cs=tinysrgb&w=1600", caption: "London." },
+      { imageUrl: "https://images.pexels.com/photos/1113638/pexels-photo-1113638.jpeg?auto=compress&cs=tinysrgb&w=1600", caption: "Add your caption." },
+      { imageUrl: "https://images.pexels.com/photos/461430/pexels-photo-461430.jpeg?auto=compress&cs=tinysrgb&w=1600", caption: "Add your caption." }
     ],
-    mapEntryIds: ["amsterdam-airbnb"],
+    mapEntryIds: ["london-airbnb"],
     activities: [
-      { id: "amsterdam-airbnb", title: "Our Airbnb in Amsterdam", date: "Mar 6 – 9, 2026", label: "Netherlands · Amsterdam", description: "Add your accommodation description here.", entryType: "accommodation", link: "https://www.airbnb.com/rooms/YOUR_LISTING_ID", linkLabel: "View on Airbnb", mapEntryId: "amsterdam-airbnb", rating: 5, images: [] },
-      { id: "amsterdam-day-1", title: "Arrival", date: "March 6, 2026", label: "Netherlands · Amsterdam", description: "Add your notes.", images: [] },
-      { id: "amsterdam-day-2", title: "Exploring Amsterdam", date: "March 7, 2026", label: "Netherlands · Amsterdam", description: "Add your notes.", images: [] },
-      { id: "amsterdam-day-3", title: "Amsterdam", date: "March 8, 2026", label: "Netherlands · Amsterdam", description: "Add your notes.", images: [] },
-      { id: "amsterdam-day-4", title: "Departure", date: "March 9, 2026", label: "Netherlands · Amsterdam", description: "Add your notes.", images: [] }
+      { id: "london-airbnb", title: "Our Airbnb in London", date: "Mar 9 – 12, 2026", label: "United Kingdom · London", description: "Add your accommodation description here.", entryType: "accommodation", link: "https://www.airbnb.com/rooms/YOUR_LISTING_ID", linkLabel: "View on Airbnb", mapEntryId: "london-airbnb", rating: 5, images: [] },
+      { id: "london-day-1", title: "Arrival", date: "March 9, 2026", label: "United Kingdom · London", description: "Add your notes.", images: [] },
+      { id: "london-day-2", title: "Exploring London", date: "March 10, 2026", label: "United Kingdom · London", description: "Add your notes.", images: [] },
+      { id: "london-day-3", title: "London", date: "March 11, 2026", label: "United Kingdom · London", description: "Add your notes.", images: [] },
+      { id: "london-day-4", title: "Departure", date: "March 12, 2026", label: "United Kingdom · London", description: "Add your notes.", images: [] }
     ]
   },
   {
@@ -423,7 +423,7 @@ export const TRIP_PAGES: TripPage[] = [
     title: "Dublin",
     location: "Dublin",
     country: "Ireland",
-    dateRange: "Mar 13 – 16, 2026",
+    dateRange: "Mar 12 – 16, 2026",
     locationTags: ["Dublin, Ireland"],
     slideshow: [
       { imageUrl: "https://images.pexels.com/photos/1113638/pexels-photo-1113638.jpeg?auto=compress&cs=tinysrgb&w=1600", caption: "Trinity College." },
@@ -432,28 +432,32 @@ export const TRIP_PAGES: TripPage[] = [
     ],
     mapEntryIds: ["dublin-airbnb"],
     activities: [
-      { id: "dublin-airbnb", title: "Our Airbnb in Dublin", date: "Mar 13 – 16, 2026", label: "Ireland · Dublin", description: "Add your accommodation description here.", entryType: "accommodation", link: "https://www.airbnb.com/rooms/YOUR_LISTING_ID", linkLabel: "View on Airbnb", mapEntryId: "dublin-airbnb", rating: 5, images: [] },
-      { id: "dublin-day-1", title: "Arrival", date: "March 13, 2026", label: "Ireland · Dublin", description: "Add your notes.", images: [] },
-      { id: "dublin-day-2", title: "Exploring Dublin", date: "March 14, 2026", label: "Ireland · Dublin", description: "Add your notes.", images: [] },
-      { id: "dublin-day-3", title: "Dublin", date: "March 15, 2026", label: "Ireland · Dublin", description: "Add your notes.", images: [] },
+      { id: "dublin-airbnb", title: "Our Airbnb in Dublin", date: "Mar 12 – 16, 2026", label: "Ireland · Dublin", description: "Add your accommodation description here.", entryType: "accommodation", link: "https://www.airbnb.com/rooms/YOUR_LISTING_ID", linkLabel: "View on Airbnb", mapEntryId: "dublin-airbnb", rating: 5, images: [] },
+      { id: "dublin-day-1", title: "Arrival", date: "March 12, 2026", label: "Ireland · Dublin", description: "Add your notes.", images: [] },
+      { id: "dublin-day-2", title: "Exploring Dublin", date: "March 13, 2026", label: "Ireland · Dublin", description: "Add your notes.", images: [] },
+      { id: "dublin-day-3", title: "Dublin", date: "March 14, 2026", label: "Ireland · Dublin", description: "Add your notes.", images: [] },
       { id: "dublin-day-4", title: "Departure", date: "March 16, 2026", label: "Ireland · Dublin", description: "Add your notes.", images: [] }
     ]
   },
   {
-    slug: "elenas-birthday",
-    title: "Elena's Birthday",
-    location: "Rome",
-    country: "Italy",
-    dateRange: "Mar 20 – 23, 2026",
-    locationTags: ["Rome, Italy"],
+    slug: "albania",
+    title: "Albania",
+    location: "Tirana",
+    country: "Albania",
+    dateRange: "Mar 19 – 22, 2026",
+    locationTags: ["Albania"],
     slideshow: [
-      { imageUrl: "https://images.pexels.com/photos/358319/pexels-photo-358319.jpeg?auto=compress&cs=tinysrgb&w=1600", caption: "Celebrating in Rome." },
+      { imageUrl: "https://images.pexels.com/photos/1796727/pexels-photo-1796727.jpeg?auto=compress&cs=tinysrgb&w=1600", caption: "Add your caption." },
       { imageUrl: "https://images.pexels.com/photos/461430/pexels-photo-461430.jpeg?auto=compress&cs=tinysrgb&w=1600", caption: "Add your caption." },
       { imageUrl: "https://images.pexels.com/photos/460740/pexels-photo-460740.jpeg?auto=compress&cs=tinysrgb&w=1600", caption: "Add your caption." }
     ],
-    mapEntryIds: [],
+    mapEntryIds: ["albania-airbnb"],
     activities: [
-      { id: "elenas-bday", title: "Elena's Birthday Weekend", date: "March 20, 2026", label: "Italy · Rome", description: "Add your notes for Elena's birthday celebration.", images: [] }
+      { id: "albania-airbnb", title: "Our Airbnb in Albania", date: "Mar 19 – 22, 2026", label: "Albania", description: "Add your accommodation description here.", entryType: "accommodation", link: "https://www.airbnb.com/rooms/YOUR_LISTING_ID", linkLabel: "View on Airbnb", mapEntryId: "albania-airbnb", rating: 5, images: [] },
+      { id: "albania-day-1", title: "Arrival", date: "March 19, 2026", label: "Albania", description: "Add your notes.", images: [] },
+      { id: "albania-day-2", title: "Exploring Albania", date: "March 20, 2026", label: "Albania", description: "Add your notes.", images: [] },
+      { id: "albania-day-3", title: "Albania", date: "March 21, 2026", label: "Albania", description: "Add your notes.", images: [] },
+      { id: "albania-day-4", title: "Departure", date: "March 22, 2026", label: "Albania", description: "Add your notes.", images: [] }
     ]
   },
   {
@@ -461,7 +465,7 @@ export const TRIP_PAGES: TripPage[] = [
     title: "Paris",
     location: "Paris",
     country: "France",
-    dateRange: "Mar 27 – 30, 2026",
+    dateRange: "Mar 26 – 29, 2026",
     locationTags: ["Paris, France"],
     slideshow: [
       { imageUrl: "https://images.pexels.com/photos/460740/pexels-photo-460740.jpeg?auto=compress&cs=tinysrgb&w=1600", caption: "The Eiffel Tower." },
@@ -470,11 +474,32 @@ export const TRIP_PAGES: TripPage[] = [
     ],
     mapEntryIds: ["paris-airbnb"],
     activities: [
-      { id: "paris-airbnb", title: "Our Airbnb in Paris", date: "Mar 27 – 30, 2026", label: "France · Paris", description: "Add your accommodation description here.", entryType: "accommodation", link: "https://www.airbnb.com/rooms/YOUR_LISTING_ID", linkLabel: "View on Airbnb", mapEntryId: "paris-airbnb", rating: 5, images: [] },
-      { id: "paris-day-1", title: "Arrival", date: "March 27, 2026", label: "France · Paris", description: "Add your notes.", images: [] },
-      { id: "paris-day-2", title: "Exploring Paris", date: "March 28, 2026", label: "France · Paris", description: "Add your notes.", images: [] },
-      { id: "paris-day-3", title: "Paris", date: "March 29, 2026", label: "France · Paris", description: "Add your notes.", images: [] },
-      { id: "paris-day-4", title: "Departure", date: "March 30, 2026", label: "France · Paris", description: "Add your notes.", images: [] }
+      { id: "paris-airbnb", title: "Our Airbnb in Paris", date: "Mar 26 – 29, 2026", label: "France · Paris", description: "Add your accommodation description here.", entryType: "accommodation", link: "https://www.airbnb.com/rooms/YOUR_LISTING_ID", linkLabel: "View on Airbnb", mapEntryId: "paris-airbnb", rating: 5, images: [] },
+      { id: "paris-day-1", title: "Arrival", date: "March 26, 2026", label: "France · Paris", description: "Add your notes.", images: [] },
+      { id: "paris-day-2", title: "Exploring Paris", date: "March 27, 2026", label: "France · Paris", description: "Add your notes.", images: [] },
+      { id: "paris-day-3", title: "Paris", date: "March 28, 2026", label: "France · Paris", description: "Add your notes.", images: [] },
+      { id: "paris-day-4", title: "Departure", date: "March 29, 2026", label: "France · Paris", description: "Add your notes.", images: [] }
+    ]
+  },
+  {
+    slug: "copenhagen",
+    title: "Copenhagen",
+    location: "Copenhagen",
+    country: "Denmark",
+    dateRange: "Apr 9 – 12, 2026",
+    locationTags: ["Copenhagen, Denmark"],
+    slideshow: [
+      { imageUrl: "https://images.pexels.com/photos/1113638/pexels-photo-1113638.jpeg?auto=compress&cs=tinysrgb&w=1600", caption: "Add your caption." },
+      { imageUrl: "https://images.pexels.com/photos/461430/pexels-photo-461430.jpeg?auto=compress&cs=tinysrgb&w=1600", caption: "Add your caption." },
+      { imageUrl: "https://images.pexels.com/photos/460740/pexels-photo-460740.jpeg?auto=compress&cs=tinysrgb&w=1600", caption: "Add your caption." }
+    ],
+    mapEntryIds: ["copenhagen-airbnb"],
+    activities: [
+      { id: "copenhagen-airbnb", title: "Our Airbnb in Copenhagen", date: "Apr 9 – 12, 2026", label: "Denmark · Copenhagen", description: "Add your accommodation description here.", entryType: "accommodation", link: "https://www.airbnb.com/rooms/YOUR_LISTING_ID", linkLabel: "View on Airbnb", mapEntryId: "copenhagen-airbnb", rating: 5, images: [] },
+      { id: "copenhagen-day-1", title: "Arrival", date: "April 9, 2026", label: "Denmark · Copenhagen", description: "Add your notes.", images: [] },
+      { id: "copenhagen-day-2", title: "Exploring Copenhagen", date: "April 10, 2026", label: "Denmark · Copenhagen", description: "Add your notes.", images: [] },
+      { id: "copenhagen-day-3", title: "Copenhagen", date: "April 11, 2026", label: "Denmark · Copenhagen", description: "Add your notes.", images: [] },
+      { id: "copenhagen-day-4", title: "Departure", date: "April 12, 2026", label: "Denmark · Copenhagen", description: "Add your notes.", images: [] }
     ]
   },
   {
@@ -482,7 +507,7 @@ export const TRIP_PAGES: TripPage[] = [
     title: "Malta",
     location: "Valletta",
     country: "Malta",
-    dateRange: "Apr 17 – 20, 2026",
+    dateRange: "Apr 16 – 19, 2026",
     locationTags: ["Malta"],
     slideshow: [
       { imageUrl: "https://images.pexels.com/photos/1796727/pexels-photo-1796727.jpeg?auto=compress&cs=tinysrgb&w=1600", caption: "Valletta." },
@@ -491,11 +516,11 @@ export const TRIP_PAGES: TripPage[] = [
     ],
     mapEntryIds: ["malta-airbnb"],
     activities: [
-      { id: "malta-airbnb", title: "Our Airbnb in Malta", date: "Apr 17 – 20, 2026", label: "Malta", description: "Add your accommodation description here.", entryType: "accommodation", link: "https://www.airbnb.com/rooms/YOUR_LISTING_ID", linkLabel: "View on Airbnb", mapEntryId: "malta-airbnb", rating: 5, images: [] },
-      { id: "malta-day-1", title: "Arrival", date: "April 17, 2026", label: "Malta", description: "Add your notes.", images: [] },
-      { id: "malta-day-2", title: "Exploring Malta", date: "April 18, 2026", label: "Malta", description: "Add your notes.", images: [] },
-      { id: "malta-day-3", title: "Malta", date: "April 19, 2026", label: "Malta", description: "Add your notes.", images: [] },
-      { id: "malta-day-4", title: "Departure", date: "April 20, 2026", label: "Malta", description: "Add your notes.", images: [] }
+      { id: "malta-airbnb", title: "Our Airbnb in Malta", date: "Apr 16 – 19, 2026", label: "Malta", description: "Add your accommodation description here.", entryType: "accommodation", link: "https://www.airbnb.com/rooms/YOUR_LISTING_ID", linkLabel: "View on Airbnb", mapEntryId: "malta-airbnb", rating: 5, images: [] },
+      { id: "malta-day-1", title: "Arrival", date: "April 16, 2026", label: "Malta", description: "Add your notes.", images: [] },
+      { id: "malta-day-2", title: "Exploring Malta", date: "April 17, 2026", label: "Malta", description: "Add your notes.", images: [] },
+      { id: "malta-day-3", title: "Malta", date: "April 18, 2026", label: "Malta", description: "Add your notes.", images: [] },
+      { id: "malta-day-4", title: "Departure", date: "April 19, 2026", label: "Malta", description: "Add your notes.", images: [] }
     ]
   },
   {

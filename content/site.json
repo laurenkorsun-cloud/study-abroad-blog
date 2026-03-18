@@ -9,7 +9,7 @@
     { "href": "/food", "label": "Food" },
     { "href": "/rome", "label": "Rome" },
     { "href": "/weekend-trips", "label": "Weekend Trips" },
-    { "href": "/unesco-sights", "label": "UNESCO Sights" }
+    { "href": "/unesco-sights", "label": "UNESCO Sites" }
   ],
   "ui": {
     "loadingMap": "Loading map…",

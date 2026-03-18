@@ -29,7 +29,7 @@
     {
       "id": "food",
       "label": "Food",
-      "title": "Food of the World",
+      "title": "Food Spots",
       "description": "All the restaurants, cafes, and more I ate in throughout the semester.",
       "href": "/food",
       "imageUrl": "/food-home.png"

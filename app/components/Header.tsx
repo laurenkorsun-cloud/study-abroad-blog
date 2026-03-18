@@ -2,10 +2,19 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import type { ReactNode } from "react";
+import { useState, type ReactNode } from "react";
 import { siteMeta, navItems } from "../../data/siteContent";
+import { useIsMobile } from "../hooks/useIsMobile";
 
-function NavLink({ href, children }: { href: string; children: ReactNode }) {
+function NavLink({
+  href,
+  children,
+  onClick
+}: {
+  href: string;
+  children: ReactNode;
+  onClick?: () => void;
+}) {
   const pathname = usePathname();
   const isActive =
     href === "/"
@@ -15,7 +24,8 @@ function NavLink({ href, children }: { href: string; children: ReactNode }) {
   return (
     <Link
       href={href}
-      className={`text-xs uppercase tracking-[0.2em] ${
+      onClick={onClick}
+      className={`block text-xs uppercase tracking-[0.2em] ${
         isActive ? "font-semibold" : "text-slate-500 hover:text-slate-900"
       }`}
     >
@@ -25,8 +35,25 @@ function NavLink({ href, children }: { href: string; children: ReactNode }) {
 }
 
 export function Header() {
+  const isMobile = useIsMobile();
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const navContent = (
+    <>
+      {navItems.map((item) => (
+        <NavLink
+          key={item.href}
+          href={item.href}
+          onClick={() => setMenuOpen(false)}
+        >
+          {item.label}
+        </NavLink>
+      ))}
+    </>
+  );
+
   return (
-    <header className="border-b border-slate-200 bg-white">
+    <header className="sticky top-0 z-50 border-b border-slate-200 bg-white">
       <div className="flex w-full items-center justify-between px-4 py-5 md:px-8 md:py-6">
         <Link
           href="/"
@@ -34,15 +61,50 @@ export function Header() {
         >
           {siteMeta.siteName}
         </Link>
-        <nav className="flex gap-6">
-          {navItems.map((item) => (
-            <NavLink key={item.href} href={item.href}>
-              {item.label}
-            </NavLink>
-          ))}
-        </nav>
+
+        {isMobile ? (
+          <>
+            <button
+              type="button"
+              onClick={() => setMenuOpen((o) => !o)}
+              className="flex h-10 w-10 items-center justify-center rounded-lg border border-slate-200 text-slate-700 hover:bg-slate-50"
+              aria-label="Toggle menu"
+              aria-expanded={menuOpen}
+            >
+              <span className="sr-only">Menu</span>
+              {menuOpen ? (
+                <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              ) : (
+                <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+              )}
+            </button>
+
+            {menuOpen && (
+              <>
+                <div
+                  className="fixed inset-0 top-[57px] z-40 bg-slate-900/20"
+                  aria-hidden="true"
+                  onClick={() => setMenuOpen(false)}
+                />
+                <nav
+                  className="absolute right-0 top-full z-50 mt-0 flex w-56 flex-col gap-4 border-b border-l border-slate-200 bg-white px-6 py-5 shadow-lg"
+                  role="navigation"
+                >
+                  {navContent}
+                </nav>
+              </>
+            )}
+          </>
+        ) : (
+          <nav className="flex gap-6" role="navigation">
+            {navContent}
+          </nav>
+        )}
       </div>
     </header>
   );
 }
-

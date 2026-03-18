@@ -12,6 +12,8 @@ export type BlogPost = {
   date: string;
   label: string;
   description: string;
+  /** Optional images attached directly to the Rome entry card. */
+  images?: { imageUrl: string; caption?: string }[];
 };
 
 export type GalleryImage = {

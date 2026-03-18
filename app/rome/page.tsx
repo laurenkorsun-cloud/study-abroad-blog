@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ContentBox, ImageGallery, type GalleryImage } from "../components/shared";
+import { ContentBox, ImageGallery } from "../components/shared";
 import { InteractiveMap } from "../components/MapWrapper";
 import { getAllEntries } from "../../data/mapEntries";
 import {
@@ -30,57 +30,76 @@ export default function RomePage() {
   return (
     <div className="flex flex-col">
       {/* Page header */}
-      <section className="section-container border-b border-slate-100">
-        <div className="page-header">
-          <p className="page-label">{romePageHeader.label}</p>
-          <h1 className="page-title">{romePageHeader.title}</h1>
-          <p className="page-description">{romePageHeader.description}</p>
+      <section className="relative overflow-hidden border-b border-slate-200 bg-gradient-to-b from-slate-50 to-white">
+        <div className="section-container relative">
+          <div className="page-header max-w-2xl">
+            <p className="page-label">{romePageHeader.label}</p>
+            <h1 className="page-title text-3xl md:text-4xl lg:text-5xl">
+              {romePageHeader.title}
+            </h1>
+            <p className="page-description mt-4">{romePageHeader.description}</p>
+          </div>
+          <div className="absolute bottom-0 left-0 h-1 w-24 bg-slate-900" aria-hidden="true" />
         </div>
       </section>
 
-      {/* Blog entries and sidebar */}
-      <section className="section-container bg-box-bg">
-        <div className="grid gap-6 lg:grid-cols-[minmax(0,1.5fr)_minmax(0,1fr)]">
-          <div className="space-y-4">
-            <div className="flex items-center justify-between gap-2">
+      {/* Entries: floating cards + sticky sidebar */}
+      <section className="section-container bg-white">
+        <div className="grid gap-8 lg:grid-cols-[1fr_320px]">
+          <div>
+            <div className="mb-6 flex flex-wrap items-end justify-between gap-3">
               <h2 className="box-title">{romeEntriesSection.title}</h2>
-              <span className="text-xs text-text-muted">
-                {romeEntriesSection.subtitle}
-              </span>
+              {romeEntriesSection.subtitle && romeEntriesSection.subtitle.trim().length > 0 && (
+                <span className="text-xs text-text-muted">
+                  {romeEntriesSection.subtitle}
+                </span>
+              )}
             </div>
-            <div className="space-y-4">
-              {romeDailyPosts.map((post) => (
-                <ContentBox
-                  key={post.id}
-                  title={post.title}
-                  label={post.label}
-                  date={post.date}
-                  description={post.description}
-                />
-              ))}
+
+            <div className="grid gap-5 sm:grid-cols-2">
+              {romeDailyPosts.map((post, index) => {
+                const isFeatured = index % 5 === 0;
+                return (
+                  <div
+                    key={post.id}
+                    className={isFeatured ? "sm:col-span-2" : ""}
+                  >
+                    <div className="h-full rounded-2xl border border-slate-200 bg-white/90 shadow-sm transition hover:-translate-y-0.5 hover:shadow-lg">
+                      <ContentBox
+                        title={post.title}
+                        label={post.label}
+                        date={post.date}
+                        description={post.description}
+                        images={post.images}
+                        className="!bg-transparent !shadow-none !rounded-2xl"
+                      />
+                    </div>
+                  </div>
+                );
+              })}
             </div>
           </div>
 
-          {/* Sidebar */}
-          <div className="space-y-4">
-            <div className="image-card">
+          {/* Sticky sidebar */}
+          <aside className="space-y-5 lg:sticky lg:top-24 lg:self-start">
+            <div className="image-card overflow-hidden rounded-box-lg shadow-md">
               <div
-                className="h-44 bg-cover bg-center"
+                className="h-48 bg-cover bg-center transition duration-300 hover:scale-[1.02]"
                 style={{
-                  backgroundImage: `linear-gradient(to bottom, rgba(15,23,42,0.1), rgba(15,23,42,0.6)), url(${romeSidebar.heroImage})`
+                  backgroundImage: `linear-gradient(to bottom, rgba(15,23,42,0.08), rgba(15,23,42,0.5)), url(${romeSidebar.heroImage})`
                 }}
               />
-              <div className="image-card-caption space-y-2">
+              <div className="image-card-caption space-y-2 px-5 py-4">
                 <p className="text-xs font-semibold uppercase tracking-[0.18em] text-text-muted">
                   {romeSidebar.heroLabel}
                 </p>
-                <p className="text-sm text-text-secondary">
+                <p className="text-sm leading-relaxed text-text-secondary">
                   {romeSidebar.heroDescription}
                 </p>
               </div>
             </div>
 
-            <div className="content-box space-y-3">
+            <div className="content-box space-y-3 rounded-box-lg shadow-sm">
               <div className="flex items-center justify-between gap-2">
                 <h2 className="text-sm font-semibold">{romeSidebar.videoTitle}</h2>
                 <span className="text-[11px] text-text-muted">
@@ -101,12 +120,12 @@ export default function RomePage() {
                 </div>
               </div>
             </div>
-          </div>
+          </aside>
         </div>
       </section>
 
       {/* Image galleries */}
-      <section className="section-container space-y-6">
+      <section className="section-container space-y-8 bg-box-bg py-section-lg">
         <ImageGallery
           title={romeGalleriesSection.roma.title}
           subtitle={romeGalleriesSection.roma.subtitle}
@@ -121,8 +140,8 @@ export default function RomePage() {
       </section>
 
       {/* Map section */}
-      <section className="section-container border-t border-slate-100 bg-box-bg">
-        <div className="space-y-4">
+      <section className="section-container border-t border-slate-200 bg-white py-section-lg">
+        <div className="space-y-5">
           <div className="flex flex-col justify-between gap-3 md:flex-row md:items-end">
             <div className="space-y-2">
               <h2 className="box-title">{romeMapSection.title}</h2>
@@ -130,19 +149,22 @@ export default function RomePage() {
                 {romeMapSection.description}
               </p>
             </div>
-            <Link href={romeMapSection.ctaHref} className="btn-primary">
+            <Link href={romeMapSection.ctaHref} className="btn-primary shrink-0">
               {romeMapSection.ctaButton}
             </Link>
           </div>
 
-          <InteractiveMap
-            entries={romeEntries}
-            center={[41.9028, 12.4964]}
-            zoom={13}
-            height="50vh"
-          />
+          <div className="overflow-hidden rounded-box-lg border border-slate-200 shadow-sm">
+            <InteractiveMap
+              entries={romeEntries}
+              center={[41.9028, 12.4964]}
+              zoom={13}
+              height="50vh"
+            />
+          </div>
         </div>
       </section>
     </div>
   );
 }
+

@@ -1,0 +1,11 @@
+---
+description: Mobile vs desktop layout for all pages
+alwaysApply: true
+---
+
+# Responsive layout (mobile vs desktop)
+
+- **All pages** use the same app shell: `ResponsiveLayout` in `app/layout.tsx` renders `Header` + `main`. The Header shows a hamburger menu and slide-out nav on small viewports, and horizontal nav on larger ones.
+- **Main** has `data-viewport="mobile"` or `data-viewport="desktop"` so CSS or JS can target viewport.
+- **New pages**: Prefer Tailwind responsive classes (e.g. `md:grid-cols-2`, `max-md:flex-col`) for layout. When a page needs different structure on mobile vs desktop (e.g. map full-width on mobile, map + side panel on desktop), use the client hook `useIsMobile()` from `app/hooks/useIsMobile.ts` and branch rendering or classes on its return value.
+- **Future pages** automatically get the responsive shell; no extra wiring needed.
