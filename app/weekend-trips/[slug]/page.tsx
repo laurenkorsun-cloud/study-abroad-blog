@@ -5,11 +5,11 @@ import { useParams } from "next/navigation";
 import { useState } from "react";
 import dynamic from "next/dynamic";
 import { getTripPageBySlug } from "../../../data/tripPages";
-import { getEntriesByIds } from "../../../data/mapEntries";
-import { ContentBox } from "../../components/shared";
 import { weekendTripDetail } from "../../../data/weekendTripsContent";
 import { getWeatherForTrip } from "../../../data/tripWeather";
 import { useImageLightbox } from "../../components/shared/ImageLightbox";
+import { WeekendSocialPost } from "../../components/weekend/WeekendSocialPost";
+import { getEntriesByIds } from "../../../data/mapEntries";
 
 const TripMap = dynamic(
   () => import("../../components/TripMap").then((mod) => ({ default: mod.TripMap })),
@@ -31,7 +31,7 @@ function Slideshow({ slides }: SlideshowProps) {
   if (safeSlides.length === 0) return null;
 
   return (
-    <section className="relative overflow-hidden border-t border-b border-slate-200 bg-slate-50">
+    <section className="relative overflow-hidden bg-slate-50 md:rounded-2xl">
       <div className="relative h-[60vh] w-full md:h-[70vh]">
         {safeSlides.map((slide, idx) => (
           <div
@@ -60,7 +60,6 @@ function Slideshow({ slides }: SlideshowProps) {
         ))}
       </div>
 
-      {/* Nav arrows */}
       <button
         type="button"
         onClick={(e) => {
@@ -82,7 +81,6 @@ function Slideshow({ slides }: SlideshowProps) {
         →
       </button>
 
-      {/* Dots */}
       <div className="absolute inset-x-0 bottom-4 z-10 flex justify-center gap-2">
         {safeSlides.map((_, idx) => (
           <button
@@ -155,21 +153,32 @@ export default function WeekendTripDetailPage() {
 
   return (
     <div className="flex flex-col bg-journal-paper">
-      {/* Title — same journal rhythm as home cover */}
-      <section className="section-container border-b border-slate-200/70 bg-journal-paper">
-        <div className="page-header">
+      {/* Page label */}
+      <section className="section-container border-b border-slate-200/70 bg-journal-paper pb-2 pt-section md:pb-3 md:pt-section-lg">
+        <div className="mx-auto max-w-xl text-center">
           <p className="page-label">{weekendTripDetail.pageLabel}</p>
-          <h1 className="page-title">{trip.title}</h1>
-          <div className="flex flex-wrap items-center gap-3 pt-2">
-            <span className="tag">{trip.dateRange}</span>
+        </div>
+      </section>
+
+      {/* Slim profile bar */}
+      <section className="section-container border-b border-slate-200/70 bg-journal-paper pb-section pt-2 md:pb-section-lg">
+        <div className="mx-auto max-w-xl text-center">
+          <h1 className="font-title text-xl font-semibold tracking-tight text-slate-900 md:text-2xl">
+            {trip.title}
+          </h1>
+          <p className="mt-1.5 font-inter text-xs text-slate-500">{trip.dateRange}</p>
+          <div className="mt-2 flex flex-wrap items-center justify-center gap-2">
             {trip.locationTags
               ? trip.locationTags.map((loc) => (
-                  <span key={loc} className="tag">
+                  <span
+                    key={loc}
+                    className="rounded-full border border-slate-200/80 bg-white/80 px-2.5 py-0.5 font-inter text-[11px] text-slate-600"
+                  >
                     {loc}
                   </span>
                 ))
               : (
-                  <span className="tag">
+                  <span className="rounded-full border border-slate-200/80 bg-white/80 px-2.5 py-0.5 font-inter text-[11px] text-slate-600">
                     {trip.location}, {trip.country}
                   </span>
                 )}
@@ -177,13 +186,16 @@ export default function WeekendTripDetailPage() {
         </div>
       </section>
 
-      {/* Weather forecast for this weekend */}
-      {weather && (
-        <section className="section-container border-t border-slate-200/80 bg-journal-paper pt-0">
-          <div className="mx-auto max-w-3xl">
-            <div className="content-box flex flex-col items-center gap-4">
-              <p className="page-label">{weekendTripDetail.weatherTitle}</p>
-              <div className="flex gap-4">
+      <div className="section-container bg-journal-paper">
+        <div className="mx-auto w-full max-w-xl">
+        {/* Weather */}
+        {weather && (
+          <section className="border-t border-slate-200/80 bg-journal-paper py-6 md:py-8">
+            <div className="rounded-2xl border border-slate-200/80 bg-white p-5 shadow-md">
+              <p className="text-center font-title text-sm font-semibold text-slate-900 md:text-base">
+                {weekendTripDetail.weatherTitle}
+              </p>
+              <div className="mt-4 flex flex-wrap justify-center gap-4 md:gap-6">
                 {weather.days.map((day) => (
                   <div key={day.label} className="min-w-[70px] text-center">
                     {day.icon && (
@@ -191,71 +203,66 @@ export default function WeekendTripDetailPage() {
                         {day.icon}
                       </div>
                     )}
-                    <p className="text-xs font-semibold text-text-muted">
-                      {day.label}
-                    </p>
+                    <p className="text-xs font-semibold text-text-muted">{day.label}</p>
                     <p className="text-sm font-semibold text-text-primary">
                       {day.high}°F / {day.low}°F
                     </p>
-                    <p className="mt-1 text-xs text-text-secondary">
-                      {day.summary}
-                    </p>
+                    <p className="mt-1 font-inter text-xs text-text-secondary">{day.summary}</p>
                   </div>
                 ))}
               </div>
             </div>
-          </div>
-        </section>
-      )}
+          </section>
+        )}
 
-      {/* Slideshow */}
-      {trip.slideshow?.length ? <Slideshow slides={trip.slideshow} /> : null}
+        {/* Slideshow — IG-style frame on md+ */}
+        {trip.slideshow?.length ? (
+          <section className="border-t border-slate-200/80 bg-journal-paper py-6 md:py-8">
+            <div className="w-full overflow-hidden md:mx-auto md:max-w-lg md:rounded-2xl md:border md:border-slate-200/80 md:shadow-md">
+              <Slideshow slides={trip.slideshow} />
+            </div>
+          </section>
+        ) : null}
 
-      {/* Chronological timeline of moments */}
-      <section className="section-container border-t border-slate-200/80 bg-journal-paper">
-        <div className="mx-auto max-w-3xl space-y-4">
-          <h2 className="box-title">{weekendTripDetail.entriesTitle}</h2>
-
-          <div className="relative mt-6 space-y-6 border-l border-slate-200 pl-6">
+        {/* Feed */}
+        <section className="border-t border-slate-200/80 bg-journal-paper py-6 md:py-8">
+          <h2 className="box-title mb-6 text-center font-title">{weekendTripDetail.entriesTitle}</h2>
+          <div className="space-y-6">
             {(trip.activities ?? []).map((activity) => (
-              <div key={activity.id} className="relative">
-                {/* Timeline dot */}
-                <span className="absolute -left-[7px] top-4 h-3 w-3 rounded-full border-2 border-white bg-accent-primary shadow" />
-
-                <ContentBox
-                  title={activity.title}
-                  label={activity.label}
-                  date={activity.date}
-                  description={activity.description}
-                  images={activity.images}
-                  link={activity.link}
-                  linkLabel={activity.linkLabel ?? (activity.entryType === "accommodation" ? weekendTripDetail.accommodationLinkLabel : undefined)}
-                  rating={activity.rating}
-                  className="ml-4 hover:shadow-md transition-shadow"
-                />
-              </div>
+              <WeekendSocialPost
+                key={activity.id}
+                tripTitle={trip.title}
+                activity={activity}
+                linkLabel={
+                  activity.linkLabel ??
+                  (activity.entryType === "accommodation"
+                    ? weekendTripDetail.accommodationLinkLabel
+                    : undefined)
+                }
+              />
             ))}
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Interactive map at the bottom, stays consistent with other pages */}
-      <section className="section-container border-t border-slate-200/80 bg-journal-paper">
-        <div className="space-y-2">
-          <h2 className="box-title">{weekendTripDetail.mapTitle}</h2>
-          <p className="max-w-2xl font-inter text-sm text-text-secondary md:text-base">
-            {weekendTripDetail.mapDescription}
-          </p>
+        {/* Map */}
+        <section className="border-t border-slate-200/80 bg-journal-paper py-6 pb-section md:py-8 md:pb-section-lg">
+          <div className="space-y-2 text-center md:text-left">
+            <h2 className="box-title font-title">{weekendTripDetail.mapTitle}</h2>
+            <p className="mx-auto max-w-2xl font-inter text-sm text-text-secondary md:mx-0 md:text-base">
+              {weekendTripDetail.mapDescription}
+            </p>
+          </div>
+          <div className="mt-4 overflow-hidden rounded-2xl border border-slate-200/80 bg-white shadow-md">
+            <TripMap
+              entries={mapEntries}
+              cityCenter={cityCenter}
+              activeMarkerId={activeMarkerId}
+              onMarkerSelect={(markerId) => setActiveMarkerId(markerId)}
+            />
+          </div>
+        </section>
         </div>
-        <div className="mt-4 overflow-hidden rounded-sm border border-slate-200/90 bg-white shadow-md">
-          <TripMap
-            entries={mapEntries}
-            cityCenter={cityCenter}
-            activeMarkerId={activeMarkerId}
-            onMarkerSelect={(markerId) => setActiveMarkerId(markerId)}
-          />
-        </div>
-      </section>
+      </div>
     </div>
   );
 }
