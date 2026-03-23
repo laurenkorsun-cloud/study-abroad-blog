@@ -40,7 +40,7 @@ export function TripCard({
         className="flex flex-1 flex-col justify-between gap-1.5 px-4 py-3 no-underline text-inherit transition hover:bg-slate-50/80 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-slate-300"
       >
         <div className="space-y-0.5">
-          <p className="text-sm font-medium text-slate-900">{trip.title}</p>
+          <p className="font-helvetica text-sm font-medium text-slate-900">{trip.title}</p>
           <p className="text-xs text-slate-400">
             {trip.location}, {trip.country}
           </p>

@@ -17,14 +17,20 @@
     @apply font-inter antialiased;
   }
 
-  /* Titles — Helvetica (system stack) */
-  h1, h2, h3, h4 {
+  /* Titles — Helvetica (explicit so they don’t inherit body Inter from parents) */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply font-helvetica tracking-normal text-text-primary;
   }
 
-  /* Navigation and buttons use clean sans-serif */
-  nav, button {
-    @apply font-sans;
+  /* Navigation and buttons — Inter (same as body); titles stay Helvetica above */
+  nav,
+  button {
+    @apply font-inter;
   }
 
   a {

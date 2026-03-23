@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function NotFound() {
   return (
     <div className="flex min-h-[60vh] flex-col items-center justify-center gap-4 px-6">
-      <h1 className="text-2xl font-semibold text-slate-900">Page not found</h1>
+      <h1 className="font-helvetica text-2xl font-semibold text-slate-900">Page not found</h1>
       <p className="text-sm text-slate-600">
         The page you’re looking for doesn’t exist or couldn’t be loaded.
       </p>

@@ -89,7 +89,7 @@ function DetailPanel({ entry, onClose }: DetailPanelProps) {
           <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-text-muted">
             {entry.type}
           </p>
-          <h3 className="text-lg font-semibold text-text-primary">
+          <h3 className="font-helvetica text-lg font-semibold text-text-primary">
             {entry.title}
           </h3>
         </div>
