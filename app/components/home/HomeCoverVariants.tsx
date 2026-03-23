@@ -5,6 +5,9 @@ import { uiStrings } from "../../../data/siteContent";
 import type { MapEntry } from "../../../data/mapEntries";
 import { InteractiveMap } from "../MapWrapper";
 import { useSearchParams } from "next/navigation";
+import { parseCoverVariant, type HomeCoverVariant } from "../../../lib/coverVariants";
+
+export type { HomeCoverVariant };
 
 type HomeHero = {
   label: string;
@@ -34,58 +37,12 @@ type HomeMapPreview = {
   ctaHref: string;
 };
 
-export type HomeCoverVariant =
-  | "minimal"
-  | "bold"
-  | "editorial"
-  | "startup"
-  | "classic"
-  | "fluid"
-  | "warm"
-  | "journal";
-
 type HomeCoverProps = {
   hero: HomeHero;
   sections: HomeSection[];
   mapPreview: HomeMapPreview;
   entries: MapEntry[];
 };
-
-function VariantPills({ current }: { current: HomeCoverVariant }) {
-  const items: Array<{ id: HomeCoverVariant; label: string }> = [
-    { id: "classic", label: "Classic" },
-    { id: "minimal", label: "Minimal" },
-    { id: "bold", label: "Bold" },
-    { id: "editorial", label: "Editorial" },
-    { id: "startup", label: "Startup" },
-    { id: "fluid", label: "Fluid" },
-    { id: "warm", label: "Warm" },
-    { id: "journal", label: "Journal" }
-  ];
-
-  return (
-    <div className="mx-auto flex w-full max-w-6xl items-center justify-center px-4 pt-4 md:px-10 md:pt-6">
-      <div className="flex max-w-full flex-wrap justify-center gap-1.5 rounded-2xl border border-slate-200/80 bg-white/90 px-2 py-2 shadow-sm backdrop-blur-sm md:gap-2 md:rounded-full md:px-3">
-        {items.map((item) => {
-          const active = item.id === current;
-          return (
-            <Link
-              key={item.id}
-              href={`/?cover=${item.id}`}
-              className={`whitespace-nowrap rounded-full px-2.5 py-1 text-[11px] font-medium transition md:px-3 md:text-xs ${
-                active
-                  ? "bg-slate-900 text-white"
-                  : "text-text-secondary hover:bg-slate-100 hover:text-text-primary"
-              }`}
-            >
-              {item.label}
-            </Link>
-          );
-        })}
-      </div>
-    </div>
-  );
-}
 
 function HeroButtons({ hero }: { hero: HomeHero }) {
   return (
@@ -924,33 +881,12 @@ function SectionJournal({ sections }: { sections: HomeSection[] }) {
   );
 }
 
-function getVariantFromSearchParams(searchParams: URLSearchParams | null): HomeCoverVariant {
-  if (!searchParams) return "classic";
-  const raw = searchParams.get("cover") ?? "";
-  const v = raw.toLowerCase();
-  if (
-    v === "classic" ||
-    v === "minimal" ||
-    v === "bold" ||
-    v === "editorial" ||
-    v === "startup" ||
-    v === "fluid" ||
-    v === "warm" ||
-    v === "journal"
-  ) {
-    return v;
-  }
-  return "classic";
-}
-
 export function HomeCover({ hero, sections, mapPreview, entries }: HomeCoverProps) {
   const searchParams = useSearchParams();
-  const variant = getVariantFromSearchParams(searchParams);
+  const variant = parseCoverVariant(searchParams);
 
   return (
     <div className="flex flex-col">
-      <VariantPills current={variant} />
-
       {variant === "classic" && <HeroClassic hero={hero} />}
       {variant === "minimal" && <HeroMinimal hero={hero} />}
       {variant === "bold" && <HeroBold hero={hero} />}

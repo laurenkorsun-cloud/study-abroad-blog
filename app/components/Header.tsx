@@ -2,7 +2,8 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState, type ReactNode } from "react";
+import { Suspense, useState, type ReactNode } from "react";
+import { CoverStyleBar } from "./CoverStyleBar";
 import { siteMeta, navItems } from "../../data/siteContent";
 import { useIsMobile } from "../hooks/useIsMobile";
 
@@ -35,6 +36,7 @@ function NavLink({
 }
 
 export function Header() {
+  const pathname = usePathname();
   const isMobile = useIsMobile();
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -51,6 +53,8 @@ export function Header() {
       ))}
     </>
   );
+
+  const isHome = pathname === "/";
 
   return (
     <header className="sticky top-0 z-50 border-b border-slate-200 bg-white">
@@ -105,6 +109,18 @@ export function Header() {
           </nav>
         )}
       </div>
+
+      {isHome && (
+        <Suspense
+          fallback={
+            <div className="border-t border-slate-200 bg-slate-50 px-4 py-3 text-center text-xs text-slate-500">
+              Loading cover options…
+            </div>
+          }
+        >
+          <CoverStyleBar />
+        </Suspense>
+      )}
     </header>
   );
 }

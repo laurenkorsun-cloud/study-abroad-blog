@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import Link from "next/link";
 import {
   homeHero,
@@ -60,10 +61,20 @@ function SectionCard({
   );
 }
 
+function HomeLoading() {
+  return (
+    <div className="flex min-h-[40vh] flex-col items-center justify-center gap-3 bg-slate-50 px-6 py-16 text-center">
+      <p className="text-sm text-slate-600">Loading home…</p>
+    </div>
+  );
+}
+
 export default function HomePage() {
   const entries = getAllEntries();
 
   return (
-    <HomeCover hero={homeHero} sections={homeSections} mapPreview={homeMapPreview} entries={entries} />
+    <Suspense fallback={<HomeLoading />}>
+      <HomeCover hero={homeHero} sections={homeSections} mapPreview={homeMapPreview} entries={entries} />
+    </Suspense>
   );
 }
