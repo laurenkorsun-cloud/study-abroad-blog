@@ -99,7 +99,12 @@ function HeroJournal({ hero }: { hero: HomeHero }) {
             <span>{hero.label}</span>
             <span className="h-px w-12 bg-teal-600/50" aria-hidden="true" />
           </div>
-          <h1 className="font-helvetica text-4xl font-semibold leading-[1.15] text-slate-900 md:text-5xl lg:text-[3.25rem]">
+          <h1
+            className="text-4xl font-bold leading-[1.1] tracking-tight text-slate-900 md:text-5xl lg:text-[3.25rem]"
+            style={{
+              fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
+            }}
+          >
             {hero.title}
           </h1>
           {hero.description.trim() ? (
