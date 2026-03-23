@@ -37,7 +37,7 @@ function SightCard({ sight }: { sight: UnescoSight }) {
         <button
           type="button"
           disabled={!cover}
-          className="h-52 w-full cursor-zoom-in border-0 bg-slate-200 bg-cover bg-center p-0 disabled:cursor-default md:h-56"
+          className="h-52 w-full cursor-default border-0 bg-slate-200 bg-cover bg-center p-0 disabled:cursor-not-allowed md:h-56"
           style={{
             backgroundImage: cover
               ? `linear-gradient(to bottom, rgba(15,23,42,0.10), rgba(15,23,42,0.55)), url(${cover})`
@@ -92,7 +92,7 @@ function SightCard({ sight }: { sight: UnescoSight }) {
               <button
                 key={`${sight.id}-${idx}`}
                 type="button"
-                className="h-20 cursor-zoom-in overflow-hidden rounded-xl border-0 bg-slate-200 bg-cover bg-center bg-no-repeat p-0"
+                className="h-20 cursor-default overflow-hidden rounded-xl border-0 bg-slate-200 bg-cover bg-center bg-no-repeat p-0"
                 style={{ backgroundImage: `url(${url})` }}
                 onClick={() => open(url)}
                 aria-label={`View photo ${idx + 1} full size`}

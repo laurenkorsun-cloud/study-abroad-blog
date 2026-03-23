@@ -196,7 +196,7 @@ export default function FoodPage() {
     <div className="flex flex-col">
       <LightboxableImage
         src={foodPageCoverImage}
-        className="h-48 w-full cursor-zoom-in md:h-56 lg:h-64"
+        className="h-48 w-full cursor-default md:h-56 lg:h-64"
         style={{
           backgroundImage: `linear-gradient(to bottom, rgba(15,23,42,0.06), rgba(15,23,42,0.35)), url(${foodPageCoverImage})`
         }}
@@ -272,7 +272,7 @@ export default function FoodPage() {
                       {r.imageUrls[0] && (
                         <div
                           role="presentation"
-                          className="-mx-box-padding -mt-box-padding mb-3 h-32 cursor-zoom-in bg-cover bg-center"
+                          className="-mx-box-padding -mt-box-padding mb-3 h-32 cursor-default bg-cover bg-center"
                           style={{
                             backgroundImage: `url(${r.imageUrls[0]})`,
                             borderRadius: "1rem 1rem 0 0"

@@ -132,7 +132,7 @@ function DetailPanel({ entry, onClose }: DetailPanelProps) {
                 <button
                   key={idx}
                   type="button"
-                  className="aspect-square cursor-zoom-in overflow-hidden rounded-box border-0 bg-slate-100 bg-cover bg-center bg-no-repeat p-0"
+                  className="aspect-square cursor-default overflow-hidden rounded-box border-0 bg-slate-100 bg-cover bg-center bg-no-repeat p-0"
                   style={{ backgroundImage: `url(${url})` }}
                   onClick={() => open(url)}
                   aria-label={`View photo ${idx + 1} full size`}

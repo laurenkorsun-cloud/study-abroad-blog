@@ -195,7 +195,7 @@ export function TripMap({
                   <button
                     key={idx}
                     type="button"
-                    className="h-32 cursor-zoom-in overflow-hidden rounded-xl border border-slate-200 bg-slate-50 bg-cover bg-center bg-no-repeat p-0"
+                    className="h-32 cursor-default overflow-hidden rounded-xl border border-slate-200 bg-slate-50 bg-cover bg-center bg-no-repeat p-0"
                     style={{ backgroundImage: `url(${url})` }}
                     onClick={() => open(url)}
                     aria-label={`View photo ${idx + 1} full size`}

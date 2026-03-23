@@ -42,7 +42,7 @@ function GridGallery({ images }: { images: GalleryImage[] }) {
         >
           <button
             type="button"
-            className="h-44 w-full cursor-zoom-in border-0 bg-cover bg-center bg-no-repeat p-0 md:h-48"
+            className="h-44 w-full cursor-default border-0 bg-cover bg-center bg-no-repeat p-0 md:h-48"
             style={{ backgroundImage: `url(${image.imageUrl})` }}
             onClick={() => open(image.imageUrl)}
             aria-label={image.title ? `View full image: ${image.title}` : "View full image"}
@@ -80,12 +80,14 @@ function SlideshowGallery({ images }: { images: GalleryImage[] }) {
           <div
             key={image.id}
             className={`absolute inset-0 transition-opacity duration-700 ${
-              idx === current ? "opacity-100" : "opacity-0"
+              idx === current
+                ? "z-[1] opacity-100"
+                : "pointer-events-none opacity-0"
             }`}
           >
             <button
               type="button"
-              className="h-full w-full cursor-zoom-in border-0 bg-cover bg-center bg-no-repeat p-0"
+              className="h-full w-full cursor-default border-0 bg-cover bg-center bg-no-repeat p-0"
               style={{ backgroundImage: `url(${image.imageUrl})` }}
               onClick={() => open(image.imageUrl)}
               aria-label={image.title ? `View full image: ${image.title}` : "View full image"}

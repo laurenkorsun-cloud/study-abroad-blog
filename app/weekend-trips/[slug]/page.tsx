@@ -37,12 +37,14 @@ function Slideshow({ slides }: SlideshowProps) {
           <div
             key={idx}
             className={`absolute inset-0 transition-opacity duration-700 ${
-              idx === current ? "opacity-100" : "opacity-0"
+              idx === current
+                ? "z-[1] opacity-100"
+                : "pointer-events-none opacity-0"
             }`}
           >
             <button
               type="button"
-              className="h-full w-full cursor-zoom-in border-0 bg-cover bg-center bg-no-repeat p-0"
+              className="h-full w-full cursor-default border-0 bg-cover bg-center bg-no-repeat p-0"
               style={{ backgroundImage: `url(${slide.imageUrl})` }}
               onClick={() => open(slide.imageUrl)}
               aria-label={slide.caption ? `View full image: ${slide.caption}` : "View full image"}

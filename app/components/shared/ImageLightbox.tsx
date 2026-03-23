@@ -53,7 +53,7 @@ export function ImageLightboxProvider({ children }: { children: ReactNode }) {
       {children}
       {url && (
         <div
-          className="fixed inset-0 z-[2000] flex items-center justify-center bg-black/92 p-4"
+          className="fixed inset-0 z-[2000] flex cursor-default items-center justify-center bg-black/92 p-4"
           role="dialog"
           aria-modal="true"
           aria-label="Full size image"
@@ -61,16 +61,29 @@ export function ImageLightboxProvider({ children }: { children: ReactNode }) {
         >
           <button
             type="button"
-            onClick={close}
-            className="absolute right-4 top-4 z-10 rounded-full border border-white/30 bg-white/10 px-3 py-1.5 text-sm font-medium text-white backdrop-blur-sm transition hover:bg-white/20"
+            onClick={(e) => {
+              e.stopPropagation();
+              close();
+            }}
+            className="absolute right-3 top-3 z-20 flex h-10 w-10 cursor-pointer items-center justify-center rounded-full border border-white/35 bg-black/50 text-white shadow-lg backdrop-blur-sm transition hover:bg-black/70"
+            aria-label="Close"
           >
-            Close
+            <svg
+              className="h-5 w-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth={2}
+              aria-hidden="true"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
           </button>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={url}
             alt=""
-            className="max-h-[min(92vh,100%)] max-w-[min(96vw,100%)] object-contain shadow-2xl"
+            className="max-h-[min(92vh,100%)] max-w-[min(96vw,100%)] cursor-default object-contain shadow-2xl"
             onClick={(e) => e.stopPropagation()}
           />
         </div>
@@ -103,7 +116,7 @@ export function LightboxableImage({
   return (
     <button
       type="button"
-      className={`border-0 bg-cover bg-center bg-no-repeat p-0 text-left outline-none ring-offset-2 focus-visible:ring-2 focus-visible:ring-white/50 ${className}`}
+      className={`cursor-default border-0 bg-cover bg-center bg-no-repeat p-0 text-left outline-none ring-offset-2 focus-visible:ring-2 focus-visible:ring-white/50 ${className}`}
       style={style}
       onClick={(e) => {
         e.stopPropagation();

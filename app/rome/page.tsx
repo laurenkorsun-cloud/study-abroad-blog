@@ -113,7 +113,7 @@ export default function RomePage() {
             <div className="overflow-hidden rounded-sm border border-slate-200/80 bg-white shadow-sm">
               <LightboxableImage
                 src={romeSidebar.heroImage}
-                className="h-48 w-full cursor-zoom-in transition duration-300 hover:scale-[1.02]"
+                className="h-48 w-full cursor-default transition duration-300 hover:scale-[1.02]"
                 style={{
                   backgroundImage: `linear-gradient(to bottom, rgba(15,23,42,0.08), rgba(15,23,42,0.5)), url(${romeSidebar.heroImage})`
                 }}

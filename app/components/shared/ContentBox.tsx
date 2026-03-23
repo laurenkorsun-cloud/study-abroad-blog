@@ -49,12 +49,14 @@ function MiniSlideshow({ images }: { images: ContentBoxImage[] }) {
         <div
           key={idx}
           className={`absolute inset-0 transition-opacity duration-500 ${
-            idx === current ? "opacity-100" : "opacity-0"
+            idx === current
+              ? "z-[1] opacity-100"
+              : "pointer-events-none opacity-0"
           }`}
         >
           <button
             type="button"
-            className="h-full w-full cursor-zoom-in border-0 bg-cover bg-center bg-no-repeat p-0"
+            className="h-full w-full cursor-default border-0 bg-cover bg-center bg-no-repeat p-0"
             style={{ backgroundImage: `url(${image.imageUrl})` }}
             onClick={(e) => {
               e.stopPropagation();

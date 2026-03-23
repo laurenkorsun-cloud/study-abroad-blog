@@ -29,7 +29,7 @@ export function TripCard({
     <div className="flex min-w-0 w-full flex-col overflow-hidden rounded-[1rem] border border-slate-200 bg-[#f8fafc] shadow-sm transition hover:shadow-md">
       <LightboxableImage
         src={coverImage}
-        className="h-36 w-full shrink-0 cursor-zoom-in rounded-t-[1rem] md:h-40"
+        className="h-36 w-full shrink-0 cursor-default rounded-t-[1rem] md:h-40"
         style={{
           backgroundImage: `linear-gradient(to top, rgba(15,23,42,0.55), transparent), url(${coverImage})`
         }}
