@@ -54,7 +54,7 @@ function MapPreviewSection({
         <div className="flex flex-col justify-between gap-3 sm:flex-row sm:items-end">
           <div className="space-y-2">
             {mapPreview.label.trim() ? (
-              <p className="font-inter text-xs font-semibold uppercase tracking-[0.25em] text-journal-accent">
+              <p className="font-helvetica text-xs font-semibold uppercase tracking-[0.25em] text-journal-accent">
                 {mapPreview.label}
               </p>
             ) : null}
@@ -94,7 +94,7 @@ function HeroJournal({ hero }: { hero: HomeHero }) {
     <section className="border-b border-slate-200/70 bg-journal-paper">
       <div className="mx-auto max-w-4xl px-6 py-16 md:px-8 md:py-24">
         <div className="space-y-8 text-center">
-          <div className="flex items-center justify-center gap-4 font-inter text-sm text-journal-accent">
+          <div className="flex items-center justify-center gap-4 font-helvetica text-sm font-medium tracking-[0.12em] text-journal-accent">
             <span className="h-px w-12 bg-teal-600/50" aria-hidden="true" />
             <span>{hero.label}</span>
             <span className="h-px w-12 bg-teal-600/50" aria-hidden="true" />
@@ -124,10 +124,11 @@ function HeroJournal({ hero }: { hero: HomeHero }) {
         <div className="relative left-1/2 right-1/2 -mx-[50vw] mt-12 w-screen max-w-none border-t border-slate-200 pt-10 md:mt-16 md:pt-12">
           <div className="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
             <div className="overflow-hidden rounded-sm shadow-xl">
-              <div
-                className="min-h-[clamp(14rem,65vw,22rem)] w-full bg-cover bg-center sm:min-h-[clamp(18rem,55vw,28rem)] md:min-h-[clamp(20rem,45vw,32rem)] lg:min-h-[clamp(24rem,40vw,36rem)]"
+              <LightboxableImage
+                src={hero.backgroundImage}
+                className="min-h-[clamp(14rem,65vw,22rem)] w-full cursor-default sm:min-h-[clamp(18rem,55vw,28rem)] md:min-h-[clamp(20rem,45vw,32rem)] lg:min-h-[clamp(24rem,40vw,36rem)]"
                 style={{ backgroundImage: `url(${hero.backgroundImage})` }}
-                aria-hidden="true"
+                ariaLabel="View hero image full size"
               />
             </div>
           </div>
@@ -157,7 +158,9 @@ function SectionJournal({ sections }: { sections: HomeSection[] }) {
                   />
                 </div>
                 <div className="min-w-0 flex-1 space-y-3">
-                  <p className="text-xs uppercase tracking-[0.2em] text-slate-500">{section.label}</p>
+                  <p className="font-helvetica text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">
+                    {section.label}
+                  </p>
                   <h3 className="font-helvetica text-2xl font-semibold text-slate-900 md:text-3xl">{section.title}</h3>
                   <p className="text-base text-slate-600 md:text-lg">{section.description}</p>
                   <span className="inline-block pt-1 text-sm font-medium text-journal-accent group-hover:underline">
