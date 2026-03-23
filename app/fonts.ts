@@ -1,4 +1,4 @@
-import { Fraunces, IBM_Plex_Mono, Inter } from "next/font/google";
+import { IBM_Plex_Mono, Inter, Space_Grotesk } from "next/font/google";
 
 /** Primary UI + body — neutral sans */
 export const inter = Inter({
@@ -7,10 +7,10 @@ export const inter = Inter({
   display: "swap"
 });
 
-/** Titles / display — soft serif (pairs with Inter body) */
-export const fraunces = Fraunces({
+/** Titles / display — geometric sans (distinct from Inter body) */
+export const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
-  variable: "--font-fraunces",
+  variable: "--font-space-grotesk",
   display: "swap"
 });
 
