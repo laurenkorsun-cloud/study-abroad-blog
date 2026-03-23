@@ -14,10 +14,14 @@ export default function WeekendTripsPage() {
     <div className="flex flex-col bg-journal-paper">
       {/* Match home cover: journal paper + soft border (HeroJournal / section rhythm) */}
       <section className="section-container border-b border-slate-200/70 bg-journal-paper">
-        <div className="page-header">
-          <p className="page-label">{weekendTripsOverview.label}</p>
+        <div className="page-header mx-auto max-w-3xl text-center">
+          {weekendTripsOverview.label.trim() ? (
+            <p className="page-label">{weekendTripsOverview.label}</p>
+          ) : null}
           <h1 className="page-title">{weekendTripsOverview.title}</h1>
-          <p className="page-description">{weekendTripsOverview.description}</p>
+          {weekendTripsOverview.description.trim() ? (
+            <p className="page-description">{weekendTripsOverview.description}</p>
+          ) : null}
         </div>
       </section>
 
