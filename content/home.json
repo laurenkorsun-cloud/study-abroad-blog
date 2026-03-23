@@ -1,7 +1,7 @@
 {
   "hero": {
     "label": "Semester Abroad · 2026",
-    "title": "Abroad Adventures!",
+    "title": "Lauren's Semester Abroad!",
     "description": "",
     "primaryButton": "Start in Rome",
     "primaryButtonHref": "/rome",
@@ -36,8 +36,8 @@
     }
   ],
   "mapPreview": {
-    "label": "Map Preview",
-    "title": "Tracing everywhere this semester takes me",
+    "label": "Map",
+    "title": "",
     "description": "",
     "ctaButton": "View weekend trips",
     "ctaHref": "/weekend-trips"

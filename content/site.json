@@ -2,7 +2,7 @@
   "meta": {
     "title": "Semester Abroad | Travel Journal",
     "description": "Personal travel blog documenting a semester studying abroad.",
-    "siteName": "Lauren's Semester Abroad"
+    "siteName": "Journal"
   },
   "nav": [
     { "href": "/", "label": "Home" },
