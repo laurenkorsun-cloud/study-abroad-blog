@@ -6,6 +6,14 @@ import romePageData from "../content/rome/page.json";
 import romeEntriesData from "../content/rome/entries.json";
 import romeGalleriesData from "../content/rome/galleries.json";
 
+export type RomePageHeader = {
+  kicker: string;
+  watermark: string;
+  title: string;
+  primaryCta: { label: string; href: string };
+  secondaryCta: { label: string; href: string };
+};
+
 export type BlogPost = {
   id: string;
   title: string;
@@ -24,7 +32,7 @@ export type GalleryImage = {
   aspect?: "square" | "landscape" | "portrait";
 };
 
-export const romePageHeader = romePageData.header;
+export const romePageHeader = romePageData.header as RomePageHeader;
 export const romeEntriesSection = romePageData.entriesSection;
 export const romeSidebar = romePageData.sidebar;
 export const romeGalleriesSection = romePageData.galleries;

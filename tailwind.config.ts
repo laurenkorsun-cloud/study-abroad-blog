@@ -14,7 +14,10 @@ const config: Config = {
         serif: ["Georgia", "Times New Roman", "serif"],
         // Home cover variants (next/font in layout)
         dm: ["var(--font-dm-sans)", "system-ui", "sans-serif"],
-        fraunces: ["var(--font-fraunces)", "Georgia", "serif"]
+        fraunces: ["var(--font-fraunces)", "Georgia", "serif"],
+        inter: ["var(--font-inter)", "system-ui", "sans-serif"],
+        oswald: ["var(--font-oswald)", "system-ui", "sans-serif"],
+        "mono-kicker": ["var(--font-ibm-plex-mono)", "ui-monospace", "monospace"]
       },
       colors: {
         // ═══════════════════════════════════════════════════════════════

@@ -1,8 +1,16 @@
 {
   "header": {
-    "label": "Rome · Daily Life",
-    "title": "The in-between moments that made Rome feel like home.",
-    "description": "This page gathers the slow mornings, small routines, and late-night walks that defined my months in Rome — not just the monuments, but the ordinary days that quietly rewired what \"home\" means."
+    "kicker": "ROME · 2026",
+    "watermark": "26",
+    "title": "A YEAR ABROAD IN ROME",
+    "primaryCta": {
+      "label": "BEGIN THE JOURNEY",
+      "href": "#rome-entries"
+    },
+    "secondaryCta": {
+      "label": "VIEW WEEKEND GUIDES",
+      "href": "/weekend-trips"
+    }
   },
   "entriesSection": {
     "title": "Recent entries",

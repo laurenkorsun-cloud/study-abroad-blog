@@ -25,7 +25,7 @@ function NavLink({
     <Link
       href={href}
       onClick={onClick}
-      className={`font-dm block text-xs uppercase tracking-[0.2em] ${
+      className={`font-inter block text-xs font-medium uppercase tracking-[0.18em] ${
         isActive ? "font-semibold text-journal-accent" : "text-slate-500 hover:text-slate-900"
       }`}
     >
@@ -58,7 +58,7 @@ export function Header() {
       <div className="flex w-full items-center justify-between px-4 py-5 md:px-8 md:py-6">
         <Link
           href="/"
-          className="font-fraunces text-base font-semibold tracking-tight text-slate-900 md:text-lg"
+          className="font-inter text-sm font-semibold uppercase tracking-[0.2em] text-slate-900 md:text-base"
         >
           {siteMeta.siteName}
         </Link>
