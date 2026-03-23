@@ -51,7 +51,7 @@ function Slideshow({ slides }: SlideshowProps) {
             />
             {slide.caption && (
               <div className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-950/90 to-transparent px-6 py-6 md:px-10 md:py-8">
-                <p className="max-w-2xl text-sm text-slate-100 md:text-base">
+                <p className="max-w-2xl font-inter text-sm text-slate-100 md:text-base">
                   {slide.caption}
                 </p>
               </div>
@@ -112,22 +112,15 @@ export default function WeekendTripDetailPage() {
 
   if (!trip) {
     return (
-      <section className="space-y-4 px-6 py-10">
-        <p className="text-xs font-semibold uppercase tracking-[0.25em] text-slate-400">
-          {weekendTripDetail.notFoundLabel}
-        </p>
-        <h1 className="font-title text-2xl font-semibold md:text-3xl">
-          {weekendTripDetail.notFoundTitle}
-        </h1>
-        <p className="text-sm text-slate-600 md:text-base">
-          {weekendTripDetail.notFoundDescription}
-        </p>
-        <Link
-          href="/weekend-trips"
-          className="inline-flex w-max items-center justify-center rounded-full bg-black px-4 py-2 text-xs font-medium text-white transition hover:bg-slate-800"
-        >
-          {weekendTripDetail.notFoundButton}
-        </Link>
+      <section className="section-container border-b border-slate-200/70 bg-journal-paper py-section md:py-section-lg">
+        <div className="page-header max-w-xl">
+          <p className="page-label">{weekendTripDetail.notFoundLabel}</p>
+          <h1 className="page-title">{weekendTripDetail.notFoundTitle}</h1>
+          <p className="page-description">{weekendTripDetail.notFoundDescription}</p>
+          <Link href="/weekend-trips" className="btn-primary mt-6 inline-flex w-max">
+            {weekendTripDetail.notFoundButton}
+          </Link>
+        </div>
       </section>
     );
   }
@@ -161,9 +154,9 @@ export default function WeekendTripDetailPage() {
                             : [12.496, 41.902];
 
   return (
-    <div className="flex flex-col">
-      {/* Title box - matches Rome page header structure */}
-      <section className="section-container">
+    <div className="flex flex-col bg-journal-paper">
+      {/* Title — same journal rhythm as home cover */}
+      <section className="section-container border-b border-slate-200/70 bg-journal-paper">
         <div className="page-header">
           <p className="page-label">{weekendTripDetail.pageLabel}</p>
           <h1 className="page-title">{trip.title}</h1>
@@ -186,12 +179,10 @@ export default function WeekendTripDetailPage() {
 
       {/* Weather forecast for this weekend */}
       {weather && (
-        <section className="section-container bg-white pt-0">
+        <section className="section-container border-t border-slate-200/80 bg-journal-paper pt-0">
           <div className="mx-auto max-w-3xl">
             <div className="content-box flex flex-col items-center gap-4">
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-text-muted">
-                {weekendTripDetail.weatherTitle}
-              </p>
+              <p className="page-label">{weekendTripDetail.weatherTitle}</p>
               <div className="flex gap-4">
                 {weather.days.map((day) => (
                   <div key={day.label} className="min-w-[70px] text-center">
@@ -221,7 +212,7 @@ export default function WeekendTripDetailPage() {
       {trip.slideshow?.length ? <Slideshow slides={trip.slideshow} /> : null}
 
       {/* Chronological timeline of moments */}
-      <section className="section-container bg-white">
+      <section className="section-container border-t border-slate-200/80 bg-journal-paper">
         <div className="mx-auto max-w-3xl space-y-4">
           <h2 className="box-title">{weekendTripDetail.entriesTitle}</h2>
 
@@ -249,14 +240,14 @@ export default function WeekendTripDetailPage() {
       </section>
 
       {/* Interactive map at the bottom, stays consistent with other pages */}
-      <section className="section-container border-t border-slate-100 bg-white">
+      <section className="section-container border-t border-slate-200/80 bg-journal-paper">
         <div className="space-y-2">
           <h2 className="box-title">{weekendTripDetail.mapTitle}</h2>
-          <p className="max-w-2xl text-sm text-text-secondary md:text-base">
+          <p className="max-w-2xl font-inter text-sm text-text-secondary md:text-base">
             {weekendTripDetail.mapDescription}
           </p>
         </div>
-        <div className="mt-4">
+        <div className="mt-4 overflow-hidden rounded-sm border border-slate-200/90 bg-white shadow-md">
           <TripMap
             entries={mapEntries}
             cityCenter={cityCenter}
