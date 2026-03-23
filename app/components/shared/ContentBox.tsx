@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useImageLightbox } from "./ImageLightbox";
 
 // ═══════════════════════════════════════════════════════════════════════════
 // MOMENT BOX / CONTENT BOX - Reusable box for blog posts, moments, notes
@@ -35,6 +36,7 @@ export interface ContentBoxProps {
 
 function MiniSlideshow({ images }: { images: ContentBoxImage[] }) {
   const [current, setCurrent] = useState(0);
+  const { open } = useImageLightbox();
 
   if (images.length === 0) return null;
 
@@ -50,12 +52,18 @@ function MiniSlideshow({ images }: { images: ContentBoxImage[] }) {
             idx === current ? "opacity-100" : "opacity-0"
           }`}
         >
-          <div
-            className="h-full w-full bg-cover bg-center"
+          <button
+            type="button"
+            className="h-full w-full cursor-zoom-in border-0 bg-cover bg-center bg-no-repeat p-0"
             style={{ backgroundImage: `url(${image.imageUrl})` }}
+            onClick={(e) => {
+              e.stopPropagation();
+              open(image.imageUrl);
+            }}
+            aria-label={image.caption ? `View full image: ${image.caption}` : "View full image"}
           />
           {image.caption && (
-            <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-900/80 to-transparent px-4 py-3">
+            <div className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-900/80 to-transparent px-4 py-3">
               <p className="text-xs text-white md:text-sm">{image.caption}</p>
             </div>
           )}
@@ -65,24 +73,36 @@ function MiniSlideshow({ images }: { images: ContentBoxImage[] }) {
       {images.length > 1 && (
         <>
           <button
-            onClick={prev}
-            className="absolute left-2 top-1/2 -translate-y-1/2 rounded-full bg-white/90 p-2 text-slate-900 shadow-md transition hover:bg-white"
+            type="button"
+            onClick={(e) => {
+              e.stopPropagation();
+              prev();
+            }}
+            className="absolute left-2 top-1/2 z-10 -translate-y-1/2 rounded-full bg-white/90 p-2 text-slate-900 shadow-md transition hover:bg-white"
             aria-label="Previous image"
           >
             ←
           </button>
           <button
-            onClick={next}
-            className="absolute right-2 top-1/2 -translate-y-1/2 rounded-full bg-white/90 p-2 text-slate-900 shadow-md transition hover:bg-white"
+            type="button"
+            onClick={(e) => {
+              e.stopPropagation();
+              next();
+            }}
+            className="absolute right-2 top-1/2 z-10 -translate-y-1/2 rounded-full bg-white/90 p-2 text-slate-900 shadow-md transition hover:bg-white"
             aria-label="Next image"
           >
             →
           </button>
-          <div className="absolute inset-x-0 bottom-2 flex justify-center gap-1.5">
+          <div className="absolute inset-x-0 bottom-2 z-10 flex justify-center gap-1.5">
             {images.map((_, idx) => (
               <button
+                type="button"
                 key={idx}
-                onClick={() => setCurrent(idx)}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setCurrent(idx);
+                }}
                 className={`h-1.5 w-1.5 rounded-full transition ${
                   idx === current ? "bg-white" : "bg-white/40"
                 }`}

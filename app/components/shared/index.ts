@@ -8,6 +8,11 @@ export {
   type ContentBoxImage
 } from "./ContentBox";
 export { ImageGallery, type GalleryImage } from "./ImageGallery";
+export {
+  ImageLightboxProvider,
+  LightboxableImage,
+  useImageLightbox
+} from "./ImageLightbox";
 export { EntryPage, type EntryPageProps, type MomentEntry } from "./EntryPage";
 
 // NOTE: InteractiveMap MUST be dynamically imported with ssr: false

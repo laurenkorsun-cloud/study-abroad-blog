@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ContentBox, ImageGallery } from "../components/shared";
+import { ContentBox, ImageGallery, LightboxableImage } from "../components/shared";
 import { InteractiveMap } from "../components/MapWrapper";
 import { getAllEntries } from "../../data/mapEntries";
 import {
@@ -111,11 +111,13 @@ export default function RomePage() {
 
           <aside className="space-y-5 lg:sticky lg:top-24 lg:self-start">
             <div className="overflow-hidden rounded-sm border border-slate-200/80 bg-white shadow-sm">
-              <div
-                className="h-48 bg-cover bg-center transition duration-300 hover:scale-[1.02]"
+              <LightboxableImage
+                src={romeSidebar.heroImage}
+                className="h-48 w-full cursor-zoom-in transition duration-300 hover:scale-[1.02]"
                 style={{
                   backgroundImage: `linear-gradient(to bottom, rgba(15,23,42,0.08), rgba(15,23,42,0.5)), url(${romeSidebar.heroImage})`
                 }}
+                ariaLabel="View sidebar image full size"
               />
               <div className="space-y-2 px-5 py-4">
                 <p className="font-inter text-[11px] font-semibold uppercase tracking-[0.18em] text-text-muted">

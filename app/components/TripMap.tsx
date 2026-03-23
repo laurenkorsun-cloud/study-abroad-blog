@@ -6,6 +6,7 @@ import type { Map as LeafletMap } from "leaflet";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import type { MapEntry } from "../../data/mapEntries";
+import { useImageLightbox } from "./shared/ImageLightbox";
 
 // Fix default Leaflet marker icons in Next.js
 if (typeof window !== "undefined") {
@@ -69,6 +70,7 @@ export function TripMap({
   activeMarkerId,
   onMarkerSelect
 }: TripMapProps) {
+  const { open } = useImageLightbox();
   const [map, setMap] = useState<LeafletMap | null>(null);
 
   const activeEntry = activeMarkerId
@@ -190,15 +192,14 @@ export function TripMap({
               </p>
               <div className="mt-2 grid gap-2 md:grid-cols-2">
                 {activeEntry.images.map((url, idx) => (
-                  <div
+                  <button
                     key={idx}
-                    className="h-32 overflow-hidden rounded-xl border border-slate-200 bg-slate-50"
-                  >
-                    <div
-                      className="h-full w-full bg-cover bg-center"
-                      style={{ backgroundImage: `url(${url})` }}
-                    />
-                  </div>
+                    type="button"
+                    className="h-32 cursor-zoom-in overflow-hidden rounded-xl border border-slate-200 bg-slate-50 bg-cover bg-center bg-no-repeat p-0"
+                    style={{ backgroundImage: `url(${url})` }}
+                    onClick={() => open(url)}
+                    aria-label={`View photo ${idx + 1} full size`}
+                  />
                 ))}
               </div>
             </div>

@@ -2,6 +2,7 @@
 
 import { useIsMobile } from "../hooks/useIsMobile";
 import { Header } from "./Header";
+import { ImageLightboxProvider } from "./shared/ImageLightbox";
 
 /**
  * App shell for all pages: Header + main. Main has data-viewport so pages
@@ -12,7 +13,7 @@ export function ResponsiveLayout({ children }: { children: React.ReactNode }) {
   const isMobile = useIsMobile();
 
   return (
-    <>
+    <ImageLightboxProvider>
       <Header />
       <main
         className="flex w-full flex-1 flex-col px-0 py-0"
@@ -20,6 +21,6 @@ export function ResponsiveLayout({ children }: { children: React.ReactNode }) {
       >
         {children}
       </main>
-    </>
+    </ImageLightboxProvider>
   );
 }

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useImageLightbox } from "./ImageLightbox";
 
 // ═══════════════════════════════════════════════════════════════════════════
 // IMAGE GALLERY - Reusable gallery/slideshow component
@@ -25,6 +26,7 @@ interface ImageGalleryProps {
 }
 
 function GridGallery({ images }: { images: GalleryImage[] }) {
+  const { open } = useImageLightbox();
   return (
     <div className="grid gap-4 md:grid-cols-3">
       {images.map((image) => (
@@ -38,9 +40,12 @@ function GridGallery({ images }: { images: GalleryImage[] }) {
                 : ""
           }`}
         >
-          <div
-            className="h-44 w-full bg-cover bg-center md:h-48"
+          <button
+            type="button"
+            className="h-44 w-full cursor-zoom-in border-0 bg-cover bg-center bg-no-repeat p-0 md:h-48"
             style={{ backgroundImage: `url(${image.imageUrl})` }}
+            onClick={() => open(image.imageUrl)}
+            aria-label={image.title ? `View full image: ${image.title}` : "View full image"}
           />
           <figcaption className="image-card-caption space-y-1">
             {image.title && (
@@ -63,6 +68,7 @@ function GridGallery({ images }: { images: GalleryImage[] }) {
 
 function SlideshowGallery({ images }: { images: GalleryImage[] }) {
   const [current, setCurrent] = useState(0);
+  const { open } = useImageLightbox();
 
   const next = () => setCurrent((c) => (c + 1) % images.length);
   const prev = () => setCurrent((c) => (c - 1 + images.length) % images.length);
@@ -77,12 +83,15 @@ function SlideshowGallery({ images }: { images: GalleryImage[] }) {
               idx === current ? "opacity-100" : "opacity-0"
             }`}
           >
-            <div
-              className="h-full w-full bg-cover bg-center"
+            <button
+              type="button"
+              className="h-full w-full cursor-zoom-in border-0 bg-cover bg-center bg-no-repeat p-0"
               style={{ backgroundImage: `url(${image.imageUrl})` }}
+              onClick={() => open(image.imageUrl)}
+              aria-label={image.title ? `View full image: ${image.title}` : "View full image"}
             />
             {(image.title || image.caption) && (
-              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-900/90 to-transparent px-6 py-6">
+              <div className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-900/90 to-transparent px-6 py-6">
                 {image.title && (
                   <p className="font-medium text-white">{image.title}</p>
                 )}
@@ -98,24 +107,36 @@ function SlideshowGallery({ images }: { images: GalleryImage[] }) {
       {images.length > 1 && (
         <>
           <button
-            onClick={prev}
-            className="absolute left-4 top-1/2 -translate-y-1/2 rounded-full bg-white/90 p-3 text-slate-900 shadow-lg transition hover:bg-white"
+            type="button"
+            onClick={(e) => {
+              e.stopPropagation();
+              prev();
+            }}
+            className="absolute left-4 top-1/2 z-10 -translate-y-1/2 rounded-full bg-white/90 p-3 text-slate-900 shadow-lg transition hover:bg-white"
             aria-label="Previous image"
           >
             ←
           </button>
           <button
-            onClick={next}
-            className="absolute right-4 top-1/2 -translate-y-1/2 rounded-full bg-white/90 p-3 text-slate-900 shadow-lg transition hover:bg-white"
+            type="button"
+            onClick={(e) => {
+              e.stopPropagation();
+              next();
+            }}
+            className="absolute right-4 top-1/2 z-10 -translate-y-1/2 rounded-full bg-white/90 p-3 text-slate-900 shadow-lg transition hover:bg-white"
             aria-label="Next image"
           >
             →
           </button>
-          <div className="absolute inset-x-0 bottom-4 flex justify-center gap-2">
+          <div className="absolute inset-x-0 bottom-4 z-10 flex justify-center gap-2">
             {images.map((_, idx) => (
               <button
+                type="button"
                 key={idx}
-                onClick={() => setCurrent(idx)}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setCurrent(idx);
+                }}
                 className={`h-2 w-2 rounded-full transition ${
                   idx === current ? "bg-white" : "bg-white/40"
                 }`}

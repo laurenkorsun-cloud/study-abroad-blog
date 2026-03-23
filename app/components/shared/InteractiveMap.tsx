@@ -7,6 +7,7 @@ import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import type { MapEntry } from "../../../data/mapEntries";
 import { mapLegend, uiStrings } from "../../../data/siteContent";
+import { useImageLightbox } from "./ImageLightbox";
 
 // ═══════════════════════════════════════════════════════════════════════════
 // INTERACTIVE MAP - Unified map component for all pages
@@ -80,6 +81,7 @@ interface DetailPanelProps {
 }
 
 function DetailPanel({ entry, onClose }: DetailPanelProps) {
+  const { open } = useImageLightbox();
   return (
     <div className="h-full overflow-y-auto border-l border-slate-200 bg-white p-5">
       <div className="flex items-start justify-between gap-3">
@@ -127,15 +129,14 @@ function DetailPanel({ entry, onClose }: DetailPanelProps) {
             </p>
             <div className="grid grid-cols-2 gap-2">
               {entry.images.map((url, idx) => (
-                <div
+                <button
                   key={idx}
-                  className="aspect-square overflow-hidden rounded-box bg-slate-100"
-                >
-                  <div
-                    className="h-full w-full bg-cover bg-center"
-                    style={{ backgroundImage: `url(${url})` }}
-                  />
-                </div>
+                  type="button"
+                  className="aspect-square cursor-zoom-in overflow-hidden rounded-box border-0 bg-slate-100 bg-cover bg-center bg-no-repeat p-0"
+                  style={{ backgroundImage: `url(${url})` }}
+                  onClick={() => open(url)}
+                  aria-label={`View photo ${idx + 1} full size`}
+                />
               ))}
             </div>
           </div>

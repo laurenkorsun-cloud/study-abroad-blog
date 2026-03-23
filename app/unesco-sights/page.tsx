@@ -9,6 +9,7 @@ import {
   type UnescoSight,
   type UnescoStatus
 } from "../../data/unescoSights";
+import { useImageLightbox } from "../components/shared/ImageLightbox";
 
 function formatVisitDate(date: string | undefined) {
   if (!date) return "Planned";
@@ -26,22 +27,27 @@ function isVisited(status: UnescoStatus) {
 }
 
 function SightCard({ sight }: { sight: UnescoSight }) {
+  const { open } = useImageLightbox();
   const cover = sight.imageUrls?.[0];
   const visited = isVisited(sight.status);
 
   return (
     <article className="content-box overflow-hidden p-0">
       <div className="relative">
-        <div
-          className="h-52 w-full bg-slate-200 bg-cover bg-center md:h-56"
+        <button
+          type="button"
+          disabled={!cover}
+          className="h-52 w-full cursor-zoom-in border-0 bg-slate-200 bg-cover bg-center p-0 disabled:cursor-default md:h-56"
           style={{
             backgroundImage: cover
               ? `linear-gradient(to bottom, rgba(15,23,42,0.10), rgba(15,23,42,0.55)), url(${cover})`
               : "linear-gradient(to bottom, rgba(15,23,42,0.06), rgba(15,23,42,0.14))"
           }}
+          onClick={() => cover && open(cover)}
+          aria-label={cover ? `View full image: ${sight.name}` : undefined}
         />
 
-        <div className="absolute left-4 top-4 flex items-center gap-2">
+        <div className="pointer-events-none absolute left-4 top-4 z-10 flex items-center gap-2">
           <div
             className={`flex h-7 w-7 items-center justify-center rounded-full border bg-white/95 text-sm shadow-sm ${
               visited ? "border-slate-300 text-slate-900" : "border-slate-200 text-slate-300"
@@ -83,15 +89,14 @@ function SightCard({ sight }: { sight: UnescoSight }) {
         {Array.isArray(sight.imageUrls) && sight.imageUrls.length > 1 && (
           <div className="grid grid-cols-3 gap-2">
             {sight.imageUrls.slice(0, 3).map((url, idx) => (
-              <div
+              <button
                 key={`${sight.id}-${idx}`}
-                className="h-20 overflow-hidden rounded-xl bg-slate-200"
-              >
-                <div
-                  className="h-full w-full bg-cover bg-center"
-                  style={{ backgroundImage: `url(${url})` }}
-                />
-              </div>
+                type="button"
+                className="h-20 cursor-zoom-in overflow-hidden rounded-xl border-0 bg-slate-200 bg-cover bg-center bg-no-repeat p-0"
+                style={{ backgroundImage: `url(${url})` }}
+                onClick={() => open(url)}
+                aria-label={`View photo ${idx + 1} full size`}
+              />
             ))}
           </div>
         )}

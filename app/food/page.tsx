@@ -9,6 +9,7 @@ import {
   foodPageHeader,
   foodPageSections
 } from "../../data/foodContent";
+import { LightboxableImage, useImageLightbox } from "../components/shared/ImageLightbox";
 
 // ═══════════════════════════════════════════════════════════════════════════
 // FOOD PAGE - All content from data/foodContent.ts
@@ -51,15 +52,13 @@ function RestaurantModal({
           {restaurant.imageUrls.length > 0 && (
             <div className="grid gap-3 sm:grid-cols-2">
               {restaurant.imageUrls.map((url, idx) => (
-                <div
+                <LightboxableImage
                   key={`${restaurant.id}-${idx}`}
-                  className="h-56 overflow-hidden rounded-box border border-slate-200 bg-slate-50"
-                >
-                  <div
-                    className="h-full w-full bg-cover bg-center"
-                    style={{ backgroundImage: `url(${url})` }}
-                  />
-                </div>
+                  src={url}
+                  className="h-56 w-full overflow-hidden rounded-box border border-slate-200 bg-slate-50"
+                  style={{ backgroundImage: `url(${url})` }}
+                  ariaLabel={`View photo ${idx + 1} full size`}
+                />
               ))}
             </div>
           )}
@@ -101,6 +100,7 @@ function RestaurantModal({
 }
 
 export default function FoodPage() {
+  const { open } = useImageLightbox();
   const baseRestaurants = getAllRestaurants();
   const allEntries = getAllEntries();
   const restaurantEntries = allEntries.filter((e) => e.type === "restaurant");
@@ -194,13 +194,13 @@ export default function FoodPage() {
 
   return (
     <div className="flex flex-col">
-      <div
-        className="h-48 w-full bg-slate-200 bg-cover bg-center md:h-56 lg:h-64"
+      <LightboxableImage
+        src={foodPageCoverImage}
+        className="h-48 w-full cursor-zoom-in md:h-56 lg:h-64"
         style={{
           backgroundImage: `linear-gradient(to bottom, rgba(15,23,42,0.06), rgba(15,23,42,0.35)), url(${foodPageCoverImage})`
         }}
-        role="img"
-        aria-label="Food cover"
+        ariaLabel="View food cover full size"
       />
 
       <section className="section-container border-b border-slate-100">
@@ -256,18 +256,30 @@ export default function FoodPage() {
                 <h3 className="text-lg font-semibold text-text-primary">{city}</h3>
                 <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
                   {items.map((r) => (
-                    <button
+                    <article
                       key={r.id}
-                      type="button"
+                      role="button"
+                      tabIndex={0}
                       onClick={() => setSelectedRestaurant(r)}
-                      className="content-box space-y-2 text-left transition hover:-translate-y-0.5 hover:shadow-md"
+                      onKeyDown={(e) => {
+                        if (e.key === "Enter" || e.key === " ") {
+                          e.preventDefault();
+                          setSelectedRestaurant(r);
+                        }
+                      }}
+                      className="content-box cursor-pointer space-y-2 text-left transition hover:-translate-y-0.5 hover:shadow-md"
                     >
                       {r.imageUrls[0] && (
                         <div
-                          className="-mx-box-padding -mt-box-padding mb-3 h-32 bg-cover bg-center"
+                          role="presentation"
+                          className="-mx-box-padding -mt-box-padding mb-3 h-32 cursor-zoom-in bg-cover bg-center"
                           style={{
                             backgroundImage: `url(${r.imageUrls[0]})`,
                             borderRadius: "1rem 1rem 0 0"
+                          }}
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            open(r.imageUrls[0]);
                           }}
                         />
                       )}
@@ -285,7 +297,7 @@ export default function FoodPage() {
                       <p className="text-sm text-text-secondary">
                         {r.highlight || "Click to view photos and notes."}
                       </p>
-                    </button>
+                    </article>
                   ))}
                 </div>
               </div>

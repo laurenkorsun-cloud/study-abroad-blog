@@ -9,6 +9,7 @@ import { getEntriesByIds } from "../../../data/mapEntries";
 import { ContentBox } from "../../components/shared";
 import { weekendTripDetail } from "../../../data/weekendTripsContent";
 import { getWeatherForTrip } from "../../../data/tripWeather";
+import { useImageLightbox } from "../../components/shared/ImageLightbox";
 
 const TripMap = dynamic(
   () => import("../../components/TripMap").then((mod) => ({ default: mod.TripMap })),
@@ -22,6 +23,7 @@ type SlideshowProps = {
 function Slideshow({ slides }: SlideshowProps) {
   const safeSlides = Array.isArray(slides) && slides.length > 0 ? slides : [];
   const [current, setCurrent] = useState(0);
+  const { open } = useImageLightbox();
 
   const next = () => setCurrent((c) => (c + 1) % safeSlides.length);
   const prev = () => setCurrent((c) => (c - 1 + safeSlides.length) % safeSlides.length);
@@ -38,12 +40,15 @@ function Slideshow({ slides }: SlideshowProps) {
               idx === current ? "opacity-100" : "opacity-0"
             }`}
           >
-            <div
-              className="h-full w-full bg-cover bg-center"
+            <button
+              type="button"
+              className="h-full w-full cursor-zoom-in border-0 bg-cover bg-center bg-no-repeat p-0"
               style={{ backgroundImage: `url(${slide.imageUrl})` }}
+              onClick={() => open(slide.imageUrl)}
+              aria-label={slide.caption ? `View full image: ${slide.caption}` : "View full image"}
             />
             {slide.caption && (
-              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-950/90 to-transparent px-6 py-6 md:px-10 md:py-8">
+              <div className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-950/90 to-transparent px-6 py-6 md:px-10 md:py-8">
                 <p className="max-w-2xl text-sm text-slate-100 md:text-base">
                   {slide.caption}
                 </p>
@@ -55,24 +60,36 @@ function Slideshow({ slides }: SlideshowProps) {
 
       {/* Nav arrows */}
       <button
-        onClick={prev}
-        className="absolute left-4 top-1/2 -translate-y-1/2 rounded-full bg-white/90 p-3 text-slate-900 shadow-lg transition hover:bg-white"
+        type="button"
+        onClick={(e) => {
+          e.stopPropagation();
+          prev();
+        }}
+        className="absolute left-4 top-1/2 z-10 -translate-y-1/2 rounded-full bg-white/90 p-3 text-slate-900 shadow-lg transition hover:bg-white"
       >
         ←
       </button>
       <button
-        onClick={next}
-        className="absolute right-4 top-1/2 -translate-y-1/2 rounded-full bg-white/90 p-3 text-slate-900 shadow-lg transition hover:bg-white"
+        type="button"
+        onClick={(e) => {
+          e.stopPropagation();
+          next();
+        }}
+        className="absolute right-4 top-1/2 z-10 -translate-y-1/2 rounded-full bg-white/90 p-3 text-slate-900 shadow-lg transition hover:bg-white"
       >
         →
       </button>
 
       {/* Dots */}
-      <div className="absolute inset-x-0 bottom-4 flex justify-center gap-2">
+      <div className="absolute inset-x-0 bottom-4 z-10 flex justify-center gap-2">
         {safeSlides.map((_, idx) => (
           <button
+            type="button"
             key={idx}
-            onClick={() => setCurrent(idx)}
+            onClick={(e) => {
+              e.stopPropagation();
+              setCurrent(idx);
+            }}
             className={`h-2 w-2 rounded-full transition ${
               idx === current ? "bg-white" : "bg-white/40"
             }`}

@@ -1,6 +1,9 @@
+"use client";
+
 import Link from "next/link";
 import type { MapEntry } from "../../../data/mapEntries";
 import { InteractiveMap } from "../MapWrapper";
+import { LightboxableImage } from "../shared/ImageLightbox";
 
 type HomeHero = {
   label: string;
@@ -146,10 +149,11 @@ function SectionJournal({ sections }: { sections: HomeSection[] }) {
                 className="group flex flex-col gap-6 py-10 transition hover:bg-white/40 md:flex-row md:items-start md:gap-10 md:py-12"
               >
                 <div className="w-full shrink-0 overflow-hidden rounded-sm bg-slate-200 shadow-sm md:w-[min(100%,22rem)] lg:w-[28rem]">
-                  <div
-                    className="aspect-[4/3] w-full bg-cover bg-center transition duration-300 group-hover:scale-[1.02] sm:aspect-[16/10] md:min-h-[14rem] md:aspect-auto md:h-56 lg:h-64"
+                  <LightboxableImage
+                    src={section.imageUrl}
+                    className="aspect-[4/3] w-full transition duration-300 group-hover:scale-[1.02] sm:aspect-[16/10] md:min-h-[14rem] md:aspect-auto md:h-56 lg:h-64"
                     style={{ backgroundImage: `url(${section.imageUrl})` }}
-                    aria-hidden="true"
+                    ariaLabel={`View section image: ${section.title}`}
                   />
                 </div>
                 <div className="min-w-0 flex-1 space-y-3">

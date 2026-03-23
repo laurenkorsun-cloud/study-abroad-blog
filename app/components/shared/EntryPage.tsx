@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { ContentBox } from "./ContentBox";
 import { ImageGallery, type GalleryImage } from "./ImageGallery";
+import { LightboxableImage } from "./ImageLightbox";
 import { InteractiveMap } from "../MapWrapper";
 import type { MapEntry } from "../../../data/mapEntries";
 
@@ -139,8 +140,9 @@ export function EntryPage({
           <div className="space-y-4">
             {sidebarHeroImage && (
               <div className="image-card">
-                <div
-                  className="h-44 bg-cover bg-center"
+                <LightboxableImage
+                  src={sidebarHeroImage}
+                  className="h-44 w-full"
                   style={{
                     backgroundImage: `linear-gradient(to bottom, rgba(15,23,42,0.1), rgba(15,23,42,0.6)), url(${sidebarHeroImage})`
                   }}
