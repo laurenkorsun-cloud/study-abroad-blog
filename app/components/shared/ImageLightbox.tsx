@@ -53,7 +53,7 @@ export function ImageLightboxProvider({ children }: { children: ReactNode }) {
       {children}
       {url && (
         <div
-          className="fixed inset-0 z-[2000] flex cursor-default items-center justify-center bg-black/92 p-4"
+          className="fixed inset-0 z-[2000] flex cursor-default items-center justify-center bg-black/85 p-4 backdrop-blur-md backdrop-saturate-50"
           role="dialog"
           aria-modal="true"
           aria-label="Full size image"
