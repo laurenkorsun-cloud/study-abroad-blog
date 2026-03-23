@@ -11,7 +11,10 @@ const config: Config = {
         // Body and navigation - clean system fonts
         sans: ["-apple-system", "BlinkMacSystemFont", "system-ui", "Segoe UI", "sans-serif"],
         // Headings - elegant serif
-        serif: ["Georgia", "Times New Roman", "serif"]
+        serif: ["Georgia", "Times New Roman", "serif"],
+        // Home cover variants (next/font in layout)
+        dm: ["var(--font-dm-sans)", "system-ui", "sans-serif"],
+        fraunces: ["var(--font-fraunces)", "Georgia", "serif"]
       },
       colors: {
         // ═══════════════════════════════════════════════════════════════

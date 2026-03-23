@@ -34,7 +34,15 @@ type HomeMapPreview = {
   ctaHref: string;
 };
 
-export type HomeCoverVariant = "minimal" | "bold" | "editorial" | "startup" | "classic";
+export type HomeCoverVariant =
+  | "minimal"
+  | "bold"
+  | "editorial"
+  | "startup"
+  | "classic"
+  | "fluid"
+  | "warm"
+  | "journal";
 
 type HomeCoverProps = {
   hero: HomeHero;
@@ -49,19 +57,22 @@ function VariantPills({ current }: { current: HomeCoverVariant }) {
     { id: "minimal", label: "Minimal" },
     { id: "bold", label: "Bold" },
     { id: "editorial", label: "Editorial" },
-    { id: "startup", label: "Startup" }
+    { id: "startup", label: "Startup" },
+    { id: "fluid", label: "Fluid" },
+    { id: "warm", label: "Warm" },
+    { id: "journal", label: "Journal" }
   ];
 
   return (
-    <div className="mx-auto flex w-full max-w-6xl items-center justify-center px-6 pt-6 md:px-10">
-      <div className="flex flex-wrap justify-center gap-2 rounded-full border border-slate-200 bg-white/80 px-2.5 py-2 shadow-sm backdrop-blur">
+    <div className="mx-auto flex w-full max-w-6xl items-center justify-center px-4 pt-4 md:px-10 md:pt-6">
+      <div className="flex max-w-full flex-wrap justify-center gap-1.5 rounded-2xl border border-slate-200/80 bg-white/90 px-2 py-2 shadow-sm backdrop-blur-sm md:gap-2 md:rounded-full md:px-3">
         {items.map((item) => {
           const active = item.id === current;
           return (
             <Link
               key={item.id}
               href={`/?cover=${item.id}`}
-              className={`rounded-full px-3 py-1 text-xs font-medium transition ${
+              className={`whitespace-nowrap rounded-full px-2.5 py-1 text-[11px] font-medium transition md:px-3 md:text-xs ${
                 active
                   ? "bg-slate-900 text-white"
                   : "text-text-secondary hover:bg-slate-100 hover:text-text-primary"
@@ -99,37 +110,67 @@ function MapPreviewSection({
   variant: HomeCoverVariant;
 }) {
   const base = "section-container";
-  const bg =
-    variant === "bold"
-      ? "bg-slate-950 text-white"
-      : variant === "startup"
-        ? "bg-slate-950 text-white"
-        : "bg-box-bg";
+  const isDark = variant === "bold" || variant === "startup";
 
-  const labelClass =
-    variant === "bold" || variant === "startup"
-      ? "text-xs font-semibold uppercase tracking-[0.3em] text-slate-300"
-      : "page-label";
+  const bg = isDark
+    ? "bg-slate-950 text-white"
+    : variant === "fluid"
+      ? "bg-gradient-to-b from-white via-violet-50/40 to-fuchsia-50/30"
+      : variant === "warm"
+        ? "bg-gradient-to-b from-orange-50/50 to-stone-100/70"
+        : variant === "journal"
+          ? "border-t border-slate-200/80 bg-[#f5f5f4]"
+          : "bg-box-bg";
 
-  const titleClass =
-    variant === "bold" || variant === "startup"
-      ? "text-2xl font-semibold tracking-tight text-white md:text-3xl"
-      : "box-title";
+  const labelClass = isDark
+    ? "text-xs font-semibold uppercase tracking-[0.3em] text-slate-300"
+    : variant === "fluid"
+      ? "font-dm text-sm font-medium text-violet-700"
+      : variant === "warm"
+        ? "font-dm text-xs font-semibold uppercase tracking-[0.3em] text-orange-900/70"
+        : variant === "journal"
+          ? "font-dm text-xs font-semibold uppercase tracking-[0.25em] text-teal-800"
+          : "page-label";
 
-  const descClass =
-    variant === "bold" || variant === "startup"
-      ? "max-w-md text-sm text-slate-200 md:text-base"
-      : "max-w-md text-sm text-text-secondary";
+  const titleClass = isDark
+    ? "text-2xl font-semibold tracking-tight text-white md:text-3xl"
+    : variant === "fluid"
+      ? "font-fraunces text-2xl font-semibold text-slate-900 md:text-3xl"
+      : variant === "warm"
+        ? "font-fraunces text-2xl font-semibold text-stone-900 md:text-3xl"
+        : variant === "journal"
+          ? "font-fraunces text-2xl font-semibold text-slate-900 md:text-3xl"
+          : "box-title";
 
-  const ctaClass =
-    variant === "bold" || variant === "startup"
-      ? "inline-flex items-center justify-center rounded-full bg-white px-5 py-2 text-sm font-medium text-slate-900 transition hover:bg-slate-100"
-      : "btn-primary";
+  const descClass = isDark
+    ? "max-w-md text-sm text-slate-200 md:text-base"
+    : variant === "fluid"
+      ? "font-dm max-w-md text-sm text-slate-600 md:text-base"
+      : variant === "warm"
+        ? "font-dm max-w-md text-sm text-stone-700 md:text-base"
+        : variant === "journal"
+          ? "font-dm max-w-md text-sm text-slate-600 md:text-base"
+          : "max-w-md text-sm text-text-secondary";
 
-  const mapFrameClass =
-    variant === "bold" || variant === "startup"
-      ? "overflow-hidden rounded-box-lg border border-white/10 bg-white/5"
-      : "overflow-hidden rounded-box-lg border border-slate-200 bg-slate-50";
+  const ctaClass = isDark
+    ? "inline-flex items-center justify-center rounded-full bg-white px-5 py-2 text-sm font-medium text-slate-900 transition hover:bg-slate-100"
+    : variant === "fluid"
+      ? "font-dm inline-flex items-center text-sm font-semibold text-violet-800 underline decoration-violet-300 underline-offset-4 transition hover:text-violet-950"
+      : variant === "warm"
+        ? "font-dm inline-flex items-center justify-center rounded-full bg-stone-900 px-5 py-2.5 text-sm font-semibold text-orange-50 transition hover:bg-stone-800"
+        : variant === "journal"
+          ? "font-dm inline-flex items-center text-sm font-semibold text-teal-800 underline decoration-teal-400/70 underline-offset-4 transition hover:text-teal-950"
+          : "btn-primary";
+
+  const mapFrameClass = isDark
+    ? "overflow-hidden rounded-box-lg border border-white/10 bg-white/5"
+    : variant === "fluid"
+      ? "overflow-hidden rounded-[1.75rem] bg-white/70 shadow-2xl shadow-violet-200/35 ring-1 ring-violet-100/70"
+      : variant === "warm"
+        ? "overflow-hidden rounded-[1.5rem] bg-white/80 shadow-xl shadow-orange-200/40 ring-1 ring-orange-100/60"
+        : variant === "journal"
+          ? "overflow-hidden rounded-sm border border-slate-200/90 bg-white shadow-md"
+          : "overflow-hidden rounded-box-lg border border-slate-200 bg-slate-50";
 
   return (
     <section className={`${base} ${bg}`}>
@@ -617,11 +658,286 @@ function HeroStartup({ hero }: { hero: HomeHero }) {
   );
 }
 
+/** Soft gradients, organic radii, link-style CTAs — less “boxed” UI */
+function HeroFluid({ hero }: { hero: HomeHero }) {
+  return (
+    <section className="relative overflow-hidden bg-gradient-to-br from-violet-50 via-white to-fuchsia-50/30">
+      <div className="pointer-events-none absolute -right-32 top-10 h-96 w-96 rounded-full bg-pink-200/35 blur-3xl" />
+      <div className="pointer-events-none absolute -bottom-10 -left-24 h-72 w-72 rounded-full bg-violet-200/30 blur-3xl" />
+
+      <div className="relative z-10 mx-auto max-w-6xl px-6 py-16 md:px-10 md:py-24">
+        <div className="grid gap-14 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
+          <div className="space-y-7 font-dm text-slate-900">
+            <p className="text-sm font-medium tracking-wide text-violet-700/90">{hero.label}</p>
+            <h1 className="font-fraunces text-[2.75rem] font-semibold leading-[1.08] md:text-5xl lg:text-6xl">
+              {hero.title}
+            </h1>
+            <p className="max-w-lg text-base leading-relaxed text-slate-600 md:text-lg">{hero.description}</p>
+            <div className="flex flex-wrap items-baseline gap-8 pt-2">
+              <Link
+                href={hero.primaryButtonHref}
+                className="group inline-flex items-center gap-2 text-base font-semibold text-violet-800 underline decoration-violet-300/80 decoration-2 underline-offset-[6px] transition hover:text-violet-950 hover:decoration-violet-500"
+              >
+                {hero.primaryButton}
+                <span className="transition-transform group-hover:translate-x-0.5" aria-hidden="true">
+                  →
+                </span>
+              </Link>
+              <Link
+                href={hero.secondaryButtonHref}
+                className="text-base font-medium text-slate-600 transition hover:text-slate-900"
+              >
+                {hero.secondaryButton}
+              </Link>
+            </div>
+          </div>
+
+          <div className="relative lg:pl-2">
+            <div className="absolute -inset-1 rounded-[2.25rem] bg-gradient-to-tr from-violet-300/25 via-transparent to-fuchsia-200/20 blur-xl" />
+            <div className="relative overflow-hidden rounded-[2rem] shadow-2xl shadow-violet-300/25 ring-1 ring-white/80">
+              <div
+                className="aspect-[4/3] w-full bg-cover bg-center"
+                style={{ backgroundImage: `url(${hero.backgroundImage})` }}
+                aria-hidden="true"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function SectionFluid({ sections }: { sections: HomeSection[] }) {
+  return (
+    <section className="relative bg-white px-6 py-16 md:px-10 md:py-24">
+      <div className="mx-auto max-w-6xl space-y-16">
+        <div className="max-w-2xl space-y-3 font-dm">
+          <p className="text-sm font-medium text-violet-700">Explore</p>
+          <h2 className="font-fraunces text-3xl font-semibold text-slate-900 md:text-4xl">
+            Where to wander
+          </h2>
+          <p className="text-slate-600">Soft shapes and breathing room—no harsh card grid.</p>
+        </div>
+
+        <div className="flex flex-col gap-14">
+          {sections.map((section, i) => (
+            <Link
+              key={section.id}
+              href={section.href}
+              className={`group flex flex-col gap-6 md:flex-row md:items-center md:gap-12 ${
+                i % 2 === 1 ? "md:flex-row-reverse" : ""
+              }`}
+            >
+              <div className="relative md:w-[48%]">
+                <div className="overflow-hidden rounded-[1.75rem] shadow-xl shadow-slate-200/60 ring-1 ring-slate-100/80 transition duration-300 group-hover:shadow-2xl group-hover:shadow-violet-200/50">
+                  <div
+                    className="aspect-[16/10] w-full bg-cover bg-center transition duration-500 group-hover:scale-[1.02]"
+                    style={{ backgroundImage: `url(${section.imageUrl})` }}
+                    aria-hidden="true"
+                  />
+                </div>
+              </div>
+              <div className="min-w-0 flex-1 space-y-3 font-dm">
+                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-violet-600/80">
+                  {section.label}
+                </p>
+                <h3 className="font-fraunces text-2xl font-semibold text-slate-900 md:text-3xl">
+                  {section.title}
+                </h3>
+                <p className="text-slate-600">{section.description}</p>
+                <p className="pt-1 text-sm font-semibold text-violet-800">
+                  {uiStrings.explorePrefix} {section.label} →
+                </p>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/** Terracotta / cream warmth — rounded imagery, minimal chrome */
+function HeroWarm({ hero }: { hero: HomeHero }) {
+  return (
+    <section className="relative overflow-hidden bg-gradient-to-b from-orange-50/90 via-amber-50/50 to-stone-100/80">
+      <div
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(251,146,60,0.14),transparent)]"
+        aria-hidden="true"
+      />
+
+      <div className="relative z-10 mx-auto grid max-w-6xl gap-10 px-6 py-20 md:grid-cols-2 md:items-center md:gap-14 md:px-10 md:py-28">
+        <div className="space-y-6 font-dm text-stone-800">
+          <p className="text-xs font-semibold uppercase tracking-[0.35em] text-orange-800/70">{hero.label}</p>
+          <h1 className="font-fraunces text-4xl font-semibold leading-[1.12] text-stone-900 md:text-5xl lg:text-[3.25rem]">
+            {hero.title}
+          </h1>
+          <p className="max-w-md text-base leading-relaxed text-stone-700">{hero.description}</p>
+          <div className="flex flex-col gap-4 pt-2 sm:flex-row sm:items-center">
+            <Link
+              href={hero.primaryButtonHref}
+              className="inline-flex w-fit items-center justify-center rounded-full bg-stone-900 px-7 py-3 text-sm font-semibold text-orange-50 shadow-lg shadow-orange-900/15 transition hover:bg-stone-800"
+            >
+              {hero.primaryButton}
+            </Link>
+            <Link
+              href={hero.secondaryButtonHref}
+              className="inline-flex w-fit items-center text-sm font-semibold text-orange-900/90 underline decoration-orange-400/60 underline-offset-4 hover:text-stone-900"
+            >
+              {hero.secondaryButton}
+            </Link>
+          </div>
+        </div>
+
+        <div className="relative">
+          <div className="absolute -inset-2 rounded-[2rem] bg-gradient-to-br from-orange-200/40 to-amber-100/30 blur-2xl" />
+          <div className="relative overflow-hidden rounded-[1.75rem] shadow-2xl shadow-orange-200/50">
+            <div
+              className="aspect-[5/4] w-full bg-cover bg-center"
+              style={{ backgroundImage: `url(${hero.backgroundImage})` }}
+              aria-hidden="true"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function SectionWarm({ sections }: { sections: HomeSection[] }) {
+  return (
+    <section className="bg-gradient-to-b from-stone-100/60 to-orange-50/30 px-6 py-16 md:px-10 md:py-24">
+      <div className="mx-auto max-w-6xl">
+        <div className="mb-12 max-w-xl space-y-2 font-dm">
+          <h2 className="font-fraunces text-3xl text-stone-900 md:text-4xl">Stories by theme</h2>
+          <p className="text-stone-600">Frosted panels and warm light—no sharp boxes.</p>
+        </div>
+
+        <div className="grid gap-6 md:grid-cols-3">
+          {sections.map((section) => (
+            <Link
+              key={section.id}
+              href={section.href}
+              className="group flex flex-col overflow-hidden rounded-[1.75rem] bg-white/70 shadow-md shadow-orange-200/30 backdrop-blur-sm transition hover:bg-white hover:shadow-xl hover:shadow-orange-200/40"
+            >
+              <div className="relative aspect-[5/3] overflow-hidden">
+                <div
+                  className="h-full w-full bg-cover bg-center transition duration-500 group-hover:scale-105"
+                  style={{ backgroundImage: `url(${section.imageUrl})` }}
+                  aria-hidden="true"
+                />
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-stone-900/20 to-transparent opacity-0 transition group-hover:opacity-100" />
+              </div>
+              <div className="flex flex-1 flex-col space-y-2 p-6 font-dm">
+                <span className="text-[11px] font-semibold uppercase tracking-[0.2em] text-orange-800/70">
+                  {section.label}
+                </span>
+                <h3 className="font-fraunces text-xl font-semibold text-stone-900">{section.title}</h3>
+                <p className="flex-1 text-sm text-stone-600">{section.description}</p>
+                <span className="text-sm font-semibold text-orange-900/90">Open →</span>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/** Narrow editorial column, teal accents, list-based structure */
+function HeroJournal({ hero }: { hero: HomeHero }) {
+  return (
+    <section className="border-b border-slate-200/70 bg-[#fafaf9]">
+      <div className="mx-auto max-w-3xl px-6 py-20 md:px-8 md:py-28">
+        <div className="space-y-8">
+          <div className="flex items-center gap-4 font-dm text-sm text-teal-800/90">
+            <span className="h-px w-12 bg-teal-600/50" aria-hidden="true" />
+            <span>{hero.label}</span>
+          </div>
+          <h1 className="font-fraunces text-4xl font-semibold leading-[1.15] text-slate-900 md:text-5xl lg:text-[3.5rem]">
+            {hero.title}
+          </h1>
+          <p className="font-dm text-lg leading-relaxed text-slate-600 md:text-xl">{hero.description}</p>
+          <div className="flex flex-wrap gap-8 border-t border-slate-200 pt-8 font-dm">
+            <Link
+              href={hero.primaryButtonHref}
+              className="text-base font-semibold text-teal-800 underline decoration-teal-400/70 underline-offset-[6px] transition hover:text-teal-950"
+            >
+              {hero.primaryButton}
+            </Link>
+            <Link href={hero.secondaryButtonHref} className="text-base text-slate-600 transition hover:text-slate-900">
+              {hero.secondaryButton}
+            </Link>
+          </div>
+        </div>
+
+        <div className="mt-14 border-t border-slate-200 pt-10">
+          <div className="overflow-hidden rounded-sm shadow-lg">
+            <div
+              className="aspect-[21/9] w-full max-w-2xl bg-cover bg-center md:aspect-[2/1]"
+              style={{ backgroundImage: `url(${hero.backgroundImage})` }}
+              aria-hidden="true"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function SectionJournal({ sections }: { sections: HomeSection[] }) {
+  return (
+    <section className="bg-[#fafaf9] px-6 py-16 md:px-10 md:py-24">
+      <div className="mx-auto max-w-3xl">
+        <h2 className="font-fraunces text-2xl font-semibold text-slate-900 md:text-3xl">Contents</h2>
+        <p className="mt-2 font-dm text-slate-600">Jump in—each line is a door.</p>
+
+        <ol className="mt-10 divide-y divide-slate-200 border-y border-slate-200 font-dm">
+          {sections.map((section, i) => (
+            <li key={section.id}>
+              <Link href={section.href} className="group flex gap-6 py-8 transition hover:bg-white/60">
+                <span className="w-8 shrink-0 pt-1 font-fraunces text-2xl text-teal-800/80 tabular-nums">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <div className="min-w-0 flex-1 space-y-2">
+                  <p className="text-xs uppercase tracking-[0.2em] text-slate-500">{section.label}</p>
+                  <h3 className="text-xl font-semibold text-slate-900 md:text-2xl">{section.title}</h3>
+                  <p className="text-slate-600">{section.description}</p>
+                  <span className="inline-block pt-1 text-sm font-medium text-teal-800 group-hover:underline">
+                    Continue
+                  </span>
+                </div>
+                <div className="hidden h-24 w-32 shrink-0 overflow-hidden rounded-sm bg-slate-200 sm:block">
+                  <div
+                    className="h-full w-full bg-cover bg-center"
+                    style={{ backgroundImage: `url(${section.imageUrl})` }}
+                    aria-hidden="true"
+                  />
+                </div>
+              </Link>
+            </li>
+          ))}
+        </ol>
+      </div>
+    </section>
+  );
+}
+
 function getVariantFromSearchParams(searchParams: URLSearchParams | null): HomeCoverVariant {
   if (!searchParams) return "classic";
   const raw = searchParams.get("cover") ?? "";
   const v = raw.toLowerCase();
-  if (v === "classic" || v === "minimal" || v === "bold" || v === "editorial" || v === "startup") {
+  if (
+    v === "classic" ||
+    v === "minimal" ||
+    v === "bold" ||
+    v === "editorial" ||
+    v === "startup" ||
+    v === "fluid" ||
+    v === "warm" ||
+    v === "journal"
+  ) {
     return v;
   }
   return "classic";
@@ -640,12 +956,18 @@ export function HomeCover({ hero, sections, mapPreview, entries }: HomeCoverProp
       {variant === "bold" && <HeroBold hero={hero} />}
       {variant === "editorial" && <HeroEditorial hero={hero} />}
       {variant === "startup" && <HeroStartup hero={hero} />}
+      {variant === "fluid" && <HeroFluid hero={hero} />}
+      {variant === "warm" && <HeroWarm hero={hero} />}
+      {variant === "journal" && <HeroJournal hero={hero} />}
 
       {variant === "classic" && <SectionStackClassic sections={sections} />}
       {variant === "minimal" && <SectionGridMinimal sections={sections} />}
       {variant === "bold" && <SectionGridBold sections={sections} />}
       {variant === "editorial" && <SectionGridEditorial sections={sections} />}
       {variant === "startup" && <SectionGridMinimal sections={sections} />}
+      {variant === "fluid" && <SectionFluid sections={sections} />}
+      {variant === "warm" && <SectionWarm sections={sections} />}
+      {variant === "journal" && <SectionJournal sections={sections} />}
 
       <MapPreviewSection mapPreview={mapPreview} entries={entries} variant={variant} />
     </div>

@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { ResponsiveLayout } from "./components/ResponsiveLayout";
 import { siteMeta } from "../data/siteContent";
+import { dmSans, fraunces } from "./fonts";
 
 export const metadata: Metadata = {
   title: siteMeta.title,
@@ -20,7 +21,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="flex min-h-screen flex-col bg-white text-slate-900">
+      <body
+        className={`${dmSans.variable} ${fraunces.variable} flex min-h-screen flex-col bg-white font-sans text-slate-900`}
+      >
         <ResponsiveLayout>{children}</ResponsiveLayout>
       </body>
     </html>
