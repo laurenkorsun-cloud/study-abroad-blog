@@ -21,8 +21,12 @@ const config: Config = {
         // GLOBAL THEME COLORS - Edit these to change the entire site
         // ═══════════════════════════════════════════════════════════════
 
+        // Journal / paper surfaces
+        "journal-paper": "#fafaf9", // stone-50 — main page background
+        "journal-accent": "#115e59", // teal-800 — links, labels, emphasis
+
         // Content box background (soft, faded)
-        "box-bg": "#f8fafc",        // slate-50 - soft warm grey
+        "box-bg": "#f5f5f4",        // stone-100 — journal card tone
         // Alternative options:
         // "box-bg": "#f1f5f9",     // slate-100 - slightly darker grey
         // "box-bg": "#eff6ff",     // blue-50 - cool light blue
@@ -34,9 +38,9 @@ const config: Config = {
         "text-secondary": "#475569", // slate-600 - secondary text
         "text-muted": "#94a3b8",     // slate-400 - muted/labels
 
-        // Accent colors
-        "accent-primary": "#0f172a", // slate-900 - buttons, links
-        "accent-hover": "#334155",   // slate-700 - button hover
+        // Accent colors (journal: teal buttons; tweak in one place)
+        "accent-primary": "#115e59", // teal-800
+        "accent-hover": "#134e4a",   // teal-900
 
         // Map marker colors
         "marker-restaurant": "#0ea5e9", // sky-500

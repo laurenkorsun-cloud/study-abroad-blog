@@ -22,7 +22,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${dmSans.variable} ${fraunces.variable} flex min-h-screen flex-col bg-white font-sans text-slate-900`}
+        className={`${dmSans.variable} ${fraunces.variable} flex min-h-screen flex-col bg-journal-paper font-dm text-slate-900`}
       >
         <ResponsiveLayout>{children}</ResponsiveLayout>
       </body>

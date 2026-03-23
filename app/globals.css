@@ -10,16 +10,16 @@
 @layer base {
   html,
   body {
-    @apply min-h-full bg-white text-text-primary;
+    @apply min-h-full bg-journal-paper text-text-primary;
   }
 
   body {
-    @apply font-sans antialiased;
+    @apply font-dm antialiased;
   }
 
-  /* Headings use elegant serif font */
+  /* Journal: Fraunces for display headings site-wide */
   h1, h2, h3, h4 {
-    @apply font-serif tracking-normal text-text-primary;
+    @apply font-fraunces tracking-normal text-text-primary;
   }
 
   /* Navigation and buttons use clean sans-serif */
@@ -43,13 +43,13 @@
    ═══════════════════════════════════════════════════════════════════════════ */
 
 @layer components {
-  /* Content box - soft background, no dark borders */
+  /* Content box — journal: soft paper, light frame */
   .content-box {
-    @apply bg-box-bg rounded-box p-box-padding;
+    @apply rounded-sm border border-slate-200/80 bg-white/90 p-box-padding shadow-sm;
   }
 
   .content-box-lg {
-    @apply bg-box-bg rounded-box-lg p-box-padding-lg;
+    @apply rounded-sm border border-slate-200/80 bg-white/90 p-box-padding-lg shadow-sm;
   }
 
   /* Section container with consistent spacing */
@@ -63,7 +63,7 @@
   }
 
   .page-label {
-    @apply text-xs font-semibold uppercase tracking-[0.3em] text-text-muted;
+    @apply font-dm text-xs font-semibold uppercase tracking-[0.25em] text-journal-accent;
   }
 
   .page-title {
@@ -83,24 +83,24 @@
     @apply text-xs text-text-muted md:text-sm;
   }
 
-  /* Primary button */
+  /* Primary button — journal teal */
   .btn-primary {
-    @apply inline-flex items-center justify-center rounded-full bg-accent-primary px-5 py-2 text-sm font-medium text-white transition hover:bg-accent-hover;
+    @apply inline-flex items-center justify-center rounded-sm bg-accent-primary px-5 py-2.5 text-sm font-medium text-white shadow-sm transition hover:bg-accent-hover;
   }
 
   /* Secondary button */
   .btn-secondary {
-    @apply inline-flex items-center justify-center rounded-full border border-slate-200 bg-white px-5 py-2 text-sm font-medium text-text-primary transition hover:bg-slate-50;
+    @apply inline-flex items-center justify-center rounded-sm border border-slate-300 bg-white px-5 py-2.5 text-sm font-medium text-text-primary transition hover:bg-stone-50;
   }
 
   /* Tag/badge styling */
   .tag {
-    @apply rounded-full border border-slate-200 px-3 py-1 text-xs text-text-secondary;
+    @apply rounded-sm border border-slate-200/90 bg-white/80 px-3 py-1 text-xs text-text-secondary;
   }
 
   /* Map container styling */
   .map-container {
-    @apply h-[60vh] min-h-[400px] overflow-hidden rounded-box-lg border border-slate-200 bg-slate-50;
+    @apply h-[60vh] min-h-[400px] overflow-hidden rounded-sm border border-slate-200/90 bg-white shadow-sm;
   }
 
   /* Image with caption */

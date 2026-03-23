@@ -2,8 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Suspense, useState, type ReactNode } from "react";
-import { CoverStyleBar } from "./CoverStyleBar";
+import { useState, type ReactNode } from "react";
 import { siteMeta, navItems } from "../../data/siteContent";
 import { useIsMobile } from "../hooks/useIsMobile";
 
@@ -26,8 +25,8 @@ function NavLink({
     <Link
       href={href}
       onClick={onClick}
-      className={`block text-xs uppercase tracking-[0.2em] ${
-        isActive ? "font-semibold" : "text-slate-500 hover:text-slate-900"
+      className={`font-dm block text-xs uppercase tracking-[0.2em] ${
+        isActive ? "font-semibold text-journal-accent" : "text-slate-500 hover:text-slate-900"
       }`}
     >
       {children}
@@ -54,14 +53,12 @@ export function Header() {
     </>
   );
 
-  const isHome = pathname === "/";
-
   return (
-    <header className="sticky top-0 z-50 border-b border-slate-200 bg-white">
+    <header className="sticky top-0 z-50 border-b border-slate-200/90 bg-journal-paper/95 backdrop-blur-sm">
       <div className="flex w-full items-center justify-between px-4 py-5 md:px-8 md:py-6">
         <Link
           href="/"
-          className="text-sm font-semibold uppercase tracking-[0.25em] md:text-base lg:text-lg"
+          className="font-fraunces text-base font-semibold tracking-tight text-slate-900 md:text-lg"
         >
           {siteMeta.siteName}
         </Link>
@@ -95,7 +92,7 @@ export function Header() {
                   onClick={() => setMenuOpen(false)}
                 />
                 <nav
-                  className="absolute right-0 top-full z-50 mt-0 flex w-56 flex-col gap-4 border-b border-l border-slate-200 bg-white px-6 py-5 shadow-lg"
+                  className="absolute right-0 top-full z-50 mt-0 flex w-56 flex-col gap-4 border-b border-l border-slate-200/90 bg-journal-paper px-6 py-5 shadow-lg"
                   role="navigation"
                 >
                   {navContent}
@@ -109,18 +106,6 @@ export function Header() {
           </nav>
         )}
       </div>
-
-      {isHome && (
-        <Suspense
-          fallback={
-            <div className="border-t border-slate-200 bg-slate-50 px-4 py-3 text-center text-xs text-slate-500">
-              Loading cover options…
-            </div>
-          }
-        >
-          <CoverStyleBar />
-        </Suspense>
-      )}
     </header>
   );
 }
