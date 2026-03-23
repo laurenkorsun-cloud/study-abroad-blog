@@ -17,7 +17,7 @@
     @apply font-inter antialiased;
   }
 
-  /* Titles — Outfit (explicit so they don’t inherit body Inter from parents) */
+  /* Titles — Fraunces (explicit so they don’t inherit body Inter from parents) */
   h1,
   h2,
   h3,
@@ -27,7 +27,7 @@
     @apply font-title tracking-normal text-text-primary;
   }
 
-  /* Navigation and buttons — Inter (same as body); titles stay Outfit above */
+  /* Navigation and buttons — Inter (same as body); titles stay Fraunces above */
   nav,
   button {
     @apply font-inter;

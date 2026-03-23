@@ -1,4 +1,4 @@
-import { IBM_Plex_Mono, Inter, Outfit } from "next/font/google";
+import { Fraunces, IBM_Plex_Mono, Inter } from "next/font/google";
 
 /** Primary UI + body — neutral sans */
 export const inter = Inter({
@@ -7,10 +7,10 @@ export const inter = Inter({
   display: "swap"
 });
 
-/** Titles / display — geometric sans (distinct from body Inter) */
-export const outfit = Outfit({
+/** Titles / display — soft serif (pairs with Inter body) */
+export const fraunces = Fraunces({
   subsets: ["latin"],
-  variable: "--font-outfit",
+  variable: "--font-fraunces",
   display: "swap"
 });
 
