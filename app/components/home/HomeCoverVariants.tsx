@@ -51,22 +51,22 @@ function MapPreviewSection({
         <div className="flex flex-col justify-between gap-3 sm:flex-row sm:items-end">
           <div className="space-y-2">
             {mapPreview.label.trim() ? (
-              <p className="font-dm text-xs font-semibold uppercase tracking-[0.25em] text-journal-accent">
+              <p className="font-inter text-xs font-semibold uppercase tracking-[0.25em] text-journal-accent">
                 {mapPreview.label}
               </p>
             ) : null}
             {mapPreview.title.trim() ? (
-              <h2 className="font-fraunces text-2xl font-semibold text-slate-900 md:text-3xl">
+              <h2 className="font-inter text-2xl font-semibold text-slate-900 md:text-3xl">
                 {mapPreview.title}
               </h2>
             ) : null}
             {mapPreview.description.trim() ? (
-              <p className="font-dm max-w-md text-sm text-slate-600 md:text-base">{mapPreview.description}</p>
+              <p className="font-inter max-w-md text-sm text-slate-600 md:text-base">{mapPreview.description}</p>
             ) : null}
           </div>
           <Link
             href={mapPreview.ctaHref}
-            className="font-dm inline-flex shrink-0 items-center text-sm font-semibold text-journal-accent underline decoration-teal-400/70 underline-offset-4 transition hover:text-teal-950 sm:self-end"
+            className="font-inter inline-flex shrink-0 items-center text-sm font-semibold text-journal-accent underline decoration-teal-400/70 underline-offset-4 transition hover:text-teal-950 sm:self-end"
           >
             {mapPreview.ctaButton}
           </Link>
@@ -91,18 +91,18 @@ function HeroJournal({ hero }: { hero: HomeHero }) {
     <section className="border-b border-slate-200/70 bg-journal-paper">
       <div className="mx-auto max-w-4xl px-6 py-16 md:px-8 md:py-24">
         <div className="space-y-8 text-center">
-          <div className="flex items-center justify-center gap-4 font-dm text-sm text-journal-accent">
+          <div className="flex items-center justify-center gap-4 font-inter text-sm text-journal-accent">
             <span className="h-px w-12 bg-teal-600/50" aria-hidden="true" />
             <span>{hero.label}</span>
             <span className="h-px w-12 bg-teal-600/50" aria-hidden="true" />
           </div>
-          <h1 className="font-fraunces text-4xl font-semibold leading-[1.15] text-slate-900 md:text-5xl lg:text-[3.25rem]">
+          <h1 className="font-inter text-4xl font-semibold leading-[1.15] text-slate-900 md:text-5xl lg:text-[3.25rem]">
             {hero.title}
           </h1>
           {hero.description.trim() ? (
-            <p className="font-dm text-lg leading-relaxed text-slate-600 md:text-xl">{hero.description}</p>
+            <p className="font-inter text-lg leading-relaxed text-slate-600 md:text-xl">{hero.description}</p>
           ) : null}
-          <div className="flex flex-col items-center justify-center gap-4 border-t border-slate-200 pt-8 font-dm sm:flex-row sm:gap-10">
+          <div className="flex flex-col items-center justify-center gap-4 border-t border-slate-200 pt-8 font-inter sm:flex-row sm:gap-10">
             <Link
               href={hero.primaryButtonHref}
               className="text-base font-semibold text-journal-accent underline decoration-teal-400/70 underline-offset-[6px] transition hover:text-teal-950"
@@ -138,7 +138,7 @@ function SectionJournal({ sections }: { sections: HomeSection[] }) {
   return (
     <section className="bg-journal-paper px-6 py-16 md:px-10 md:py-24">
       <div className="mx-auto max-w-4xl">
-        <ul className="divide-y divide-slate-200 border-y border-slate-200 font-dm">
+        <ul className="divide-y divide-slate-200 border-y border-slate-200 font-inter">
           {sections.map((section) => (
             <li key={section.id}>
               <Link
@@ -154,7 +154,7 @@ function SectionJournal({ sections }: { sections: HomeSection[] }) {
                 </div>
                 <div className="min-w-0 flex-1 space-y-3">
                   <p className="text-xs uppercase tracking-[0.2em] text-slate-500">{section.label}</p>
-                  <h3 className="font-fraunces text-2xl font-semibold text-slate-900 md:text-3xl">{section.title}</h3>
+                  <h3 className="font-inter text-2xl font-semibold text-slate-900 md:text-3xl">{section.title}</h3>
                   <p className="text-base text-slate-600 md:text-lg">{section.description}</p>
                   <span className="inline-block pt-1 text-sm font-medium text-journal-accent group-hover:underline">
                     Continue

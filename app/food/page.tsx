@@ -4,7 +4,11 @@ import { useMemo, useState } from "react";
 import { InteractiveMap } from "../components/MapWrapper";
 import { getAllRestaurants, type Restaurant } from "../../data/restaurants";
 import { getAllEntries, type MapEntry } from "../../data/mapEntries";
-import { foodPageHeader, foodPageSections } from "../../data/foodContent";
+import {
+  foodPageCoverImage,
+  foodPageHeader,
+  foodPageSections
+} from "../../data/foodContent";
 
 // ═══════════════════════════════════════════════════════════════════════════
 // FOOD PAGE - All content from data/foodContent.ts
@@ -190,6 +194,15 @@ export default function FoodPage() {
 
   return (
     <div className="flex flex-col">
+      <div
+        className="h-48 w-full bg-slate-200 bg-cover bg-center md:h-56 lg:h-64"
+        style={{
+          backgroundImage: `linear-gradient(to bottom, rgba(15,23,42,0.06), rgba(15,23,42,0.35)), url(${foodPageCoverImage})`
+        }}
+        role="img"
+        aria-label="Food cover"
+      />
+
       <section className="section-container border-b border-slate-100">
         <div className="page-header">
           <p className="page-label">{foodPageHeader.label}</p>

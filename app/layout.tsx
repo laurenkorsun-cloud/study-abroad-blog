@@ -2,7 +2,7 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { ResponsiveLayout } from "./components/ResponsiveLayout";
 import { siteMeta } from "../data/siteContent";
-import { dmSans, fraunces, ibmPlexMono, inter, oswald } from "./fonts";
+import { ibmPlexMono, inter } from "./fonts";
 
 export const metadata: Metadata = {
   title: siteMeta.title,
@@ -22,7 +22,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${dmSans.variable} ${fraunces.variable} ${inter.variable} ${oswald.variable} ${ibmPlexMono.variable} flex min-h-screen flex-col bg-journal-paper font-dm text-slate-900`}
+        className={`${inter.variable} ${ibmPlexMono.variable} flex min-h-screen flex-col bg-journal-paper font-inter text-slate-900`}
       >
         <ResponsiveLayout>{children}</ResponsiveLayout>
       </body>

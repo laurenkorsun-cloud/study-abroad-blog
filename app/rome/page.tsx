@@ -36,7 +36,7 @@ export default function RomePage() {
       <section className="relative overflow-hidden bg-white">
         <div className="pointer-events-none absolute inset-0 flex items-center justify-center select-none">
           <span
-            className="font-oswald text-[clamp(14rem,40vw,28rem)] font-bold leading-none text-slate-200/50"
+            className="font-inter text-[clamp(14rem,40vw,28rem)] font-bold leading-none tracking-tighter text-slate-200/50"
             aria-hidden="true"
           >
             {header.watermark}
@@ -53,7 +53,7 @@ export default function RomePage() {
               <span className="h-px w-8 bg-slate-300 md:w-12" aria-hidden="true" />
             </div>
 
-            <h1 className="font-oswald text-[clamp(2.25rem,8vw,4.5rem)] font-bold uppercase leading-[0.95] tracking-tight text-slate-900">
+            <h1 className="font-inter text-[clamp(2.25rem,8vw,4.5rem)] font-bold uppercase leading-[0.95] tracking-tight text-slate-900">
               {header.title}
             </h1>
           </div>

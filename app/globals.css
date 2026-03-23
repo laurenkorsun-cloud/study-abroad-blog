@@ -14,12 +14,12 @@
   }
 
   body {
-    @apply font-dm antialiased;
+    @apply font-inter antialiased;
   }
 
-  /* Journal: Fraunces for display headings site-wide */
+  /* Simple neutral sans for headings site-wide */
   h1, h2, h3, h4 {
-    @apply font-fraunces tracking-normal text-text-primary;
+    @apply font-inter tracking-normal text-text-primary;
   }
 
   /* Navigation and buttons use clean sans-serif */
@@ -63,7 +63,7 @@
   }
 
   .page-label {
-    @apply font-dm text-xs font-semibold uppercase tracking-[0.25em] text-journal-accent;
+    @apply font-inter text-xs font-semibold uppercase tracking-[0.25em] text-journal-accent;
   }
 
   .page-title {
