@@ -17,17 +17,17 @@
     @apply font-inter antialiased;
   }
 
-  /* Titles — Helvetica (explicit so they don’t inherit body Inter from parents) */
+  /* Titles — Outfit (explicit so they don’t inherit body Inter from parents) */
   h1,
   h2,
   h3,
   h4,
   h5,
   h6 {
-    @apply font-helvetica tracking-normal text-text-primary;
+    @apply font-title tracking-normal text-text-primary;
   }
 
-  /* Navigation and buttons — Inter (same as body); titles stay Helvetica above */
+  /* Navigation and buttons — Inter (same as body); titles stay Outfit above */
   nav,
   button {
     @apply font-inter;
@@ -73,7 +73,7 @@
   }
 
   .page-title {
-    @apply font-helvetica text-3xl font-semibold tracking-tight md:text-4xl;
+    @apply font-title text-3xl font-semibold tracking-tight md:text-4xl;
   }
 
   .page-description {
@@ -82,7 +82,7 @@
 
   /* Card/box title styling */
   .box-title {
-    @apply font-helvetica text-lg font-semibold tracking-tight md:text-xl;
+    @apply font-title text-lg font-semibold tracking-tight md:text-xl;
   }
 
   .box-subtitle {

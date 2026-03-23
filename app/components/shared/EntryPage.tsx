@@ -165,7 +165,7 @@ export function EntryPage({
             )}
             {sidebarSummaryTitle && sidebarSummaryTemplate && (
               <div className="content-box space-y-3">
-                <h2 className="font-helvetica text-sm font-semibold">{sidebarSummaryTitle}</h2>
+                <h2 className="font-title text-sm font-semibold">{sidebarSummaryTitle}</h2>
                 <p className="text-sm text-text-secondary">
                   {sidebarSummaryTemplate
                     .replace("{location}", title)

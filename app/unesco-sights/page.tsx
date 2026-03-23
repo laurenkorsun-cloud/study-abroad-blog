@@ -66,7 +66,7 @@ function SightCard({ sight }: { sight: UnescoSight }) {
       <div className="space-y-3 p-5">
         <div className="space-y-1">
           <div className="flex flex-wrap items-start justify-between gap-2">
-            <h3 className="font-helvetica text-base font-semibold text-text-primary md:text-lg">
+            <h3 className="font-title text-base font-semibold text-text-primary md:text-lg">
               {sight.name}
             </h3>
             <span className="tag">{sight.unescoCategory}</span>

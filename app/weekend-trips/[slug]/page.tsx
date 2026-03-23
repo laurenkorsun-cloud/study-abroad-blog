@@ -116,7 +116,7 @@ export default function WeekendTripDetailPage() {
         <p className="text-xs font-semibold uppercase tracking-[0.25em] text-slate-400">
           {weekendTripDetail.notFoundLabel}
         </p>
-        <h1 className="font-helvetica text-2xl font-semibold md:text-3xl">
+        <h1 className="font-title text-2xl font-semibold md:text-3xl">
           {weekendTripDetail.notFoundTitle}
         </h1>
         <p className="text-sm text-slate-600 md:text-base">

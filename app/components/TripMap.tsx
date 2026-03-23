@@ -125,7 +125,7 @@ export function TripMap({
             >
               <Popup>
                 <div className="space-y-1 text-xs text-slate-900">
-                  <p className="font-helvetica font-semibold">{entry.title}</p>
+                  <p className="font-title font-semibold">{entry.title}</p>
                   <p className="text-[11px] text-slate-700">
                     {entry.address ?? `${entry.city}, ${entry.country}`}
                   </p>
@@ -156,7 +156,7 @@ export function TripMap({
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">
                 {activeEntry.type}
               </p>
-              <h3 className="mt-1 font-helvetica text-lg font-semibold md:text-xl">
+              <h3 className="mt-1 font-title text-lg font-semibold md:text-xl">
                 {activeEntry.title}
               </h3>
               <p className="text-xs text-slate-500">

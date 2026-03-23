@@ -54,12 +54,12 @@ function MapPreviewSection({
         <div className="flex flex-col justify-between gap-3 sm:flex-row sm:items-end">
           <div className="space-y-2">
             {mapPreview.label.trim() ? (
-              <p className="font-helvetica text-xs font-semibold uppercase tracking-[0.25em] text-journal-accent">
+              <p className="font-title text-xs font-semibold uppercase tracking-[0.25em] text-journal-accent">
                 {mapPreview.label}
               </p>
             ) : null}
             {mapPreview.title.trim() ? (
-              <h2 className="font-helvetica text-2xl font-semibold text-slate-900 md:text-3xl">
+              <h2 className="font-title text-2xl font-semibold text-slate-900 md:text-3xl">
                 {mapPreview.title}
               </h2>
             ) : null}
@@ -94,17 +94,12 @@ function HeroJournal({ hero }: { hero: HomeHero }) {
     <section className="border-b border-slate-200/70 bg-journal-paper">
       <div className="mx-auto max-w-4xl px-6 py-16 md:px-8 md:py-24">
         <div className="space-y-8 text-center">
-          <div className="flex items-center justify-center gap-4 font-helvetica text-sm font-medium tracking-[0.12em] text-journal-accent">
+          <div className="flex items-center justify-center gap-4 font-title text-sm font-medium tracking-[0.12em] text-journal-accent">
             <span className="h-px w-12 bg-teal-600/50" aria-hidden="true" />
             <span>{hero.label}</span>
             <span className="h-px w-12 bg-teal-600/50" aria-hidden="true" />
           </div>
-          <h1
-            className="text-4xl font-bold leading-[1.1] tracking-tight text-slate-900 md:text-5xl lg:text-[3.25rem]"
-            style={{
-              fontFamily: '"Helvetica Neue", Helvetica, Arial, sans-serif'
-            }}
-          >
+          <h1 className="font-title text-4xl font-bold leading-[1.1] tracking-tight text-slate-900 md:text-5xl lg:text-[3.25rem]">
             {hero.title}
           </h1>
           {hero.description.trim() ? (
@@ -163,10 +158,10 @@ function SectionJournal({ sections }: { sections: HomeSection[] }) {
                   />
                 </div>
                 <div className="min-w-0 flex-1 space-y-3">
-                  <p className="font-helvetica text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">
+                  <p className="font-title text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">
                     {section.label}
                   </p>
-                  <h3 className="font-helvetica text-2xl font-semibold text-slate-900 md:text-3xl">{section.title}</h3>
+                  <h3 className="font-title text-2xl font-semibold text-slate-900 md:text-3xl">{section.title}</h3>
                   <p className="text-base text-slate-600 md:text-lg">{section.description}</p>
                   <span className="inline-block pt-1 text-sm font-medium text-journal-accent group-hover:underline">
                     Continue

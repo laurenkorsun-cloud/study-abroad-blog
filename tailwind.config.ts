@@ -10,15 +10,8 @@ const config: Config = {
       fontFamily: {
         sans: ["-apple-system", "BlinkMacSystemFont", "system-ui", "Segoe UI", "sans-serif"],
         serif: ["Georgia", "Times New Roman", "serif"],
-        /** Titles / display — Helvetica stack (system on macOS) */
-        helvetica: [
-          '"Helvetica Neue"',
-          "Helvetica",
-          "Arial",
-          "ui-sans-serif",
-          "system-ui",
-          "sans-serif"
-        ],
+        /** Titles / display — Outfit (loaded via next/font, see app/fonts.ts) */
+        title: ["var(--font-outfit)", "var(--font-inter)", "system-ui", "sans-serif"],
         inter: ["var(--font-inter)", "system-ui", "sans-serif"],
         "mono-kicker": ["var(--font-ibm-plex-mono)", "ui-monospace", "monospace"]
       },

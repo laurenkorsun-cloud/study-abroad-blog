@@ -89,7 +89,7 @@ function DetailPanel({ entry, onClose }: DetailPanelProps) {
           <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-text-muted">
             {entry.type}
           </p>
-          <h3 className="font-helvetica text-lg font-semibold text-text-primary">
+          <h3 className="font-title text-lg font-semibold text-text-primary">
             {entry.title}
           </h3>
         </div>
@@ -333,7 +333,7 @@ export function InteractiveMap({
               >
                 <Popup>
                   <div className="space-y-1 text-xs text-text-primary">
-                    <p className="font-helvetica font-semibold">{entry.title}</p>
+                    <p className="font-title font-semibold">{entry.title}</p>
                     <p className="text-[11px] capitalize text-text-muted">
                       {entry.type}
                     </p>

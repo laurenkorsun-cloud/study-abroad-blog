@@ -82,7 +82,7 @@ export function HomeMapPreview() {
             >
               <Popup>
                 <div className="space-y-1 text-xs">
-                  <p className="font-helvetica font-semibold">{entry.title}</p>
+                  <p className="font-title font-semibold">{entry.title}</p>
                   <p className="text-[11px] capitalize text-slate-500">
                     {entry.type}
                   </p>

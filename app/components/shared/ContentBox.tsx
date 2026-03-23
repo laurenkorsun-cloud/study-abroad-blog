@@ -155,7 +155,7 @@ export function ContentBox({
           </div>
         )}
 
-        <h3 className="font-helvetica text-base font-semibold text-text-primary md:text-lg">
+        <h3 className="font-title text-base font-semibold text-text-primary md:text-lg">
           {title}
         </h3>
 

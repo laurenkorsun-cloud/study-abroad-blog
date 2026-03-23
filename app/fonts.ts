@@ -1,9 +1,16 @@
-import { IBM_Plex_Mono, Inter } from "next/font/google";
+import { IBM_Plex_Mono, Inter, Outfit } from "next/font/google";
 
-/** Primary UI + headings — simple, neutral sans */
+/** Primary UI + body — neutral sans */
 export const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
+  display: "swap"
+});
+
+/** Titles / display — geometric sans (distinct from body Inter) */
+export const outfit = Outfit({
+  subsets: ["latin"],
+  variable: "--font-outfit",
   display: "swap"
 });
 

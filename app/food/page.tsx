@@ -35,7 +35,7 @@ function RestaurantModal({
             <p className="text-xs uppercase tracking-[0.2em] text-text-muted">
               {restaurant.city}, {restaurant.country}
             </p>
-            <h3 className="font-helvetica text-xl font-semibold text-text-primary">
+            <h3 className="font-title text-xl font-semibold text-text-primary">
               {restaurant.name}
             </h3>
           </div>
@@ -253,7 +253,7 @@ export default function FoodPage() {
           <div className="space-y-8">
             {restaurantsByCity.map(({ city, items }) => (
               <div key={city} className="space-y-3">
-                <h3 className="font-helvetica text-lg font-semibold text-text-primary">{city}</h3>
+                <h3 className="font-title text-lg font-semibold text-text-primary">{city}</h3>
                 <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
                   {items.map((r) => (
                     <article
