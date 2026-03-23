@@ -332,7 +332,7 @@ export function InteractiveMap({
               >
                 <Popup>
                   <div className="space-y-1 text-xs text-text-primary">
-                    <p className="font-semibold">{entry.title}</p>
+                    <p className="font-helvetica font-semibold">{entry.title}</p>
                     <p className="text-[11px] capitalize text-text-muted">
                       {entry.type}
                     </p>

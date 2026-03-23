@@ -123,7 +123,7 @@ export function TripMap({
             >
               <Popup>
                 <div className="space-y-1 text-xs text-slate-900">
-                  <p className="font-semibold">{entry.title}</p>
+                  <p className="font-helvetica font-semibold">{entry.title}</p>
                   <p className="text-[11px] text-slate-700">
                     {entry.address ?? `${entry.city}, ${entry.country}`}
                   </p>

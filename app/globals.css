@@ -17,9 +17,9 @@
     @apply font-inter antialiased;
   }
 
-  /* Simple neutral sans for headings site-wide */
+  /* Titles — Helvetica (system stack) */
   h1, h2, h3, h4 {
-    @apply font-inter tracking-normal text-text-primary;
+    @apply font-helvetica tracking-normal text-text-primary;
   }
 
   /* Navigation and buttons use clean sans-serif */
@@ -67,7 +67,7 @@
   }
 
   .page-title {
-    @apply text-3xl font-semibold tracking-tight md:text-4xl;
+    @apply font-helvetica text-3xl font-semibold tracking-tight md:text-4xl;
   }
 
   .page-description {
@@ -76,7 +76,7 @@
 
   /* Card/box title styling */
   .box-title {
-    @apply text-lg font-semibold tracking-tight md:text-xl;
+    @apply font-helvetica text-lg font-semibold tracking-tight md:text-xl;
   }
 
   .box-subtitle {

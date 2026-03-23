@@ -36,7 +36,7 @@ export default function RomePage() {
       <section className="relative overflow-hidden bg-white">
         <div className="pointer-events-none absolute inset-0 flex items-center justify-center select-none">
           <span
-            className="font-inter text-[clamp(14rem,40vw,28rem)] font-bold leading-none tracking-tighter text-slate-200/50"
+            className="font-helvetica text-[clamp(14rem,40vw,28rem)] font-bold leading-none tracking-tighter text-slate-200/50"
             aria-hidden="true"
           >
             {header.watermark}
@@ -53,7 +53,7 @@ export default function RomePage() {
               <span className="h-px w-8 bg-slate-300 md:w-12" aria-hidden="true" />
             </div>
 
-            <h1 className="font-inter text-[clamp(2.25rem,8vw,4.5rem)] font-bold uppercase leading-[0.95] tracking-tight text-slate-900">
+            <h1 className="font-helvetica text-[clamp(2.25rem,8vw,4.5rem)] font-bold uppercase leading-[0.95] tracking-tight text-slate-900">
               {header.title}
             </h1>
           </div>
@@ -80,7 +80,7 @@ export default function RomePage() {
         <div className="grid gap-8 lg:grid-cols-[1fr_320px]">
           <div>
             <div className="mb-6 flex flex-wrap items-end justify-between gap-3">
-              <h2 className="font-inter text-sm font-semibold uppercase tracking-[0.2em] text-slate-900">
+              <h2 className="font-helvetica text-sm font-semibold uppercase tracking-[0.2em] text-slate-900">
                 {romeEntriesSection.title}
               </h2>
               {romeEntriesSection.subtitle && romeEntriesSection.subtitle.trim().length > 0 && (
@@ -129,7 +129,7 @@ export default function RomePage() {
 
             <div className="space-y-3 rounded-sm border border-slate-200/80 bg-white p-4 shadow-sm">
               <div className="flex items-center justify-between gap-2">
-                <h2 className="font-inter text-sm font-semibold">{romeSidebar.videoTitle}</h2>
+                <h2 className="font-helvetica text-sm font-semibold">{romeSidebar.videoTitle}</h2>
                 <span className="font-inter text-[11px] text-text-muted">{uiStrings.comingSoon}</span>
               </div>
               <div className="relative aspect-video overflow-hidden rounded-sm bg-slate-100">
@@ -170,7 +170,7 @@ export default function RomePage() {
         <div className="space-y-5">
           <div className="flex flex-col justify-between gap-3 md:flex-row md:items-end">
             <div className="space-y-2">
-              <h2 className="font-inter text-base font-semibold text-slate-900">{romeMapSection.title}</h2>
+              <h2 className="font-helvetica text-base font-semibold text-slate-900">{romeMapSection.title}</h2>
               <p className="font-inter max-w-md text-sm text-text-secondary">{romeMapSection.description}</p>
             </div>
             <Link href={romeMapSection.ctaHref} className="btn-primary shrink-0">

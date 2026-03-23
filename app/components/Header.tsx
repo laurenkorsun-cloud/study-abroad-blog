@@ -58,7 +58,7 @@ export function Header() {
       <div className="flex w-full items-center justify-between px-4 py-5 md:px-8 md:py-6">
         <Link
           href="/"
-          className="font-inter text-sm font-semibold uppercase tracking-[0.2em] text-slate-900 md:text-base"
+          className="font-helvetica text-sm font-semibold uppercase tracking-[0.2em] text-slate-900 md:text-base"
         >
           {siteMeta.siteName}
         </Link>

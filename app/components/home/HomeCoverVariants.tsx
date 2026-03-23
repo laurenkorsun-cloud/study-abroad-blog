@@ -56,7 +56,7 @@ function MapPreviewSection({
               </p>
             ) : null}
             {mapPreview.title.trim() ? (
-              <h2 className="font-inter text-2xl font-semibold text-slate-900 md:text-3xl">
+              <h2 className="font-helvetica text-2xl font-semibold text-slate-900 md:text-3xl">
                 {mapPreview.title}
               </h2>
             ) : null}
@@ -96,7 +96,7 @@ function HeroJournal({ hero }: { hero: HomeHero }) {
             <span>{hero.label}</span>
             <span className="h-px w-12 bg-teal-600/50" aria-hidden="true" />
           </div>
-          <h1 className="font-inter text-4xl font-semibold leading-[1.15] text-slate-900 md:text-5xl lg:text-[3.25rem]">
+          <h1 className="font-helvetica text-4xl font-semibold leading-[1.15] text-slate-900 md:text-5xl lg:text-[3.25rem]">
             {hero.title}
           </h1>
           {hero.description.trim() ? (
@@ -154,7 +154,7 @@ function SectionJournal({ sections }: { sections: HomeSection[] }) {
                 </div>
                 <div className="min-w-0 flex-1 space-y-3">
                   <p className="text-xs uppercase tracking-[0.2em] text-slate-500">{section.label}</p>
-                  <h3 className="font-inter text-2xl font-semibold text-slate-900 md:text-3xl">{section.title}</h3>
+                  <h3 className="font-helvetica text-2xl font-semibold text-slate-900 md:text-3xl">{section.title}</h3>
                   <p className="text-base text-slate-600 md:text-lg">{section.description}</p>
                   <span className="inline-block pt-1 text-sm font-medium text-journal-accent group-hover:underline">
                     Continue
