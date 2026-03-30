@@ -5,9 +5,12 @@
 
 import overviewData from "../content/weekend-trips/overview.json";
 
+/** Main heading on `/weekend-trips` (single source; JSON `title` should match) */
+export const WEEKEND_TRIPS_LIST_TITLE = "Weekend Trip Guides";
+
 export const weekendTripsOverview = {
   label: overviewData.label,
-  title: overviewData.title,
+  title: (overviewData.title?.trim() || WEEKEND_TRIPS_LIST_TITLE) as string,
   description: overviewData.description,
   cardLabel: overviewData.cardLabel,
   yearSuffix: overviewData.yearSuffix,

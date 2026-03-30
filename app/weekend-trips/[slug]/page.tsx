@@ -32,7 +32,7 @@ function Slideshow({ slides }: SlideshowProps) {
 
   return (
     <section className="relative overflow-hidden bg-slate-50 md:rounded-2xl">
-      <div className="relative h-[60vh] w-full md:h-[70vh]">
+      <div className="relative min-h-[300px] h-[72vh] w-full md:min-h-[400px] md:h-[82vh]">
         {safeSlides.map((slide, idx) => (
           <div
             key={idx}
@@ -191,39 +191,45 @@ export default function WeekendTripDetailPage() {
         {/* Weather */}
         {weather && (
           <section className="border-t border-slate-200/80 bg-journal-paper py-6 md:py-8">
-            <div className="rounded-2xl border border-slate-200/80 bg-white p-5 shadow-md">
+            <div className="rounded-2xl border border-slate-200/80 bg-white p-4 shadow-md sm:p-5">
               <p className="text-center font-title text-sm font-semibold text-slate-900 md:text-base">
                 {weekendTripDetail.weatherTitle}
               </p>
-              <div className="mt-4 flex flex-wrap justify-center gap-4 md:gap-6">
+              <div className="mt-4 flex flex-row flex-nowrap items-stretch justify-between gap-0 sm:gap-1 md:gap-2">
                 {weather.days.map((day) => (
-                  <div key={day.label} className="min-w-[70px] text-center">
+                  <div
+                    key={day.label}
+                    className="min-w-0 flex-1 border-l border-slate-100 px-1 text-center first:border-l-0 first:pl-0 sm:px-2 md:px-3"
+                  >
                     {day.icon && (
-                      <div className="mb-1 text-xl" aria-hidden="true">
+                      <div className="mb-0.5 text-lg sm:text-xl" aria-hidden="true">
                         {day.icon}
                       </div>
                     )}
-                    <p className="text-xs font-semibold text-text-muted">{day.label}</p>
-                    <p className="text-sm font-semibold text-text-primary">
+                    <p className="text-[10px] font-semibold text-text-muted sm:text-xs">{day.label}</p>
+                    <p className="text-[11px] font-semibold text-text-primary sm:text-sm">
                       {day.high}°F / {day.low}°F
                     </p>
-                    <p className="mt-1 font-inter text-xs text-text-secondary">{day.summary}</p>
+                    <p className="mt-1 line-clamp-4 font-inter text-[10px] leading-snug text-text-secondary sm:text-xs md:line-clamp-3">
+                      {day.summary}
+                    </p>
                   </div>
                 ))}
               </div>
             </div>
           </section>
         )}
+        </div>
 
-        {/* Slideshow — IG-style frame on md+ */}
         {trip.slideshow?.length ? (
           <section className="border-t border-slate-200/80 bg-journal-paper py-6 md:py-8">
-            <div className="w-full overflow-hidden md:mx-auto md:max-w-lg md:rounded-2xl md:border md:border-slate-200/80 md:shadow-md">
+            <div className="mx-auto w-full max-w-5xl overflow-hidden md:rounded-2xl md:border md:border-slate-200/80 md:shadow-md lg:max-w-6xl">
               <Slideshow slides={trip.slideshow} />
             </div>
           </section>
         ) : null}
 
+        <div className="mx-auto w-full max-w-xl">
         {/* Feed */}
         <section className="border-t border-slate-200/80 bg-journal-paper py-6 md:py-8">
           <h2 className="box-title mb-6 text-center font-title">{weekendTripDetail.entriesTitle}</h2>
@@ -231,7 +237,6 @@ export default function WeekendTripDetailPage() {
             {(trip.activities ?? []).map((activity) => (
               <WeekendSocialPost
                 key={activity.id}
-                tripTitle={trip.title}
                 activity={activity}
                 linkLabel={
                   activity.linkLabel ??

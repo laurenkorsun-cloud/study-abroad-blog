@@ -7,6 +7,10 @@ export {
   type ContentBoxProps,
   type ContentBoxImage
 } from "./ContentBox";
+export {
+  WeekendMomentCard,
+  type WeekendMomentCardProps
+} from "./WeekendMomentCard";
 export { ImageGallery, type GalleryImage } from "./ImageGallery";
 export {
   ImageLightboxProvider,

@@ -1,11 +1,19 @@
+import type { Metadata } from "next";
 import { getAllTrips } from "../../data/tripPages";
-import { weekendTripsOverview } from "../../data/weekendTripsContent";
+import {
+  WEEKEND_TRIPS_LIST_TITLE,
+  weekendTripsOverview
+} from "../../data/weekendTripsContent";
 import { TripCard } from "../components/TripCard";
 
 // ═══════════════════════════════════════════════════════════════════════════
 // WEEKEND TRIPS OVERVIEW - Trip cards from data/tripPages.ts
 // Page content from data/weekendTripsContent.ts
 // ═══════════════════════════════════════════════════════════════════════════
+
+export const metadata: Metadata = {
+  title: WEEKEND_TRIPS_LIST_TITLE
+};
 
 export default function WeekendTripsPage() {
   const trips = getAllTrips();
@@ -14,11 +22,13 @@ export default function WeekendTripsPage() {
     <div className="flex flex-col bg-journal-paper">
       {/* Match home cover: journal paper + soft border (HeroJournal / section rhythm) */}
       <section className="section-container border-b border-slate-200/70 bg-journal-paper">
-        <div className="page-header mx-auto max-w-3xl text-center">
+        <div className="mx-auto flex max-w-3xl flex-col items-center text-center">
           {weekendTripsOverview.label.trim() ? (
             <p className="page-label">{weekendTripsOverview.label}</p>
           ) : null}
-          <h1 className="page-title">{weekendTripsOverview.title}</h1>
+          <h1 className="page-title w-full text-center">
+            {WEEKEND_TRIPS_LIST_TITLE}
+          </h1>
           {weekendTripsOverview.description.trim() ? (
             <p className="page-description">{weekendTripsOverview.description}</p>
           ) : null}

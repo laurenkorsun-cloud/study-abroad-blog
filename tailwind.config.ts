@@ -10,6 +10,15 @@ const config: Config = {
       fontFamily: {
         sans: ["-apple-system", "BlinkMacSystemFont", "system-ui", "Segoe UI", "sans-serif"],
         serif: ["Georgia", "Times New Roman", "serif"],
+        /** Body copy / journal descriptions — Times-first */
+        "body-serif": [
+          "Times New Roman",
+          "Times",
+          "Georgia",
+          "Cambria",
+          "ui-serif",
+          "serif"
+        ],
         /** Titles / display — Space Grotesk (loaded via next/font, see app/fonts.ts) */
         title: ["var(--font-space-grotesk)", "var(--font-inter)", "system-ui", "sans-serif"],
         inter: ["var(--font-inter)", "system-ui", "sans-serif"],

@@ -41,6 +41,8 @@ export interface ContentBoxProps {
    * Combine with `className` to tune padding (e.g. `!p-0`) if needed.
    */
   bare?: boolean;
+  /** When `bare` and there are no images, show a dashed slot so photos can be added later */
+  bareImagePlaceholder?: boolean;
 }
 
 function MiniSlideshow({
@@ -153,7 +155,8 @@ export function ContentBox({
   rating,
   social,
   variant = "default",
-  bare = false
+  bare = false,
+  bareImagePlaceholder = false
 }: ContentBoxProps) {
   const activeStyles = isActive ? "ring-2 ring-accent-primary bg-white" : "";
   const clickableStyles = onClick ? "cursor-pointer hover:shadow-md transition-shadow" : "";
@@ -175,7 +178,7 @@ export function ContentBox({
             {avatarLetter}
           </div>
           <div className="min-w-0 flex-1">
-            <p className="truncate font-title text-sm font-semibold text-slate-900">{title}</p>
+            <p className="truncate font-body-serif text-sm font-semibold text-slate-900">{title}</p>
             <p className="truncate text-xs text-slate-500">
               {[label, date].filter(Boolean).join(" · ")}
             </p>
@@ -207,7 +210,7 @@ export function ContentBox({
 
         <div className="space-y-2 px-4 pb-4 pt-3">
           {description ? (
-            <p className="font-inter text-sm leading-relaxed text-slate-800">{description}</p>
+            <p className="font-body-serif text-sm leading-relaxed text-slate-800">{description}</p>
           ) : null}
 
           {typeof rating === "number" && rating >= 0 && rating <= 5 && (
@@ -261,7 +264,7 @@ export function ContentBox({
             </p>
           )}
 
-          <h3 className="font-title text-base font-semibold text-text-primary md:text-lg">
+          <h3 className="font-body-serif text-base font-semibold text-text-primary md:text-lg">
             {title}
           </h3>
 
@@ -281,7 +284,7 @@ export function ContentBox({
           )}
 
           {description && (
-            <p className="text-sm leading-relaxed text-text-secondary md:text-base">
+            <p className="font-body-serif text-sm leading-relaxed text-text-secondary md:text-base">
               {description}
             </p>
           )}
@@ -311,7 +314,7 @@ export function ContentBox({
 
   return (
     <Shell className={outerShell} onClick={onClick}>
-      {images && images.length > 0 && (
+      {images && images.length > 0 ? (
         <div
           className={
             bare
@@ -321,7 +324,12 @@ export function ContentBox({
         >
           <MiniSlideshow images={images} />
         </div>
-      )}
+      ) : bare && bareImagePlaceholder ? (
+        <div
+          className="mb-4 min-h-[200px] w-full overflow-hidden rounded-b-none rounded-t-none border-y border-dashed border-slate-200/90 bg-gradient-to-b from-slate-50 to-slate-100/70 sm:min-h-[240px]"
+          aria-hidden="true"
+        />
+      ) : null}
 
       <div className={`space-y-3 ${bare ? "px-4 pb-4 pt-1" : ""}`}>
         {(label || date) && (
@@ -333,7 +341,7 @@ export function ContentBox({
           </div>
         )}
 
-        <h3 className="font-title text-base font-semibold text-text-primary md:text-lg">
+        <h3 className="font-body-serif text-base font-semibold text-text-primary md:text-lg">
           {title}
         </h3>
 
@@ -353,7 +361,7 @@ export function ContentBox({
         )}
 
         {description && (
-          <p className="text-sm leading-relaxed text-text-secondary md:text-base">
+          <p className="font-body-serif text-sm leading-relaxed text-text-secondary md:text-base">
             {description}
           </p>
         )}
