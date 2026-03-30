@@ -1,8 +1,11 @@
 import { ContentBox } from "../shared/ContentBox";
 import type { TripActivity } from "../../../data/tripPages";
 
-function formatLocationLabel(label?: string): string {
-  return label?.trim() ?? "";
+/** Same compact line as the old hashtag (e.g. France·Paris), without a leading #. */
+function labelToCompactLine(label?: string): string {
+  if (!label?.trim()) return "";
+  const t = label.trim().replace(/^#/, "");
+  return t.replace(/\s+/g, "");
 }
 
 export type WeekendSocialPostProps = {
@@ -20,7 +23,7 @@ export function WeekendSocialPost({
   className = ""
 }: WeekendSocialPostProps) {
   const letter = tripTitle.trim().charAt(0).toUpperCase() || "·";
-  const locationLabel = formatLocationLabel(activity.label);
+  const locationLabel = labelToCompactLine(activity.label);
 
   return (
     <article
