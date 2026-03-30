@@ -1,10 +1,8 @@
 import { ContentBox } from "../shared/ContentBox";
 import type { TripActivity } from "../../../data/tripPages";
 
-function labelToHashtag(label?: string): string {
-  if (!label?.trim()) return "";
-  const t = label.trim().replace(/^#/, "");
-  return `#${t.replace(/\s+/g, "")}`;
+function formatLocationLabel(label?: string): string {
+  return label?.trim() ?? "";
 }
 
 export type WeekendSocialPostProps = {
@@ -22,7 +20,7 @@ export function WeekendSocialPost({
   className = ""
 }: WeekendSocialPostProps) {
   const letter = tripTitle.trim().charAt(0).toUpperCase() || "·";
-  const hashtag = labelToHashtag(activity.label);
+  const locationLabel = formatLocationLabel(activity.label);
 
   return (
     <article
@@ -38,9 +36,9 @@ export function WeekendSocialPost({
         <div className="min-w-0 flex-1 text-left">
           <p className="truncate font-title text-sm font-semibold text-slate-900">{tripTitle}</p>
           <p className="font-inter text-xs text-slate-500">
-            {hashtag ? (
+            {locationLabel ? (
               <>
-                <span className="text-journal-accent">{hashtag}</span>
+                <span className="text-journal-accent">{locationLabel}</span>
                 {activity.date ? <span> · {activity.date}</span> : null}
               </>
             ) : (

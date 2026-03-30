@@ -474,11 +474,37 @@ export const TRIP_PAGES: TripPage[] = [
     ],
     mapEntryIds: ["paris-airbnb"],
     activities: [
-      { id: "paris-airbnb", title: "Our Airbnb in Paris", date: "Mar 26 – 29, 2026", label: "France · Paris", description: "Add your accommodation description here.", entryType: "accommodation", link: "https://www.airbnb.com/rooms/YOUR_LISTING_ID", linkLabel: "View on Airbnb", mapEntryId: "paris-airbnb", rating: 5, images: [] },
-      { id: "paris-day-1", title: "Arrival", date: "March 26, 2026", label: "France · Paris", description: "Add your notes.", images: [] },
-      { id: "paris-day-2", title: "Exploring Paris", date: "March 27, 2026", label: "France · Paris", description: "Add your notes.", images: [] },
-      { id: "paris-day-3", title: "Paris", date: "March 28, 2026", label: "France · Paris", description: "Add your notes.", images: [] },
-      { id: "paris-day-4", title: "Departure", date: "March 29, 2026", label: "France · Paris", description: "Add your notes.", images: [] }
+      {
+        id: "paris-airbnb",
+        title: "Our Airbnb",
+        date: "Mar 26 – 29, 2026",
+        label: "France · Paris",
+        description: "Add your accommodation description here.",
+        entryType: "accommodation",
+        link: "https://www.airbnb.com/rooms/YOUR_LISTING_ID",
+        linkLabel: "View on Airbnb",
+        mapEntryId: "paris-airbnb",
+        rating: 5,
+        images: []
+      },
+      { id: "paris-louvre", title: "The Louvre", date: "March 26, 2026", label: "1st arr.", description: "Add your notes.", images: [] },
+      { id: "paris-gardens", title: "Gardens", date: "March 26, 2026", label: "Paris", description: "Tuileries, Luxembourg, or both—add your plan.", images: [] },
+      {
+        id: "paris-lunch-brasserie",
+        title: "Lunch at Brasserie de Pres",
+        date: "March 26, 2026",
+        label: "Saint-Germain-des-Prés",
+        description: "Lunch near Saint-Germain-des-Prés. Add your notes.",
+        images: []
+      },
+      { id: "paris-notre-dame", title: "Notre Dame", date: "March 27, 2026", label: "4th arr.", description: "Add your notes.", images: [] },
+      { id: "paris-dinner", title: "Dinner spot", date: "March 27, 2026", label: "Paris", description: "Add the restaurant and your notes.", images: [] },
+      { id: "paris-montmartre", title: "Montmartre", date: "March 27, 2026", label: "18th arr.", description: "Add your notes.", images: [] },
+      { id: "paris-cafe", title: "Cafe spot", date: "March 28, 2026", label: "Paris", description: "Add your notes.", images: [] },
+      { id: "paris-jazz", title: "Jazz club", date: "March 28, 2026", label: "Paris", description: "Add your notes.", images: [] },
+      { id: "paris-hotel-day", title: "Hotel for the day", date: "March 28, 2026", label: "Paris", description: "Day-use or luggage drop—add details.", images: [] },
+      { id: "paris-canal", title: "Canal Saint-Martin", date: "March 29, 2026", label: "10th arr.", description: "Add your notes.", images: [] },
+      { id: "paris-gros-buns", title: "Gros Buns", date: "March 29, 2026", label: "Paris", description: "Add your notes.", images: [] }
     ]
   },
   {

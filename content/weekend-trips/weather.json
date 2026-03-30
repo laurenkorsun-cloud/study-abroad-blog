@@ -148,12 +148,12 @@
     {
       "slug": "paris",
       "location": "Paris, France",
-      "dateRange": "Mar 27 – 30, 2026",
+      "dateRange": "Mar 26 – 29, 2026",
       "days": [
-        { "label": "Fri", "high": 58, "low": 44, "summary": "Spring light on the Louvre.", "icon": "☀️" },
-        { "label": "Sat", "high": 60, "low": 46, "summary": "Perfect for croissants and the Seine.", "icon": "🌤️" },
-        { "label": "Sun", "high": 59, "low": 45, "summary": "Warm enough for outdoor cafés.", "icon": "⛅" },
-        { "label": "Mon", "high": 57, "low": 43, "summary": "Golden hour before leaving.", "icon": "☀️" }
+        { "label": "Thu", "high": 55, "low": 41, "summary": "Cool spring arrival—mix of sun and high clouds, typical for late March in Paris.", "icon": "⛅" },
+        { "label": "Fri", "high": 57, "low": 43, "summary": "Bright spells and seasonable highs around 14°C—good walking weather.", "icon": "🌤️" },
+        { "label": "Sat", "high": 56, "low": 42, "summary": "Mostly cloudy with a small chance of a brief shower; still mild for March.", "icon": "☁️" },
+        { "label": "Sun", "high": 54, "low": 40, "summary": "Turning a bit cooler and breezier—layer up for the last day.", "icon": "🌥️" }
       ]
     },
     {
